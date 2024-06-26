@@ -1,0 +1,19 @@
+.img-toggle {
+    object-fit: cover;
+    height: 1.4rem;
+    border-radius: 2px;
+}
+
+    /* Proff. and Language skills untogglable bar */
+
+    .skill-name {
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        margin: 0;
+    }

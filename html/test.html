@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shuvankar">
+    <title>Suvnkr Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/img/Logo_White.svg" type="image/x-icon">
+</head>
+<style>
+    /* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav .left a img {
+    height: 1.5rem;
+}
+
+nav .right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .right ul li {
+    margin-left: 2rem;
+}
+
+nav .right ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+/* Preloader */
+.preloader {
+    background-color: #f4f4f4;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.preloader .filled {
+    height: 5px;
+    background-color: #000;
+    width: 0;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    50% { width: 50%; }
+    100% { width: 100%; }
+}
+
+/* Section styles */
+.main {
+    margin-top: 80px;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.first .img-container-landing {
+    flex: 1;
+}
+
+.first .firstsection {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first .leftdiv {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.first .leftdiv .name-color {
+    color: #007bff;
+}
+
+.first .rightdiv {
+    flex: 1;
+}
+
+.secondsection, .thirdsection, .fourthsection, .fifthsection {
+    padding: 2rem;
+}
+
+.secondsection .leftdiv {
+    flex: 1;
+}
+
+.secondsection .rightdiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondsection .rightdiv img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Experience Section */
+.experience-container {
+    margin-top: 2rem;
+}
+
+.experience {
+    margin-bottom: 1.5rem;
+}
+
+.experience .year {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.experience .details {
+    margin-left: 1rem;
+}
+
+.experience .details .title {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.experience .details .company {
+    font-size: 0.9rem;
+}
+
+.experience .details .duration {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.experience .details .description {
+    display: none;
+}
+
+.experience .details .description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience .details .description ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Section */
+.skill-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-section .left-skill-icon {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-section .left-skill-icon img {
+    margin-bottom: 1rem;
+}
+
+.skill-section .content {
+    flex: 2;
+}
+
+.skill-section .landing-skill-tech, .skill-section .landing-skill-proff {
+    margin-bottom: 1.5rem;
+}
+
+.skill-section .skill-head {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.skill-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-section ul li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.skill-section ul li i {
+    margin-right: 0.5rem;
+}
+
+/* Contact Section */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form .input-group {
+    margin-bottom: 1rem;
+}
+
+#contact-form .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#contact-form .input-group input, #contact-form .input-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .left ul, footer .right ul, footer .social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+footer .left ul li, footer .right ul li, footer .social ul li {
+    margin-right: 2rem;
+}
+
+footer .left ul li a img {
+    height: 50px;
+}
+
+footer .right ul li a, footer .social ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .social ul li a i {
+    font-size: 1.5rem;
+}
+
+/* Primary button styles */
+.primary-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<body>
+    <!-- Header Part -->
+    <header>
+        <nav>
+            <div class="left">
+                <a href="#"><img src="/img/Logo_nav_cropped.svg" alt="nav-logo" height="1.5rem"></a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="preloader">
+        <div class="filled"></div>
+    </div>
+    <main>
+        <section class="first">
+            <div class="img-container-landing">
+                <div class="img-slider-landing"></div>
+            </div>
+            <section class="firstsection">
+                <div class="leftdiv">
+                    Hello! I'm <span class="name-color">Shuvankar</span>,
+                    <div> and I am a</div>
+                    <span id="element"></span>
+                </div>
+                <div class="rightdiv"></div>
+            </section>
+        </section>
+        <section class="secondsection">
+            <div class="leftdiv">
+                <div class="heading"><h1>About Me</h1></div>
+                <div class="content">
+                    <p>I'm Shuvankar Debnath, a versatile creative professional with a diverse skill set spanning web development, graphic design, and video editing.</p>
+                    <p>With a year of experience in web development, I am proficient in HTML, CSS, and JavaScript. I have worked on projects like creating comprehensive survey forms with responsive designs. In the realm of graphic design, I have five months of experience and am skilled in Adobe Photoshop, Canva, and Adobe Illustrator.</p>
+                    <p>My true passion lies in video editing, where I bring over five years of expertise using tools such as Adobe Premiere Pro, Wondershare Filmora, and Capcut. I have produced a wide range of videos, including vlogs, cinematic edits, and tutorials for YouTube and various clients.</p>
+                    <p>Currently, I am pursuing a B.Tech degree, which I expect to complete by 2027. In addition to my professional endeavors, I have a keen interest in game development and continuously experiment with new techniques in video editing.</p>
+                </div>
+                <div class="btn">
+                    <button class="primary-btn" data="Know More"></button>
+                    <button class="primary-btn" data="Linkedin"></button>
+                </div>
+            </div>
+            <div class="rightdiv"><img src="/img/about-pic.jpg" alt="about-dp"></div>
+        </section>
+        
+        <section class="thirdsection">
+            <div class="leftdiv">
+                <div class="heading"><h1>Experience</h1></div>
+                <div class="content">
+                    <div class="experience-container">
+                        <div class="experience">
+                            <div class="year">2018</div>
+                            <div class="details">
+                                <div class="title" onclick="toggleDetails(this)">Video Editor<span class="toggle-icon">▼</span></div>
+                                <div class="company">Freelancing</div>
+                                <div class="duration">5y+ / India - Hybrid - Kolkata</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>More than 5 years of experience.</li>
+                                        <li>Experienced with Filmora PC & Currently edit videos on Premiere Pro.</li>
+                                        <li>Softwares I use - Premiere Pro, After Effects, Capcut, Filmora PC.</li>
+                                        <li>Can edit Vlogs, Tutorials, Shorts, Cinematic Edits.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <div class="year">2023</div>
+                            <div class="details">
+                                <div class="title" onclick="toggleDetails(this)">HTML Developer <span class="toggle-icon">▼</span></div>
+                                <div class="company">Freelancing</div>
+                                <div class="duration">1y / India - Hybrid - Kolkata</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>From 2023 I've started to explore Web-Development.</li>
+                                        <li>Proficient in HTML and CSS & currently learning JavaScript.</li>
+                                        <li>Projects: Survey form, Portfolio Page, Login Page for Competitive Examination.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <div class="year">2024</div>
+                            <div class="details">
+                                <div class="title" onclick="toggleDetails(this)">Graphics Designer<span class="toggle-icon">▼</span></div>
+                                <div class="company">at <a href="https://www.instagram.com/saeiemclub/" target="_blank">SAE IEM Club</a></div>
+                                <div class="duration">3m / India - Hybrid - Kolkata</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>I create engaging social media posts and videos.</li>
+                                        <li>Experienced with Canva</li>
+                                        <li>This is a volunteering position.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <div class="year">2024</div>
+                            <div class="details">
+                                <div class="title" onclick="toggleDetails(this)">Graphics Designer<span class="toggle-icon">▼</span></div>
+                                <div class="company">Freelancing</div>
+                                <div class="duration">4m / India - Remote</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Proficient with Canva.</li>
+                                        <li>Hands-on experience with Adobe Illustrator, Adobe Photoshop.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button class="primary-btn" data="Know More"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="fourthsection">
+            <div class="heading"><h1>Skills</h1></div>
+            <p>Glimpse of my skills, to learn more click on the Know More.</p>
+            <section class="skill-section">
+                <div class="left-skill-icon">
+                    <img src="/img/skills-technical.svg" alt="tech-skills">
+                    <img src="/img/skills-professional.svg" alt="prof-skills">
+                </div>
+                <div class="content">
+                    <div class="landing-skill-tech">
+                        <div class="skill-head">Technical Skills</div>
+                        <ul>
+                            <li><i class="fa-brands fa-python"></i> Python</li>
+                            <li><i class="fa-solid fa-c"></i> Programming</li>
+                            <li><i class="fa-brands fa-html5"></i> HTML</li>
+                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                            <li><i class="fa-brands fa-js"></i> JavaScript</li>
+                            <li><i class="fa-solid fa-video"></i> Video Editing</li>
+                            <li><i class="fa-solid fa-pen-nib"></i> Graphics Designer</li>
+                        </ul>
+                    </div>
+                    <div class="landing-skill-proff">
+                        <div class="skill-head">Professional Skills</div>
+                        <ul>
+                            <li><i class="fa-solid fa-user-group"></i> Communication</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Teamwork</li>
+                            <li><i class="fa-solid fa-person-arrow-up-from-line"></i> Leadership</li>
+                            <li><i class="fa-solid fa-thumbs-up"></i> Positive Attitude</li>
+                            <li><i class="fa-solid fa-user-pen"></i> Creativity</li>
+                            <li><i class="fa-solid fa-lightbulb"></i> Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button class="primary-btn" data="Know More"></button>
+                </div>
+            </section>
+        </section>
+
+        <section class="fifthsection">
+            <div class="heading"><h1>Contact</h1></div>
+            <form id="contact-form">
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit" class="primary-btn">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="left">
+            <ul>
+                <li><a href="#"><img src="/img/Logo_nav_cropped.svg" alt="footer-logo" height="50px"></a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/shuvankar-debnath-543894258/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/shuvankar_debnath/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/ShuvankarD" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:contact@shuvankardebnath.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const preloader = document.querySelector(".preloader");
+    preloader.classList.add("hide-preloader");
+
+    // Event listener for the experience titles
+    const experienceTitles = document.querySelectorAll(".experience .details .title");
+    experienceTitles.forEach(title => {
+        title.addEventListener("click", function() {
+            const description = this.nextElementSibling;
+            description.style.display = description.style.display === "block" ? "none" : "block";
+        });
+    });
+});
+
+window.addEventListener("load", function() {
+    const preloader = document.querySelector(".preloader");
+    setTimeout(function() {
+        preloader.style.display = "none";
+    }, 2000);
+});
+
+</script>
+</html>

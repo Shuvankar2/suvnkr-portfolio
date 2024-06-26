@@ -1,0 +1,131 @@
+.project-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 53px;
+    flex-wrap: wrap;
+}
+
+.project-content a{
+    text-decoration: none;   
+}
+.project-container {
+    background: rgb(15, 74, 142);
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 18rem;
+    width: 24rem;
+    margin: 2rem;
+    cursor: pointer;
+    color: #fff;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(218, 218, 218, 0.5);
+
+}
+.project-container:hover {
+    background: rgb(171, 111, 208);
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 18rem;
+    width: 24rem;
+    margin: 2rem;
+    cursor: pointer;
+    color: #141111;
+    border: 5px solid rgb(27, 221, 195);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(248, 160, 60, 0.795);
+
+}
+
+.project-icon {
+    font-size: 8rem;
+}
+
+.project-title {
+    font-size: 2rem;
+}
+
+    /* Web Dev Project CSS */
+
+.description {
+    overflow-y: auto;
+}
+
+.web-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.web-image img {
+    height: 13em;
+    border-radius: 8px;
+}
+
+.web-info {
+    margin: 5px;
+}
+
+.github-toggle {
+    color: rgb(20, 222, 141);
+    font-size: large;
+}
+.github-toggle:hover {
+    color: rgb(245, 12, 245);
+    font-size: larger;
+}
+
+    /* Web Dev Project CSS Ends */
+
+    /* Graphics Project CSS */
+
+.project-graphics-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 53px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+    /* Video Project CSS */
+
+.project-video-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.yt-video{
+    margin: 25px 10px 25px 10px;
+}
+
+@media (max-width: 600px)  {
+    
+.yt-video{
+    margin: 14px 0 14px 0;
+    max-width: 93%;
+    max-height: 205px;
+}
+
+.about-firstsection h2 {
+    font-size: 1.6em;
+}
+}
+
+footer {
+    margin: 0;
+}
+
+
+
