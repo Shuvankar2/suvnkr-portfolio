@@ -285,7 +285,7 @@ nav.open ~ .menu-overlay {
 
 /* Ensures the first image is visible on load */
 .img-slider-landing {
-    background-image: url('/img/bg-landing.jpg');
+    background-image: url('/suvnkr-portfolio/img/bg-landing.jpg');
 }
 .firstsection {
     display: flex;
@@ -765,7 +765,7 @@ nav.open ~ .menu-overlay {
     footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background: #1d2334;
-    background-image: url(/img/footer-bg.png);
+    background-image: url(/suvnkr-portfolio/img/footer-bg.png);
     background-position: center;
     background-size: cover;
     padding: 20px;
