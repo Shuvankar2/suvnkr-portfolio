@@ -30,9 +30,9 @@
           // Landing Image - Changes after 5 seconds
           document.addEventListener("DOMContentLoaded", function() {
       const images = [
-          '/img/bg-landing.jpg',
-          '/img/bg-landing2.jpg',
-          '/img/bg-landing3.jpg'
+          '/suvnkr-portfolio/img/bg-landing.jpg',
+          '/suvnkr-portfolio/img/bg-landing2.jpg',
+          '/suvnkr-portfolio/img/bg-landing3.jpg'
       ];
   
       let currentImageIndex = 0;
