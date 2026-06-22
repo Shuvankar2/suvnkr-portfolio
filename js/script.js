@@ -29,14 +29,16 @@
   
           // Landing Image - Changes after 5 seconds
           document.addEventListener("DOMContentLoaded", function() {
+      const imageSlider = document.querySelector('.img-slider-landing');
+      if (!imageSlider) return;
+
       const images = [
-          '/suvnkr-portfolio/img/bg-landing.jpg',
-          '/suvnkr-portfolio/img/bg-landing2.jpg',
-          '/suvnkr-portfolio/img/bg-landing3.jpg'
+          'img/bg-landing.jpg',
+          'img/bg-landing2.jpg',
+          'img/bg-landing3.jpg'
       ];
   
       let currentImageIndex = 0;
-      const imageSlider = document.querySelector('.img-slider-landing');
   
       function changeBackgroundImage() {
           imageSlider.classList.add('slide-out');
@@ -110,6 +112,16 @@ window.addEventListener('scroll', function() {
         scrollToTopBtn.classList.remove('show');
     }
 });
+
+// Auto-update copyright year
+document.addEventListener("DOMContentLoaded", function() {
+    const yearSpans = document.querySelectorAll(".copyright-year");
+    const currentYear = new Date().getFullYear();
+    yearSpans.forEach(span => {
+        span.textContent = currentYear;
+    });
+});
+
 
   
   
