@@ -127,5 +127,144 @@ footer {
     margin: 0;
 }
 
+/* Custom Web Project Details Dropdown CSS */
+.web-description {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+
+.web-image img {
+    width: 260px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.web-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.proj-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.proj-section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgb(27, 221, 195);
+    margin: 5px 0 2px 0;
+}
+
+.proj-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(27, 221, 195, 0.15);
+    border-color: rgb(27, 221, 195);
+    color: rgb(27, 221, 195);
+}
+
+.proj-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #24292e;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+}
+
+.github-btn:hover {
+    background: #000;
+    border-color: rgb(27, 221, 195);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.live-link-container {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.live-link-container a {
+    color: rgb(27, 221, 195) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.live-link-container a:hover {
+    color: rgb(171, 111, 208) !important;
+    border-bottom: 1px solid rgb(171, 111, 208);
+}
+
+/* Ensure the description can expand fully */
+.description.show {
+    max-height: 800px !important;
+}
+
+@media (max-width: 768px) {
+    .web-description {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .web-image img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+    
+    .proj-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
 
 
