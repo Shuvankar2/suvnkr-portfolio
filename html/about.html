@@ -5,7 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta owner="Shuvankar" content="SHUVANKAR's PORTFOLIO">
+    <meta name="description"
+        content="About Shuvankar Debnath: Learn about my journey as an Electrical Engineering student (graduating in 2027 from IEM Kolkata, Salt Lake) and a Software & AI Engineer. I specialize in building full-stack web applications and applied AI pipelines, combining systems thinking with creative design, video editing, and technical engineering.">
+    <meta name="keywords"
+        content="SUVNKR, Shuvankar Debnath, About Shuvankar Debnath, IEM Kolkata, IEM Salt Lake, Electrical Engineering, Software Engineer, AI Engineer, Video Editor, Graphic Designer, education details">
+    <meta name="author" content="Shuvankar Debnath">
     <title>About | Suvnkr Portfolio</title>
+
+    <!-- JSON-LD Structured Data for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Shuvankar Debnath",
+        "jobTitle": "Software & AI Engineer",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Institute of Engineering & Management (IEM), Kolkata",
+          "location": "Salt Lake, Kolkata"
+        },
+        "description": "Electrical Engineering student (graduating in 2027) and Software & AI Engineer specializing in full-stack development and applied AI."
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -23,11 +47,12 @@
     <header>
         <nav>
             <div class="left">
-                <a href="../index.html"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem></a>
+                <a href="https://shuvankar.qzz.io/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo"
+                        height=1.5rem></a>
             </div>
             <div class="right">
                 <ul class="nav-desktop">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="https://shuvankar.qzz.io/">Home</a></li>
                     <li><a href="../html/about.html">About</a></li>
                     <li><a href="../html/experience.html">Experiences</a></li>
                     <li><a href="../html/projects.html">Projects</a></li>
@@ -73,17 +98,18 @@
                                 </a>
                             </li>
                             <li class="menu-list">
-                                <a href="../uploads/SD-web-CV .pdf" class="menu-nav-link">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="menu-nav-link">
                                     <i class="fa-solid fa-file-pdf menu-icon"></i>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
                         </ul>
-                        
+
                         <!-- Mobile-Menu -->
                         <ul class="menu-lists nav-mobile">
                             <li class="menu-list">
-                                <a href="../index.html" class="menu-nav-link">
+                                <a href="https://shuvankar.qzz.io/" class="menu-nav-link">
                                     <i class="fa-solid fa-house menu-icon"></i>
                                     <span class="nav-link">Home</span>
                                 </a>
@@ -119,7 +145,8 @@
                                 </a>
                             </li>
                             <li class="menu-list">
-                                <a href="../uploads/SD-web-CV .pdf" class="menu-nav-link">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="menu-nav-link">
                                     <i class="fa-solid fa-file-pdf menu-icon"></i>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
@@ -176,82 +203,83 @@
                 <h1>About Me</h1>
             </div>
             <div class="about-firstsection">
-                <h2><span>Web Development</span></h2>
-                <p>With a year of experience in web development, I have honed my skills in HTML, CSS, and
-                    JavaScript. These foundational technologies have allowed me to build dynamic and responsive
-                    websites that cater to a variety of user needs. One notable project involved the creation of a
-                    comprehensive survey form, where I utilized responsive design principles to ensure an optimal
-                    viewing experience across different devices. This project not only tested my technical skills
-                    but also my ability to understand user requirements and translate them into a functional and
-                    aesthetically pleasing web application.</p>
+                <h2><span>AI & Full-Stack Engineering</span></h2>
+                <p>I'm Shuvankar Debnath — a Software & AI Engineer based in Kolkata, India, building where intelligent
+                    systems meet modern web. With hands-on experience across the MERN stack and applied AI, I design and
+                    ship production-grade applications that solve real problems, not just proof-of-concept demos. During
+                    my internship at IEMRF, I contributed directly to live backend systems — building REST APIs and
+                    MongoDB schemas for ERP and LMS platforms used by real users. My engineering philosophy is simple:
+                    systems should be scalable, maintainable, and built with intent.</p>
 
-                <h2><span>Graphic Design</span></h2>
-                <p>In the realm of graphic design, I bring five months of dedicated experience, during which I have
-                    become proficient in Adobe Photoshop, Canva, and Adobe Illustrator. These tools have enabled me
-                    to create visually stunning graphics that communicate messages effectively and captivate
-                    audiences. My design work ranges from simple social media graphics to more complex designs for
-                    marketing materials, each tailored to meet the specific needs of clients and projects. The
-                    ability to visualize concepts and bring them to life through design is a skill I continuously
-                    refine, driven by a keen eye for detail and a commitment to excellence.</p>
+                <h2><span>Computer Vision & Applied AI</span></h2>
+                <p>My deepest technical work lives at the intersection of deep learning and real-world data. I trained a
+                    multi-generation plant disease detection pipeline — benchmarking YOLOv8, YOLOv9, and YOLOv11 on a
+                    custom Roboflow-annotated dataset — achieving approximately 92% mAP. This wasn't academic; every
+                    version was trained, evaluated, and compared to understand what actually changed across model
+                    generations.</p>
 
-                <h2><span>Video Editing</span></h2>
-                <p>Video editing is where my true passion lies, backed by over five years of extensive experience. I
-                    am well-versed in using industry-standard tools such as Adobe Premiere Pro, Wondershare Filmora,
-                    and Capcut. My portfolio includes a wide range of video projects, from vlogs and cinematic edits
-                    to tutorials designed for YouTube and various clients. This experience has not only enhanced my
-                    technical skills but also my storytelling abilities, allowing me to create compelling narratives
-                    that engage viewers and leave a lasting impression. Each project is approached with a creative
-                    mindset, aiming to push the boundaries of conventional video production and deliver high-quality
-                    content.</p>
-
-                <h2><span>Academic Pursuits and Interests</span></h2>
-                <p>Currently, I am pursuing a B.Tech degree, which I am set to complete by 2027. This academic
-                    endeavor is providing me with a strong technical foundation and a broader understanding of the
-                    technological landscape. It complements my professional work, offering new perspectives and
-                    techniques that I can apply in my projects.</p>
-                <p>In addition to my formal education and professional work, I have a keen interest in game
-                    development. This interest drives me to experiment with new techniques in video editing,
-                    constantly exploring the intersection of interactive media and visual storytelling. This
-                    continuous experimentation not only fuels my creativity but also keeps me at the cutting edge of
-                    industry trends and innovations.</p>
-
-                <p>My diverse skill set in web development, graphic design, and video editing, coupled with my
-                    academic pursuits and personal interests, positions me as a versatile and dynamic professional.
-                    I am committed to delivering excellence in every project, driven by a passion for creating
-                    impactful digital experiences. As I continue to grow and evolve in my career, I look forward to
-                    leveraging my skills to make meaningful contributions to the creative and technological fields.
+                <h2><span>Building AI Products</span></h2>
+                <p>Note Loom is my flagship project — a full-stack AI-powered educational SaaS platform built on the
+                    MERN stack with role-based access control (RBAC) and LLM integration. It's not a tutorial clone;
+                    it's a system architected for real multi-user use, with distinct access flows for students and
+                    admins, an AI layer for personalised learning experiences, and a production-ready backend. Building
+                    it taught me how to think about AI features as infrastructure — not just API calls bolted onto a UI.
                 </p>
+
+                <h2><span>Electrical Engineering Roots</span></h2>
+                <p>I'm pursuing a B.Tech in Electrical Engineering at IEM Kolkata (graduating 2027), and that background
+                    shapes how I think about software. Control systems, signal processing, and systems modelling give me
+                    a different mental model for designing software — one that treats architecture like a feedback loop:
+                    inputs, state, outputs, and correction mechanisms. My EV Battery MPC Simulation project, which
+                    implements Model Predictive Control for battery management, is a direct expression of that: EE
+                    theory translated into a software simulation environment using Python and MATLAB.</p>
+
+                <h2><span>Video Editing & Graphic Design</span></h2>
+                <p>Outside of engineering, I take on freelance work in video editing and graphic design — two crafts
+                    I've developed seriously over the years. On the video side, I work across DaVinci Resolve, Adobe
+                    Premiere Pro, Wondershare Filmora, and CapCut, handling everything from cinematic edits and YouTube
+                    content to client deliverables. I'm comfortable with colour grading, motion pacing, and audio sync —
+                    the details that separate polished work from rushed cuts. For design, I use Adobe Photoshop, Adobe
+                    Illustrator, and Canva to create brand assets, social media graphics, and marketing materials. Both
+                    disciplines feed directly into how I think about UI and product presentation in my engineering work.
+                </p>
+
+                <h2><span>Content & Community</span></h2>
+                <p>Beyond code, I create technical content under the identity SUVNKR. On YouTube (@ShuvankarTechie) I
+                    share project walkthroughs, AI/ML deep-dives, and engineering breakdowns aimed at students
+                    transitioning into AI roles. I believe in learning in public — building things, documenting them,
+                    and putting the work out there for others who are on the same path.</p>
             </div>
             <!-- Education Table -->
-             <div class="table-container">
-            <table>
-                <thead>
-                    <th colspan="4">Education Details</th>
-                    <tr>
-                        <th>Exams Appeared</th>
-                        <th>Grade Obtained</th>
-                        <th>Passed Year</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Secondary Examination</td>
-                        <td>A</td>
-                        <td>2021</td>
-                    </tr>
-                    <tr>
-                        <td>Higher Secondary Examination</td>
-                        <td>B+</td>
-                        <td>2023</td>
-                    </tr>
-                    <tr>
-                        <td>Graduation</td>
-                        <td>N.A</td>
-                        <td>2027</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <th colspan="4">Education Details</th>
+                        <tr>
+                            <th>Exams Appeared</th>
+                            <th>Grade Obtained</th>
+                            <th>Passed Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Secondary Examination</td>
+                            <td>A</td>
+                            <td>2021</td>
+                        </tr>
+                        <tr>
+                            <td>Higher Secondary Examination</td>
+                            <td>B+</td>
+                            <td>2023</td>
+                        </tr>
+                        <tr>
+                            <td>Graduation</td>
+                            <td>Pursuing</td>
+                            <td>2027</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="about-pic"><img src="../img/about-pic.jpg" alt="about-dp"></div>
             <div class="btn">
@@ -266,7 +294,7 @@
         </button>
         <!-- Scroll to Top Button -->
 
-        
+
         <!-- Footer Part -->
         <footer>
             <section class="footer-first">
@@ -286,7 +314,7 @@
                                     class="fa-brands fa-github"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.facebook.com/shuvankar0" id="footer-fb" target="_social"><i
+                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social"><i
                                     class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div class="footer-socials-container">
@@ -294,7 +322,7 @@
                                     class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://x.com/shuvankar345" id="footer-twitter" target="_social"><i
+                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social"><i
                                     class="fa-brands fa-x-twitter"></i></a>
                         </div>
                         <div class="footer-socials-container">
