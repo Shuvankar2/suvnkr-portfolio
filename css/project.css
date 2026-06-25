@@ -129,96 +129,117 @@ footer {
 
 /* Custom Web Project Details Dropdown CSS */
 .web-description {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 10px;
+    display: flex !important;
+    flex-direction: column !important; /* Stack image up, content down */
+    gap: 15px !important;
+    align-items: stretch !important;
+    padding-top: 15px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .web-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
 }
 
 .web-image img {
-    width: 100%;
-    max-width: 340px;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-sizing: border-box !important;
 }
 
 .web-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .proj-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #e0e0e0;
-    margin: 0;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #e0e0e0 !important;
+    margin: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .proj-section-title {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgb(27, 221, 195);
-    margin: 5px 0 2px 0;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: rgb(27, 221, 195) !important;
+    margin: 5px 0 2px 0 !important;
 }
 
 /* Tech stack box styling */
 .tech-stack-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.88rem;
-    color: #e0e0e0;
-    line-height: 1.45;
-    display: inline-block;
-    word-break: break-word;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.88rem !important;
+    color: #e0e0e0 !important;
+    line-height: 1.45 !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-family: 'Poppins', sans-serif !important;
+    transition: all 0.3s ease !important;
 }
 
 .tech-stack-box:hover {
-    background: rgba(132, 245, 162, 0.05);
-    border-color: rgba(132, 245, 162, 0.3);
-    box-shadow: 0 0 10px rgba(132, 245, 162, 0.1);
+    background: rgba(132, 245, 162, 0.05) !important;
+    border-color: rgba(132, 245, 162, 0.3) !important;
+    box-shadow: 0 0 10px rgba(132, 245, 162, 0.1) !important;
 }
 
 /* Links layout and styling */
 .proj-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .proj-link-line {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.92rem;
-    color: #ccc;
+    display: flex !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 6px 8px !important;
+    font-size: 0.92rem !important;
+    color: #ccc !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
 }
 
 .proj-link-line strong {
-    color: #fff;
-    font-weight: 600;
+    color: #fff !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
 }
 
 /* Light green for standard and visited links to bypass default colors */
@@ -227,41 +248,96 @@ footer {
 .proj-link-line a:visited {
     color: #84f5a2 !important; /* Elegant light green */
     text-decoration: none !important;
-    font-weight: 500;
-    transition: all 0.2s ease-in-out;
-    border-bottom: 1px solid transparent;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+    border-bottom: 1px solid transparent !important;
+    word-break: break-all !important;
+    white-space: normal !important;
+    display: inline-block !important;
+    max-width: 100% !important;
 }
 
 /* Pink color on hover or when clicked (active state) */
 .proj-link-line a:hover,
 .proj-link-line a:active {
     color: #ff69b4 !important; /* Pink color */
-    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6); /* Pink glow effect */
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6) !important; /* Pink glow effect */
     border-bottom: 1px solid #ff69b4 !important;
 }
 
 .proj-link-line i {
-    color: #84f5a2;
-    font-size: 1rem;
-    width: 20px;
-    text-align: center;
+    color: #84f5a2 !important;
+    font-size: 1rem !important;
+    width: 20px !important;
+    text-align: center !important;
+    margin-top: 3px !important;
 }
 
 /* Ensure the description can expand fully */
 .description.show {
-    max-height: 800px !important;
+    max-height: 1200px !important; /* Tall enough for vertical stack */
+    opacity: 1 !important;
+    transition: max-height 0.8s ease-in, opacity 0.8s ease-in !important;
 }
 
-@media (max-width: 768px) {
-    .web-image img {
-        max-width: 100%;
-        height: auto;
+/* Overrides for experience containers on the projects page to solve mobile overflow and desktop stacking */
+.project-content .experience-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.project-content .experience {
+    background-color: #1d2334 !important;
+    margin: 15px !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    width: 45% !important; /* Two columns on desktop */
+    min-width: 320px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.project-content .experience:hover {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 0 10px rgba(216, 52, 222, 0.597) !important;
+}
+
+.project-content .details {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.project-content .description {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 850px) {
+    .project-content .experience-container {
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 10px !important;
     }
     
-    .proj-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .project-content .experience {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 15px 0 !important;
+    }
+    
+    .web-image img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
 
