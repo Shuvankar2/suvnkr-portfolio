@@ -169,76 +169,70 @@ footer {
     margin: 5px 0 2px 0;
 }
 
-.proj-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tech-tag {
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.78rem;
-    font-weight: 500;
+/* Tech stack box styling */
+.tech-stack-box {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #e0e0e0;
+    line-height: 1.45;
+    display: inline-block;
+    word-break: break-word;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 
-.tech-tag:hover {
-    background: rgba(27, 221, 195, 0.15);
-    border-color: rgb(27, 221, 195);
-    color: rgb(27, 221, 195);
+.tech-stack-box:hover {
+    background: rgba(132, 245, 162, 0.05);
+    border-color: rgba(132, 245, 162, 0.3);
+    box-shadow: 0 0 10px rgba(132, 245, 162, 0.1);
 }
 
+/* Links layout and styling */
 .proj-links {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 15px;
-    margin-top: 5px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
 }
 
-.github-btn {
-    display: inline-flex;
+.proj-link-line {
+    display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    background: #24292e;
-    color: #fff !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.2s ease;
-}
-
-.github-btn:hover {
-    background: #000;
-    border-color: rgb(27, 221, 195);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.live-link-container {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: #ccc;
 }
 
-.live-link-container a {
-    color: rgb(27, 221, 195) !important;
-    text-decoration: none !important;
+.proj-link-line strong {
+    color: #fff;
     font-weight: 600;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
 }
 
-.live-link-container a:hover {
-    color: rgb(171, 111, 208) !important;
-    border-bottom: 1px solid rgb(171, 111, 208);
+/* Elegant light green for links */
+.proj-link-line a {
+    color: #84f5a2 !important; /* Elegant light green */
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid transparent;
+}
+
+.proj-link-line a:hover {
+    color: #a8ffb2 !important; /* Brighter light green on hover */
+    text-shadow: 0 0 8px rgba(132, 245, 162, 0.5); /* Glow effect on hover */
+    border-bottom: 1px solid #a8ffb2;
+}
+
+.proj-link-line i {
+    color: #84f5a2;
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
 }
 
 /* Ensure the description can expand fully */
