@@ -608,7 +608,10 @@
             <hr>
 
             <div class="footer-credit">
-                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved.</small></p>
+                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved.
+                &nbsp;|&nbsp;
+                <a href="html/privacy-policy.html" style="color:#6d64d3;text-decoration:underline;">Privacy Policy</a>
+                </small></p>
             </div>
             <hr id="footer-bottom-bar">
         </footer>
@@ -625,6 +628,191 @@
             loop: true
         });
     </script>
+
+    <!-- ── Cookie Consent Banner ── -->
+    <style>
+        #cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92vw, 620px);
+            background: #1d2334;
+            border: 1px solid rgba(57, 225, 104, 0.25);
+            border-radius: 14px;
+            padding: 22px 24px;
+            z-index: 9999;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+            animation: slideUpBanner 0.4s ease;
+        }
+        @keyframes slideUpBanner {
+            from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        #cookie-banner .cb-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        #cookie-banner .cb-header i {
+            font-size: 1.3rem;
+            background: linear-gradient(90deg, #39e168, #6d64d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        #cookie-banner .cb-header h3 {
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            margin: 0;
+        }
+        #cookie-banner p {
+            font-size: 0.82rem;
+            color: #8892a4;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        #cookie-banner p a {
+            color: #6d64d3;
+            text-decoration: underline;
+        }
+        .cb-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .cb-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 9px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .cb-btn-necessary {
+            background: transparent;
+            border: 1px solid rgba(109, 100, 211, 0.5);
+            color: #6d64d3;
+        }
+        .cb-btn-necessary:hover {
+            border-color: #6d64d3;
+            background: rgba(109,100,211,0.1);
+        }
+        .cb-btn-all {
+            background: linear-gradient(90deg, #39e168, #6d64d3);
+            color: #111729;
+        }
+        .cb-btn-all:hover {
+            opacity: 0.88;
+        }
+        .cb-cookie-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .cb-toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .cb-toggle-row span {
+            font-size: 0.8rem;
+            color: #b0bbcc;
+        }
+        .cb-toggle-row .cb-tag-required {
+            font-size: 0.7rem;
+            color: #39e168;
+            background: rgba(57,225,104,0.1);
+            border: 1px solid rgba(57,225,104,0.25);
+            padding: 1px 8px;
+            border-radius: 20px;
+        }
+        /* toggle switch */
+        .cb-switch { position: relative; display: inline-block; width: 38px; height: 20px; }
+        .cb-switch input { opacity: 0; width: 0; height: 0; }
+        .cb-slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background: #2d3550; border-radius: 20px; transition: 0.3s;
+        }
+        .cb-slider:before {
+            position: absolute; content: "";
+            height: 14px; width: 14px; left: 3px; bottom: 3px;
+            background: #8892a4; border-radius: 50%; transition: 0.3s;
+        }
+        .cb-switch input:checked + .cb-slider { background: linear-gradient(90deg,#39e168,#6d64d3); }
+        .cb-switch input:checked + .cb-slider:before { transform: translateX(18px); background: white; }
+        .cb-switch input:disabled + .cb-slider { cursor: not-allowed; }
+    </style>
+
+    <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie Consent">
+        <div class="cb-header">
+            <i class="fa-solid fa-cookie-bite"></i>
+            <h3>We use cookies</h3>
+        </div>
+        <p>
+            This site uses cookies to enhance your experience, analyse traffic, and serve personalised ads.
+            You can choose which cookies to allow. Read our
+            <a href="html/privacy-policy.html">Privacy Policy</a> for details.
+        </p>
+        <div class="cb-cookie-toggle">
+            <div class="cb-toggle-row">
+                <span><i class="fa-solid fa-lock" style="font-size:0.75rem;margin-right:6px;color:#39e168"></i>Strictly Necessary</span>
+                <span class="cb-tag-required">Always On</span>
+            </div>
+            <div class="cb-toggle-row">
+                <span><i class="fa-solid fa-chart-bar" style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Analytics</span>
+                <label class="cb-switch"><input type="checkbox" id="cb-analytics" checked><span class="cb-slider"></span></label>
+            </div>
+            <div class="cb-toggle-row">
+                <span><i class="fa-solid fa-rectangle-ad" style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Advertising</span>
+                <label class="cb-switch"><input type="checkbox" id="cb-advertising" checked><span class="cb-slider"></span></label>
+            </div>
+        </div>
+        <div class="cb-buttons">
+            <button class="cb-btn cb-btn-necessary" id="cb-accept-necessary"
+                onclick="cookieConsent('necessary')">Accept Only Necessary</button>
+            <button class="cb-btn cb-btn-all" id="cb-accept-all"
+                onclick="cookieConsent('all')">Accept All</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Logic
+        (function() {
+            var consent = localStorage.getItem('suvnkr_cookie_consent');
+            if (!consent) {
+                setTimeout(function() {
+                    var banner = document.getElementById('cookie-banner');
+                    if (banner) banner.style.display = 'block';
+                }, 800);
+            }
+        })();
+
+        function cookieConsent(type) {
+            var analytics = type === 'all' ? true : document.getElementById('cb-analytics').checked && type !== 'necessary' ? true : false;
+            var advertising = type === 'all' ? true : document.getElementById('cb-advertising').checked && type !== 'necessary' ? true : false;
+            if (type === 'necessary') { analytics = false; advertising = false; }
+            var prefs = { type: type, analytics: analytics, advertising: advertising, timestamp: Date.now() };
+            localStorage.setItem('suvnkr_cookie_consent', JSON.stringify(prefs));
+            document.getElementById('cookie-banner').style.display = 'none';
+            // If analytics rejected, try to disable GA
+            if (!analytics && typeof gtag === 'function') {
+                window['ga-disable-G-XXXXXXXX'] = true;
+            }
+        }
+    </script>
+
 </body>
 
 </html>
