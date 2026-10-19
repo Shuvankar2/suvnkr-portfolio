@@ -2,7 +2,7 @@
 
 A sleek, responsive, and modern personal portfolio website showcasing my work as a **Web Developer, Video Editor, and Graphic Designer**. 
 
-🌐 **Live URL**: [shuvankar.qzz.io](https://shuvankar.qzz.io)
+🌐 **Live URL**: [suvnkr.in](https://suvnkr.in)
 
 ---
 
