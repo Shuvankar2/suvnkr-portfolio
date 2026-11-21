@@ -878,6 +878,55 @@ function initSuvnkrAiWidget() {
         return isInHtmlFolder ? clean : 'html/' + clean;
     }
 
+    function getNavIconInfo(target, rawLabel) {
+        const combined = (target + ' ' + rawLabel).toLowerCase();
+        let iconClass = 'fa-solid fa-arrow-right';
+        let extraClass = '';
+
+        if (combined.includes('linkedin')) {
+            iconClass = 'fa-brands fa-linkedin';
+            extraClass = 'btn-linkedin';
+        } else if (combined.includes('github')) {
+            iconClass = 'fa-brands fa-github';
+            extraClass = 'btn-github';
+        } else if (combined.includes('twitter') || combined.includes('x.com') || combined.includes('x (twitter)')) {
+            iconClass = 'fa-brands fa-x-twitter';
+            extraClass = 'btn-twitter';
+        } else if (combined.includes('instagram')) {
+            iconClass = 'fa-brands fa-instagram';
+            extraClass = 'btn-instagram';
+        } else if (combined.includes('youtube')) {
+            iconClass = 'fa-brands fa-youtube';
+            extraClass = 'btn-youtube';
+        } else if (combined.includes('facebook')) {
+            iconClass = 'fa-brands fa-facebook';
+            extraClass = 'btn-facebook';
+        } else if (combined.includes('contact') || combined.includes('mailto:')) {
+            iconClass = 'fa-solid fa-paper-plane';
+        } else if (combined.includes('experience')) {
+            iconClass = 'fa-solid fa-briefcase';
+        } else if (combined.includes('about')) {
+            iconClass = 'fa-solid fa-user';
+        } else if (combined.includes('product')) {
+            iconClass = 'fa-solid fa-box-open';
+        } else if (combined.includes('publication') || combined.includes('research') || combined.includes('yolo') || combined.includes('doi')) {
+            iconClass = 'fa-solid fa-book-bookmark';
+        } else if (combined.includes('project')) {
+            iconClass = 'fa-solid fa-layer-group';
+        } else if (combined.includes('skill')) {
+            iconClass = 'fa-solid fa-code';
+        } else if (combined.includes('home') || combined.includes('index.html')) {
+            iconClass = 'fa-solid fa-house';
+        } else if (/^https?:/i.test(target)) {
+            iconClass = 'fa-solid fa-arrow-up-right-from-square';
+        }
+
+        // Clean out leading emojis from raw label to avoid duplicate icon clutter
+        let cleanLabel = rawLabel.replace(/^[\s\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1FA00}-\u{1FA6F}]+/gu, '').trim();
+
+        return { iconClass, cleanLabel, extraClass };
+    }
+
     function formatMarkdown(text) {
         if (!text) return '';
         // 1. Escape HTML
@@ -888,20 +937,18 @@ function initSuvnkrAiWidget() {
 
         // 2a. Navigation action buttons: [NAV: Label | target] or [BUTTON: Label | target]
         escaped = escaped.replace(/\[(?:NAV|BUTTON):\s*([^|\]]+)\|\s*([^\]]+)\]/gi, (match, label, target) => {
-            const cleanLabel = label.trim();
             const resolved = resolvePortfolioUrl(target);
+            const { iconClass, cleanLabel, extraClass } = getNavIconInfo(target, label);
             const isExternal = /^https?:/i.test(resolved);
-            const icon = isExternal ? 'fa-external-link-alt' : 'fa-arrow-right';
-            return `<a href="${resolved}" class="suvnkr-ai-nav-btn" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="fas ${icon}"></i> ${cleanLabel}</a>`;
+            return `<a href="${resolved}" class="suvnkr-ai-nav-btn ${extraClass}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="${iconClass}"></i> ${cleanLabel}</a>`;
         });
 
         // 2b. Navigation action buttons in markdown format: [NAV: Label](target)
         escaped = escaped.replace(/\[(?:NAV|BUTTON):\s*([^\]]+)\]\(([^)]+)\)/gi, (match, label, target) => {
-            const cleanLabel = label.trim();
             const resolved = resolvePortfolioUrl(target);
+            const { iconClass, cleanLabel, extraClass } = getNavIconInfo(target, label);
             const isExternal = /^https?:/i.test(resolved);
-            const icon = isExternal ? 'fa-external-link-alt' : 'fa-arrow-right';
-            return `<a href="${resolved}" class="suvnkr-ai-nav-btn" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="fas ${icon}"></i> ${cleanLabel}</a>`;
+            return `<a href="${resolved}" class="suvnkr-ai-nav-btn ${extraClass}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="${iconClass}"></i> ${cleanLabel}</a>`;
         });
 
         // 3. Bold, italic, code
