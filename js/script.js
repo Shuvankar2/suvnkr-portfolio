@@ -788,6 +788,65 @@ function initSuvnkrAiWidget() {
 
     let activeTypeTimer = null;
     let activeFinishTyping = null;
+    const STORAGE_KEY = 'suvnkr_ai_session';
+    const MAX_INACTIVITY_MS = 60 * 60 * 1000; // 1 hour inactivity timeout
+
+    function saveChatState() {
+        try {
+            const msgNodes = Array.from(messagesContainer.querySelectorAll('.suvnkr-ai-msg:not(.loading)'));
+            const savedMessages = msgNodes.map(node => ({
+                className: node.className,
+                html: node.innerHTML
+            }));
+
+            const data = {
+                history: conversationHistory,
+                messages: savedMessages,
+                isOpen: drawer.classList.contains('is-open'),
+                timestamp: Date.now()
+            };
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        } catch (e) {
+            console.warn('Failed to save SUVNKR AI session:', e);
+        }
+    }
+
+    function loadChatState() {
+        try {
+            const raw = sessionStorage.getItem(STORAGE_KEY);
+            if (!raw) return false;
+            const data = JSON.parse(raw);
+
+            // Inactivity expiry check (1 hour)
+            if (Date.now() - (data.timestamp || 0) > MAX_INACTIVITY_MS) {
+                sessionStorage.removeItem(STORAGE_KEY);
+                return false;
+            }
+
+            if (Array.isArray(data.history) && data.history.length > 0) {
+                conversationHistory = data.history;
+            }
+
+            if (Array.isArray(data.messages) && data.messages.length > 0) {
+                messagesContainer.innerHTML = '';
+                data.messages.forEach(msg => {
+                    const div = document.createElement('div');
+                    div.className = msg.className;
+                    div.innerHTML = msg.html;
+                    messagesContainer.appendChild(div);
+                });
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            if (data.isOpen) {
+                setTimeout(() => toggleDrawer(true), 120);
+            }
+            return true;
+        } catch (e) {
+            console.warn('Failed to load SUVNKR AI session:', e);
+            return false;
+        }
+    }
 
     function resolvePortfolioUrl(rawTarget) {
         if (!rawTarget) return '#';
@@ -909,6 +968,7 @@ function initSuvnkrAiWidget() {
             contentSpan.innerHTML = formatMarkdown(fullText);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
             activeFinishTyping = null;
+            saveChatState();
             if (onDone) onDone();
         }
 
@@ -942,6 +1002,7 @@ function initSuvnkrAiWidget() {
             drawer.classList.remove('is-open');
             toggleBtn.innerHTML = '<i class="fas fa-robot"></i><span class="suvnkr-ai-badge"></span>';
         }
+        saveChatState();
     }
 
     toggleBtn.addEventListener('click', () => toggleDrawer());
@@ -950,6 +1011,9 @@ function initSuvnkrAiWidget() {
     clearBtn.addEventListener('click', () => {
         if (activeFinishTyping) activeFinishTyping();
         conversationHistory = [];
+        try {
+            sessionStorage.removeItem(STORAGE_KEY);
+        } catch (e) {}
         messagesContainer.innerHTML = `
             <div class="suvnkr-ai-msg bot">
                 Hey, fresh chat! How can I help you explore Shuvankar's work?
@@ -962,8 +1026,13 @@ function initSuvnkrAiWidget() {
         `;
     });
 
-    // Delegate chips click
+    // Delegate chips click & save state on navigation clicks
     messagesContainer.addEventListener('click', (e) => {
+        const navBtn = e.target.closest('.suvnkr-ai-nav-btn');
+        if (navBtn) {
+            saveChatState();
+            return;
+        }
         const chip = e.target.closest('.suvnkr-ai-chip');
         if (chip) {
             const prompt = chip.getAttribute('data-prompt');
@@ -981,6 +1050,7 @@ function initSuvnkrAiWidget() {
         inputEl.value = '';
         appendUserMessage(text);
         conversationHistory.push({ role: 'user', content: text });
+        saveChatState();
 
         // Show typing indicator
         isRequestPending = true;
@@ -1055,6 +1125,11 @@ function initSuvnkrAiWidget() {
             toggleDrawer(false);
         }
     });
+
+    window.addEventListener('beforeunload', saveChatState);
+
+    // Restore prior session across page navigations
+    loadChatState();
 }
 
 document.addEventListener('DOMContentLoaded', initSuvnkrAiWidget);
