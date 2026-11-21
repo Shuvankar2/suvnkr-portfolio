@@ -753,13 +753,13 @@ function initSuvnkrAiWidget() {
         </div>
         <div class="suvnkr-ai-messages" id="suvnkrAiMessages">
             <div class="suvnkr-ai-msg bot">
-                👋 <strong>Hello! I'm SUVNKR AI</strong>, the personal portfolio concierge for Shuvankar Debnath.<br><br>
-                Ask me anything about his software engineering products, published YOLO research, industrial training, or how to reach out!
+                Hey there! 👋 <strong>I'm SUVNKR AI</strong>, Shuvankar's portfolio buddy. Think of me as a friend who knows everything about his journey, coding projects, and research!<br><br>
+                What's on your mind? Want to check out his apps, research paper, or just have a chat?
                 <div class="suvnkr-ai-chips">
-                    <span class="suvnkr-ai-chip" data-prompt="What are Shuvankar's flagship products?">💼 Products</span>
-                    <span class="suvnkr-ai-chip" data-prompt="Tell me about Shuvankar's YOLO leaf research paper.">🔬 YOLO Research</span>
-                    <span class="suvnkr-ai-chip" data-prompt="What is Shuvankar's electrical engineering and industrial background?">⚡ Experience</span>
-                    <span class="suvnkr-ai-chip" data-prompt="How can I contact or collaborate with Shuvankar?">📬 Contact Info</span>
+                    <span class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</span>
+                    <span class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</span>
+                    <span class="suvnkr-ai-chip" data-prompt="What's his tech stack and engineering background?">⚡ Background</span>
+                    <span class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</span>
                 </div>
             </div>
         </div>
@@ -833,11 +833,11 @@ function initSuvnkrAiWidget() {
         conversationHistory = [];
         messagesContainer.innerHTML = `
             <div class="suvnkr-ai-msg bot">
-                Conversation reset! How can I assist you with Shuvankar's portfolio?
+                Hey, fresh chat! How can I help you explore Shuvankar's work?
                 <div class="suvnkr-ai-chips">
-                    <span class="suvnkr-ai-chip" data-prompt="What are Shuvankar's flagship products?">💼 Products</span>
-                    <span class="suvnkr-ai-chip" data-prompt="Tell me about Shuvankar's YOLO leaf research paper.">🔬 YOLO Research</span>
-                    <span class="suvnkr-ai-chip" data-prompt="How can I contact or collaborate with Shuvankar?">📬 Contact Info</span>
+                    <span class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</span>
+                    <span class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</span>
+                    <span class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</span>
                 </div>
             </div>
         `;
@@ -869,11 +869,26 @@ function initSuvnkrAiWidget() {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         try {
+            // Get user's current local date and time
+            const now = new Date();
+            const clientTime = now.toLocaleString(undefined, {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            });
+
             const response = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    messages: conversationHistory.slice(-8) // Send recent context window
+                    messages: conversationHistory.slice(-8), // Send recent context window
+                    currentTime: clientTime,
+                    pageTitle: document.title
                 })
             });
 
