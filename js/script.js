@@ -719,9 +719,9 @@ function initSuvnkrAiWidget() {
     toggleBtn.id = 'suvnkrAiToggleBtn';
     toggleBtn.className = 'suvnkr-ai-toggle';
     toggleBtn.setAttribute('aria-label', 'Open SUVNKR AI Assistant');
-    toggleBtn.setAttribute('title', 'Chat with SUVNKR AI Concierge');
+    toggleBtn.setAttribute('title', 'Chat with SUVNKR AI Assistant');
     toggleBtn.innerHTML = `
-        <i class="fas fa-robot"></i>
+        <i class="fas fa-comment-dots"></i>
         <span class="suvnkr-ai-badge"></span>
     `;
 
@@ -730,12 +730,12 @@ function initSuvnkrAiWidget() {
     drawer.id = 'suvnkrAiDrawer';
     drawer.className = 'suvnkr-ai-drawer';
     drawer.setAttribute('role', 'dialog');
-    drawer.setAttribute('aria-label', 'SUVNKR AI Chat Concierge');
+    drawer.setAttribute('aria-label', 'SUVNKR AI Chat Assistant');
     drawer.innerHTML = `
         <div class="suvnkr-ai-header">
             <div class="suvnkr-ai-header-info">
                 <div class="suvnkr-ai-avatar">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-comment-dots"></i>
                 </div>
                 <div class="suvnkr-ai-title-wrap">
                     <h4>SUVNKR AI <span class="suvnkr-ai-status-dot"></span></h4>
@@ -743,6 +743,9 @@ function initSuvnkrAiWidget() {
                 </div>
             </div>
             <div class="suvnkr-ai-header-actions">
+                <button type="button" class="suvnkr-ai-header-btn" id="suvnkrAiExpandBtn" title="Toggle Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
                 <button type="button" class="suvnkr-ai-header-btn" id="suvnkrAiClearBtn" title="Clear Chat History">
                     <i class="fas fa-redo-alt"></i>
                 </button>
@@ -804,6 +807,7 @@ function initSuvnkrAiWidget() {
                 history: conversationHistory,
                 messages: savedMessages,
                 isOpen: drawer.classList.contains('is-open'),
+                isFullscreen: drawer.classList.contains('is-fullscreen'),
                 timestamp: Date.now()
             };
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
@@ -841,6 +845,9 @@ function initSuvnkrAiWidget() {
 
             if (data.isOpen) {
                 setTimeout(() => toggleDrawer(true), 120);
+            }
+            if (data.isFullscreen) {
+                setTimeout(() => toggleFullscreen(true), 150);
             }
             return true;
         } catch (e) {
@@ -1001,9 +1008,37 @@ function initSuvnkrAiWidget() {
             setTimeout(() => inputEl.focus(), 150);
         } else {
             drawer.classList.remove('is-open');
-            toggleBtn.innerHTML = '<i class="fas fa-robot"></i><span class="suvnkr-ai-badge"></span>';
+            drawer.classList.remove('is-fullscreen');
+            if (expandBtn) {
+                expandBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                expandBtn.setAttribute('title', 'Toggle Fullscreen');
+            }
+            toggleBtn.innerHTML = '<i class="fas fa-comment-dots"></i><span class="suvnkr-ai-badge"></span>';
         }
         saveChatState();
+    }
+
+    const expandBtn = drawer.querySelector('#suvnkrAiExpandBtn');
+    function toggleFullscreen(fullscreen) {
+        const shouldFullscreen = (fullscreen !== undefined) ? fullscreen : !drawer.classList.contains('is-fullscreen');
+        if (shouldFullscreen) {
+            drawer.classList.add('is-fullscreen');
+            if (expandBtn) {
+                expandBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                expandBtn.setAttribute('title', 'Exit Fullscreen');
+            }
+        } else {
+            drawer.classList.remove('is-fullscreen');
+            if (expandBtn) {
+                expandBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                expandBtn.setAttribute('title', 'Toggle Fullscreen');
+            }
+        }
+        saveChatState();
+    }
+
+    if (expandBtn) {
+        expandBtn.addEventListener('click', () => toggleFullscreen());
     }
 
     toggleBtn.addEventListener('click', () => toggleDrawer());
