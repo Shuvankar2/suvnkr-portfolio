@@ -819,8 +819,17 @@ function initSuvnkrAiWidget() {
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
 
-        // 2. Navigation action buttons: [NAV: Label | target] or [BUTTON: Label | target]
+        // 2a. Navigation action buttons: [NAV: Label | target] or [BUTTON: Label | target]
         escaped = escaped.replace(/\[(?:NAV|BUTTON):\s*([^|\]]+)\|\s*([^\]]+)\]/gi, (match, label, target) => {
+            const cleanLabel = label.trim();
+            const resolved = resolvePortfolioUrl(target);
+            const isExternal = /^https?:/i.test(resolved);
+            const icon = isExternal ? 'fa-external-link-alt' : 'fa-arrow-right';
+            return `<a href="${resolved}" class="suvnkr-ai-nav-btn" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="fas ${icon}"></i> ${cleanLabel}</a>`;
+        });
+
+        // 2b. Navigation action buttons in markdown format: [NAV: Label](target)
+        escaped = escaped.replace(/\[(?:NAV|BUTTON):\s*([^\]]+)\]\(([^)]+)\)/gi, (match, label, target) => {
             const cleanLabel = label.trim();
             const resolved = resolvePortfolioUrl(target);
             const isExternal = /^https?:/i.test(resolved);
@@ -887,8 +896,9 @@ function initSuvnkrAiWidget() {
 
         let charIndex = 0;
         const totalChars = fullText.length;
-        const step = totalChars > 300 ? 5 : (totalChars > 150 ? 3 : 2);
-        const intervalMs = totalChars > 300 ? 10 : 16;
+        // Natural ChatGPT-style typing cadence with comfortable reading delay
+        const step = totalChars > 350 ? 2 : 1;
+        const intervalMs = totalChars > 350 ? 22 : 28;
 
         function finish() {
             if (activeTypeTimer) {
@@ -994,11 +1004,23 @@ function initSuvnkrAiWidget() {
                 timeZoneName: 'short'
             });
 
+            // Detect time queries and add explicit friendly instruction
+            const isTimeQuery = /\b(time|date|day|clock|samay|waqt|ghadi|aaj|today|tarikh)\b/i.test(text);
+            const outgoingMessages = conversationHistory.slice(-8).map((m, idx, arr) => {
+                if (idx === arr.length - 1 && m.role === 'user' && isTimeQuery) {
+                    return {
+                        role: 'user',
+                        content: `${m.content}\n\n[MANDATORY SYSTEM DIRECTIVE: The user's exact verified local time is: "${clientTime}". State this exact time/date directly, accurately, and cheerfully without disclaimers!]`
+                    };
+                }
+                return m;
+            });
+
             const response = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    messages: conversationHistory.slice(-8), // Send recent context window
+                    messages: outgoingMessages,
                     currentTime: clientTime,
                     pageTitle: document.title
                 })
