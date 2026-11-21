@@ -3250,6 +3250,19 @@ img:not(.img-loaded) {
     background: #00d2ff;
 }
 
+.suvnkr-ai-disclaimer {
+    font-size: 0.68rem;
+    color: #8892a4;
+    text-align: center;
+    padding: 2px 14px 8px 14px;
+    background: #1d2334;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.2px;
+    user-select: none;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
 @media (max-width: 480px) {
     .suvnkr-ai-drawer {
         right: 12px;

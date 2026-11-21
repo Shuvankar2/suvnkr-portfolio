@@ -769,6 +769,7 @@ function initSuvnkrAiWidget() {
                 <i class="fas fa-paper-plane"></i>
             </button>
         </form>
+        <div class="suvnkr-ai-disclaimer">AI can make mistakes. Verify important info.</div>
     `;
 
     document.body.appendChild(toggleBtn);
@@ -1051,6 +1052,15 @@ function initSuvnkrAiWidget() {
         appendUserMessage(text);
         conversationHistory.push({ role: 'user', content: text });
         saveChatState();
+
+        // Guardrail: Intercept negative queries, criticisms, flaws, insults, and slangs
+        const negativePattern = /\b(flaws?|weakness(es)?|negative(s)?|drawback(s)?|criticism(s)?|cons?\b|bad\s+things?|worst|scam|fraud|fake|cheat|hate|idiot|stupid|loser|fool|slut|bitch|bastard|asshole|bullshit|bakwas|chutiya|gandu|madarchod|bhosdike|harami|kamina)\b/i;
+        if (negativePattern.test(text)) {
+            typeBotMessage("I'm unable to answer this.");
+            conversationHistory.push({ role: 'assistant', content: "I'm unable to answer this." });
+            saveChatState();
+            return;
+        }
 
         // Show typing indicator
         isRequestPending = true;
