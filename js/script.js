@@ -739,7 +739,7 @@ function initSuvnkrAiWidget() {
                 </div>
                 <div class="suvnkr-ai-title-wrap">
                     <h4>SUVNKR AI <span class="suvnkr-ai-status-dot"></span></h4>
-                    <span>Portfolio Concierge · LLaMA 3.1</span>
+                    <span>Portfolio Assistant · LLaMA 3.1</span>
                 </div>
             </div>
             <div class="suvnkr-ai-header-actions">
@@ -786,31 +786,139 @@ function initSuvnkrAiWidget() {
     const closeBtn = drawer.querySelector('#suvnkrAiCloseBtn');
     const clearBtn = drawer.querySelector('#suvnkrAiClearBtn');
 
+    let activeTypeTimer = null;
+    let activeFinishTyping = null;
+
+    function resolvePortfolioUrl(rawTarget) {
+        if (!rawTarget) return '#';
+        const target = rawTarget.trim();
+        // External URLs, mailto, tel, or anchor hashes
+        if (/^(https?:|mailto:|tel:|#)/i.test(target)) return target;
+
+        // Check if current page is within the html/ directory
+        const pathname = window.location.pathname.toLowerCase();
+        const isInHtmlFolder = pathname.includes('/html/') || 
+                               pathname.endsWith('/html') ||
+                               (!pathname.includes('/portfolio/') && window.location.href.toLowerCase().includes('/html/'));
+
+        // Normalize target path
+        let clean = target.replace(/^\.\.\//, '').replace(/^html\//, '').replace(/^\//, '');
+
+        if (clean === 'index.html' || clean === '') {
+            return isInHtmlFolder ? '../index.html' : 'index.html';
+        }
+
+        return isInHtmlFolder ? clean : 'html/' + clean;
+    }
+
     function formatMarkdown(text) {
         if (!text) return '';
+        // 1. Escape HTML
         let escaped = text
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
+
+        // 2. Navigation action buttons: [NAV: Label | target] or [BUTTON: Label | target]
+        escaped = escaped.replace(/\[(?:NAV|BUTTON):\s*([^|\]]+)\|\s*([^\]]+)\]/gi, (match, label, target) => {
+            const cleanLabel = label.trim();
+            const resolved = resolvePortfolioUrl(target);
+            const isExternal = /^https?:/i.test(resolved);
+            const icon = isExternal ? 'fa-external-link-alt' : 'fa-arrow-right';
+            return `<a href="${resolved}" class="suvnkr-ai-nav-btn" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}><i class="fas ${icon}"></i> ${cleanLabel}</a>`;
+        });
+
+        // 3. Bold, italic, code
         escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         escaped = escaped.replace(/\*(.*?)\*/g, '<em>$1</em>');
         escaped = escaped.replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.1);padding:2px 5px;border-radius:4px;font-size:0.85em;">$1</code>');
-        escaped = escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-        escaped = escaped.replace(/(^|[^">])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
+
+        // 4. Markdown links: [label](url)
+        escaped = escaped.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+[^)]*)?\)/g, (match, label, url) => {
+            const resolved = resolvePortfolioUrl(url);
+            const isExternal = /^https?:/i.test(resolved);
+            return `<a href="${resolved}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>${label.trim()}</a>`;
+        });
+
+        // 5. Email addresses
+        escaped = escaped.replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>');
+
+        // 6. Bare URLs & domain links (e.g. linkedin.com/in/... or github.com/... or https://...)
+        escaped = escaped.replace(/(^|[\s(])((?:https?:\/\/|www\.|(?:linkedin|github|suvnkr)\.[a-z]{2,}\/|(?:[a-zA-Z0-9-]+\.)+(?:com|in|org|net|io|edu|gov|dev)\/)[^\s<)"]*)/gi, (match, prefix, rawUrl) => {
+            let cleanUrl = rawUrl.replace(/[.,!?;:)]+$/, '');
+            let href = cleanUrl;
+            if (!/^(https?:|mailto:|#|\/|\.\.\/)/i.test(href)) {
+                href = 'https://' + href;
+            }
+            return `${prefix}<a href="${href}" target="_blank" rel="noopener noreferrer">${cleanUrl}</a>`;
+        });
+
+        // 7. Newlines to <br>
         escaped = escaped.replace(/\n/g, '<br>');
         return escaped;
     }
 
-    function appendMessage(role, text) {
+    function appendUserMessage(text) {
         const msgDiv = document.createElement('div');
-        msgDiv.className = `suvnkr-ai-msg ${role}`;
-        if (role === 'user') {
-            msgDiv.textContent = text;
-        } else {
-            msgDiv.innerHTML = formatMarkdown(text);
-        }
+        msgDiv.className = 'suvnkr-ai-msg user';
+        msgDiv.textContent = text;
         messagesContainer.appendChild(msgDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return msgDiv;
+    }
+
+    function typeBotMessage(fullText, onDone) {
+        if (activeFinishTyping) {
+            activeFinishTyping();
+        }
+
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'suvnkr-ai-msg bot';
+
+        const contentSpan = document.createElement('span');
+        const cursorSpan = document.createElement('span');
+        cursorSpan.className = 'suvnkr-ai-cursor';
+        cursorSpan.textContent = '●';
+
+        msgDiv.appendChild(contentSpan);
+        msgDiv.appendChild(cursorSpan);
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        let charIndex = 0;
+        const totalChars = fullText.length;
+        const step = totalChars > 300 ? 5 : (totalChars > 150 ? 3 : 2);
+        const intervalMs = totalChars > 300 ? 10 : 16;
+
+        function finish() {
+            if (activeTypeTimer) {
+                clearInterval(activeTypeTimer);
+                activeTypeTimer = null;
+            }
+            cursorSpan.remove();
+            contentSpan.innerHTML = formatMarkdown(fullText);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            activeFinishTyping = null;
+            if (onDone) onDone();
+        }
+
+        activeFinishTyping = finish;
+
+        // Fast-forward on click
+        msgDiv.addEventListener('click', () => {
+            if (activeFinishTyping === finish) finish();
+        });
+
+        activeTypeTimer = setInterval(() => {
+            charIndex += step;
+            if (charIndex >= totalChars) {
+                finish();
+            } else {
+                contentSpan.innerHTML = formatMarkdown(fullText.slice(0, charIndex));
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }, intervalMs);
+
         return msgDiv;
     }
 
@@ -830,6 +938,7 @@ function initSuvnkrAiWidget() {
     closeBtn.addEventListener('click', () => toggleDrawer(false));
 
     clearBtn.addEventListener('click', () => {
+        if (activeFinishTyping) activeFinishTyping();
         conversationHistory = [];
         messagesContainer.innerHTML = `
             <div class="suvnkr-ai-msg bot">
@@ -856,8 +965,11 @@ function initSuvnkrAiWidget() {
         const text = userText || inputEl.value.trim();
         if (!text || isRequestPending) return;
 
+        // Finish any ongoing typing animation immediately
+        if (activeFinishTyping) activeFinishTyping();
+
         inputEl.value = '';
-        appendMessage('user', text);
+        appendUserMessage(text);
         conversationHistory.push({ role: 'user', content: text });
 
         // Show typing indicator
@@ -899,13 +1011,13 @@ function initSuvnkrAiWidget() {
             const data = await response.json();
             loadingDiv.remove();
 
-            const botReply = data.reply || "I didn't receive an answer. Please feel free to email Shuvankar directly at shuvankar345@gmail.com!";
-            appendMessage('bot', botReply);
+            const botReply = data.reply || "I didn't receive an answer. Feel free to reach out to Shuvankar directly at shuvankar345@gmail.com!";
+            typeBotMessage(botReply);
             conversationHistory.push({ role: 'assistant', content: botReply });
         } catch (err) {
             console.error('SUVNKR AI Error:', err);
             loadingDiv.remove();
-            appendMessage('bot', `⚠️ I had a temporary issue connecting to the AI edge worker. You can reach out directly via the contact form or email at <a href="mailto:shuvankar345@gmail.com">shuvankar345@gmail.com</a>.`);
+            typeBotMessage(`⚠️ I had a temporary issue connecting to the AI edge worker. You can reach out directly via the contact form or email at shuvankar345@gmail.com.`);
         } finally {
             isRequestPending = false;
         }

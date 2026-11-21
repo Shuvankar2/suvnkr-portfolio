@@ -3095,6 +3095,66 @@ img:not(.img-loaded) {
 .suvnkr-ai-msg.bot a {
     color: #00d2ff;
     text-decoration: underline;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.suvnkr-ai-msg.bot a:hover {
+    color: #39e168;
+}
+
+/* ChatGPT-Style Typing Cursor */
+.suvnkr-ai-cursor {
+    display: inline-block;
+    color: #39e168;
+    margin-left: 3px;
+    font-size: 0.8rem;
+    vertical-align: middle;
+    animation: suvnkrAiBlink 0.65s infinite alternate;
+}
+
+@keyframes suvnkrAiBlink {
+    0% { opacity: 0.2; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Interactive Page Navigation Action Buttons */
+.suvnkr-ai-nav-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.suvnkr-ai-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(57, 225, 104, 0.12);
+    border: 1px solid rgba(57, 225, 104, 0.35);
+    color: #39e168 !important;
+    text-decoration: none !important;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    font-family: 'Lexend', sans-serif;
+    transition: all 0.25s ease;
+    width: fit-content;
+    max-width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suvnkr-ai-nav-btn:hover {
+    background: #39e168;
+    color: #111729 !important;
+    border-color: #39e168;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(57, 225, 104, 0.35);
+}
+
+.suvnkr-ai-nav-btn i {
+    font-size: 0.85rem;
 }
 
 .suvnkr-ai-msg.user {
