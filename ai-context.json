@@ -1,0 +1,101 @@
+{
+  "lastUpdated": "2026-11-22",
+  "profile": {
+    "name": "Shuvankar Debnath",
+    "handle": "SUVNKR",
+    "title": "Software & AI Engineer | Electrical Engineering Undergraduate",
+    "email": "shuvankar345@gmail.com",
+    "portfolio": "https://suvnkr.in",
+    "location": "Kolkata, West Bengal, India"
+  },
+  "academics": {
+    "degree": "Bachelor of Technology (B.Tech) in Electrical Engineering",
+    "college": "Institute of Engineering & Management (IEM), Salt Lake, Kolkata",
+    "university": "University of Engineering & Management, Kolkata",
+    "batch": "2023 - 2027 (Expected)",
+    "currentCgpa": "8.21 / 10 CGPA (completed through Semester 6)",
+    "higherSecondary": "Higher Secondary (10+2) - WBCHSE (2023), Grade B+",
+    "secondary": "Secondary (10th) - WBBSE (2021), Grade A"
+  },
+  "research": [
+    {
+      "title": "Comparative performance of next-Gen YOLO models for leaf health classification in ornamental species",
+      "publisher": "EDP Sciences / Bio Web of Conferences (Volume 228, 2026)",
+      "doi": "https://doi.org/10.1051/bioconf/202622801001",
+      "github": "https://github.com/Shuvankar2/leaf-health-by-YOLO",
+      "summary": "Deep learning research evaluating YOLOv11, YOLOv9, and YOLOv8 models on plant leaf pathology detection."
+    }
+  ],
+  "products": [
+    {
+      "name": "GotiPrep",
+      "url": "https://gotiprep.suvnkr.in",
+      "github": "https://github.com/Shuvankar2/gotiprep",
+      "description": "Fast competitive examination practice engine and real-time typing speed test platform (MIT licensed)."
+    },
+    {
+      "name": "Kagazly",
+      "page": "products.html",
+      "description": "In-browser privacy-first document and PDF manipulation suite running 100% client-side via WebAssembly/JS (zero server storage)."
+    },
+    {
+      "name": "Eduspace (NoteLoom)",
+      "url": "https://eduspace.suvnkr.in",
+      "description": "Multi-tenant academic ERP with role-based access, attendance tracking, and video LMS."
+    },
+    {
+      "name": "AquaGlass",
+      "description": "Automated IoT smart fish feeder built with ESP32 microcontroller and Flutter mobile app."
+    },
+    {
+      "name": "EV2026",
+      "url": "https://ev.suvnkr.in",
+      "description": "Electric vehicle powertrain and battery management simulation platform."
+    }
+  ],
+  "experience": [
+    {
+      "organization": "National Test House (Eastern Region), Govt. of India",
+      "duration": "May - Jun 2026",
+      "domain": "High-voltage electrical testing, calibration instrumentation, NABL and BIS quality compliance standards."
+    },
+    {
+      "organization": "Oil and Natural Gas Corporation (ONGC)",
+      "duration": "Jun - Jul 2026",
+      "domain": "Heavy drilling rig power distribution, switchgears, and industrial electrical safety workflows."
+    },
+    {
+      "organization": "Durgapur Projects Limited (DPL)",
+      "duration": "Dec 2025 - Jan 2026",
+      "domain": "110 MW Unit thermal power station operations, switchyard protection, and SCADA instrumentation."
+    },
+    {
+      "organization": "IEM Research Foundation (IEMRF)",
+      "duration": "2025 - 2026",
+      "domain": "Eduspace & Note Loom platform architecture and full-stack software development."
+    },
+    {
+      "organization": "IEEE IEM Student Branch",
+      "role": "Executive Member",
+      "domain": "Technical symposium organization and engineering workshops."
+    }
+  ],
+  "socialMedia": {
+    "linkedin": "https://linkedin.com/in/shuvankardebnath/",
+    "github": "https://github.com/Shuvankar2",
+    "x": "https://x.com/suvnkrr",
+    "instagram": "https://instagram.com/shuvankarrr/",
+    "youtube": "https://youtube.com/@ShuvankarTechie",
+    "facebook": "https://facebook.com/suvnkrr"
+  },
+  "pages": {
+    "experience": "experience.html",
+    "about": "about.html",
+    "projects": "projects.html",
+    "products": "products.html",
+    "publications": "publications.html",
+    "skills": "skills.html",
+    "contact": "contact.html",
+    "home": "index.html"
+  }
+}
