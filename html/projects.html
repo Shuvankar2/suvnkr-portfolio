@@ -8,63 +8,606 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="description" content="Featured Projects of Shuvankar Debnath: Full-stack web applications (GotiPrep, MERN SaaS), computer vision pipelines, and AI projects.">
-    <meta name="keywords" content="SUVNKR, Shuvankar Debnath, Projects Shuvankar Debnath, GotiPrep, Software Engineer, AI Engineer, MERN web dev">
+    <meta name="description" content="Projects Portfolio of Shuvankar Debnath: Software engineering, AI research, EV control simulations, IoT embedded systems, and creative post-production.">
+    <meta name="keywords" content="SUVNKR, Shuvankar Debnath, Projects Shuvankar Debnath, Eduspace, YOLO Leaf Research, EV MPC, AquaGlass, GotiPrep, Robotics">
     <meta name="author" content="Shuvankar Debnath (SUVNKR)">
-    <title>Featured Software & AI Projects — Shuvankar Debnath (SUVNKR)</title>
+    <title>Projects &amp; Engineering Portfolio — Shuvankar Debnath (SUVNKR)</title>
     <link rel="canonical" href="https://suvnkr.in/html/projects.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Shuvankar Debnath">
     <meta property="og:url" content="https://suvnkr.in/html/projects.html">
-    <meta property="og:title" content="Featured Software & AI Projects — Shuvankar Debnath (SUVNKR)">
-    <meta property="og:description" content="Explore full-stack MERN applications, AI computer vision pipelines, and GotiPrep exam platform by Shuvankar Debnath.">
+    <meta property="og:title" content="Projects &amp; Engineering Portfolio — Shuvankar Debnath (SUVNKR)">
+    <meta property="og:description" content="Portfolio of software platforms, AI research, EV control simulations, IoT hardware, and digital media production.">
     <meta property="og:image" content="https://suvnkr.in/img/Logo-White.svg">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "url": "https://suvnkr.in/html/projects.html",
-        "name": "Featured Projects — Shuvankar Debnath",
-        "description": "Collection of software, AI, and web development projects."
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://suvnkr.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Projects",
-            "item": "https://suvnkr.in/html/projects.html"
-          }
-        ]
-      }
-    ]
-    </script>
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="../img/Logo-White.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="../css/experience.css">
-    <link rel="stylesheet" href="../css/skills.css">
-    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../css/project.css?v=20261121">
+
+    <style>
+        :root {
+            --brand-green: #39e168;
+            --brand-purple: #6d64d3;
+            --brand-sky: #00d2ff;
+            --navy-base: #111729;
+            --navy-surface: #1d2334;
+            --text-main: #ffffff;
+            --text-sub: #c2bad2;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* ── Projects Page Layout & Margins ── */
+        .projects-page-section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 1.2rem 60px;
+            box-sizing: border-box;
+        }
+
+        .projects-page-inner {
+            width: 100%;
+            max-width: 1140px;
+            padding: 10px 0 40px;
+            box-sizing: border-box;
+        }
+
+        .projects-page-section .heading {
+            margin: 45px auto 16px;
+            font-family: "Lexend", sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #39e168 -1.88%, #6d64d3 104.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .projects-page-section .heading h1 {
+            all: unset;
+            display: block;
+        }
+
+        .projects-hero-subtitle {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            max-width: 820px;
+            margin: 0 auto 36px;
+            line-height: 1.65;
+            text-align: center;
+        }
+
+        /* ── Category Filter Pills ── */
+        .projects-filter-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 0 40px;
+        }
+
+        .proj-filter-btn {
+            background: rgba(29, 35, 52, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c2bad2;
+            padding: 9px 20px;
+            border-radius: 24px;
+            font-size: 0.88rem;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s var(--ease-out);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .proj-filter-btn:hover {
+            background: rgba(57, 225, 104, 0.12);
+            border-color: rgba(57, 225, 104, 0.35);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .proj-filter-btn.is-active {
+            background: linear-gradient(135deg, rgba(57, 225, 104, 0.22), rgba(109, 100, 211, 0.32));
+            border-color: var(--brand-green);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(57, 225, 104, 0.25);
+        }
+
+        .proj-filter-btn .filter-count {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        .proj-filter-btn.is-active .filter-count {
+            background: var(--brand-green);
+            color: #111729;
+            font-weight: 700;
+        }
+
+        /* ── Special Distinct Thumbnail Designing Button ── */
+        .proj-special-thumb-btn {
+            background: linear-gradient(135deg, rgba(255, 171, 0, 0.16), rgba(255, 87, 34, 0.16));
+            border: 1px solid rgba(255, 171, 0, 0.5);
+            color: #ffc107;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(255, 171, 0, 0.15);
+            transition: all 0.25s var(--ease-out);
+        }
+
+        .proj-special-thumb-btn:hover {
+            background: linear-gradient(135deg, #ffab00, #ff5722);
+            border-color: #ffab00;
+            color: #111729;
+            box-shadow: 0 4px 20px rgba(255, 171, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .proj-special-thumb-btn .special-thumb-pill {
+            background: rgba(255, 171, 0, 0.25);
+            color: #ffc107;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.25s ease;
+        }
+
+        .proj-special-thumb-btn:hover .special-thumb-pill {
+            background: #111729;
+            color: #ffab00;
+        }
+
+        
+        /* ── Quick Impact Stats Bar ── */
+        .projects-stats-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+            background: rgba(29, 35, 52, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 0 auto 34px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            max-width: 980px;
+            box-sizing: border-box;
+        }
+
+        .proj-stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .proj-stat-number {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #39e168, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .proj-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-top: 4px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .proj-stat-divider {
+            width: 1px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ── Search & Controls Row ── */
+        .projects-controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 0 auto 28px;
+            max-width: 980px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .projects-search-box {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .projects-search-box .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7a8294;
+            font-size: 0.95rem;
+            pointer-events: none;
+            transition: color 0.2s ease;
+        }
+
+        .projects-search-box input {
+            width: 100%;
+            background: rgba(29, 35, 52, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 12px 44px 12px 46px;
+            color: #ffffff;
+            font-size: 0.92rem;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.25s var(--ease-out);
+        }
+
+        .projects-search-box input:focus {
+            border-color: var(--brand-green);
+            background: rgba(29, 35, 52, 1);
+            box-shadow: 0 0 16px rgba(57, 225, 104, 0.2);
+        }
+
+        .projects-search-box input:focus + .search-icon {
+            color: var(--brand-green);
+        }
+
+        .clear-search-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #8892a4;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 4px 8px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .clear-search-btn:hover {
+            color: #ffffff;
+        }
+
+        .software-deepdive-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(109, 100, 211, 0.15);
+            border: 1px solid rgba(109, 100, 211, 0.35);
+            color: #b7aeff;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 0.88rem;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s var(--ease-out);
+            white-space: nowrap;
+        }
+
+        .software-deepdive-btn:hover {
+            background: #6d64d3;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(109, 100, 211, 0.3);
+        }
+
+        .software-deepdive-btn.deepdive-video {
+            background: rgba(57, 225, 104, 0.12);
+            border-color: rgba(57, 225, 104, 0.35);
+            color: #39e168;
+        }
+
+        .software-deepdive-btn.deepdive-video:hover {
+            background: #39e168;
+            color: #111729;
+            box-shadow: 0 4px 16px rgba(57, 225, 104, 0.3);
+        }
+
+        .software-deepdive-btn.deepdive-graphics {
+            background: rgba(0, 210, 255, 0.12);
+            border-color: rgba(0, 210, 255, 0.35);
+            color: #00d2ff;
+        }
+
+        .software-deepdive-btn.deepdive-graphics:hover {
+            background: #00d2ff;
+            color: #111729;
+            box-shadow: 0 4px 16px rgba(0, 210, 255, 0.3);
+        }
+
+        .software-deepdive-btn.deepdive-thumbnail {
+            background: rgba(255, 171, 0, 0.12);
+            border-color: rgba(255, 171, 0, 0.35);
+            color: #ffab00;
+        }
+
+        .software-deepdive-btn.deepdive-thumbnail:hover {
+            background: #ffab00;
+            color: #111729;
+            box-shadow: 0 4px 16px rgba(255, 171, 0, 0.3);
+        }
+
+        .projects-showcase-pills {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* ── Empty State ── */
+        .no-projects-found {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(29, 35, 52, 0.5);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .no-proj-icon {
+            font-size: 3rem;
+            color: #6d64d3;
+            margin-bottom: 16px;
+        }
+
+        .no-projects-found h3 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .no-projects-found p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* ── Modern Projects Grid ── */
+        .projects-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .project-modern-card {
+            background: rgba(29, 35, 52, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s var(--ease-out);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-modern-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(57, 225, 104, 0.4);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), 0 0 24px rgba(57, 225, 104, 0.12);
+        }
+
+        .project-media-wrap {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #0f1422;
+        }
+
+        .project-media-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out);
+        }
+
+        .project-modern-card:hover .project-media-wrap img {
+            transform: scale(1.05);
+        }
+
+        .project-status-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(17, 23, 41, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(57, 225, 104, 0.4);
+            border-radius: 20px;
+            padding: 4px 13px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--brand-green);
+            font-family: 'Lexend', sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-status-badge.badge-purple {
+            border-color: rgba(109, 100, 211, 0.5);
+            color: #b7aeff;
+        }
+
+        .project-status-badge.badge-sky {
+            border-color: rgba(0, 210, 255, 0.5);
+            color: var(--brand-sky);
+        }
+
+        .project-body {
+            padding: 24px 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-category-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-sky);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .project-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .project-summary {
+            font-size: 0.88rem;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .project-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            color: #b0bbcc;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Lexend', sans-serif;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .project-link-primary {
+            background: rgba(57, 225, 104, 0.15);
+            border: 1px solid rgba(57, 225, 104, 0.4);
+            color: #39e168;
+        }
+
+        .project-link-primary:hover {
+            background: var(--brand-green);
+            color: #111729;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(57, 225, 104, 0.3);
+        }
+
+        .project-link-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #c2bad2;
+        }
+
+        .project-link-secondary:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .project-link-subtle {
+            background: rgba(109, 100, 211, 0.15);
+            border: 1px solid rgba(109, 100, 211, 0.35);
+            color: #b7aeff;
+        }
+
+        .project-link-subtle:hover {
+            background: var(--brand-purple);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .project-link-disabled {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #7a8294;
+            cursor: default;
+        }
+
+        .exp-end {
+            text-align: center;
+            margin: 50px auto 20px;
+            color: #8b95a8;
+            font-size: 0.92rem;
+        }
+
+        /* ── Responsive Styling ── */
+        @media (max-width: 900px) {
+            .projects-modern-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-page-section .heading {
+                font-size: 2.4rem;
+                margin: 36px auto 14px;
+            }
+            .project-body {
+                padding: 20px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -72,19 +615,19 @@
     <header>
         <nav>
             <div class="left">
-                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem></a>
+                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem decoding="async"></a>
             </div>
             <div class="right">
                 <ul class="nav-desktop">
                     <li><a href="https://suvnkr.in/">Home</a></li>
                     <li><a href="../html/about.html">About</a></li>
                     <li><a href="../html/experience.html">Experiences</a></li>
-                    <li><a href="../html/projects.html">Projects</a></li>
+                    <li><a href="../html/projects.html" class="active">Projects</a></li>
                     <li>
                         <div class="menu-bar">
                             <p><i class="fa-solid fa-bars menu-margin"></i></p>
                         </div>
-                    </li> <!-- Skills, Contact -->
+                    </li>
                 </ul>
 
                 <ul class="nav-mobile">
@@ -94,14 +637,13 @@
                         </div>
                     </li>
                 </ul>
-
             </div>
 
-            <!-- More Menu Sidebar -->
+                        <!-- More Menu Sidebar -->
             <div class="menu-sidebar">
 
-                <div class="close-menu-bar menu-bar">
-                    <p><i class="fa-solid fa-xmark menu-margin"></i></p>
+                <div class="close-menu-bar menu-bar" aria-label="Close menu">
+                    <p><i class="fa-solid fa-xmark"></i></p>
                 </div>
 
                 <div class="sidebar-content">
@@ -109,79 +651,117 @@
 
                         <!-- Desktop Menu -->
                         <ul class="menu-lists nav-desktop">
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:1;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:6;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:7;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
                         </ul>
-                        
+
                         <!-- Mobile-Menu -->
                         <ul class="menu-lists nav-mobile">
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:1;">
                                 <a href="https://suvnkr.in/" class="menu-nav-link">
-                                    <i class="fa-solid fa-house menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-house"></i></span>
                                     <span class="nav-link">Home</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/about.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-user-secret  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="about.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-user"></i></span>
                                     <span class="nav-link">About</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/experience.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-bars-progress menu-icon"></i>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="experience.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-briefcase"></i></span>
                                     <span class="nav-link">Experiences</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/projects.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-diagram-project menu-icon"></i>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="projects.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-layer-group"></i></span>
                                     <span class="nav-link">Projects</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:6;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:7;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:8;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:9;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:10;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:11;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
@@ -195,28 +775,28 @@
                             <div class="menu-socials">
                                 <div class="menu-socials-container">
                                     <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta"
-                                        target="_social"><i class="fa-brands fa-instagram"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
                                     <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                        target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                             class="fa-brands fa-github"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                            class="fa-brands fa-telegram"></i></a>
+                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
+                                        target="_social" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
-                                        target="_social"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
                                 </div>
                             </div>
                         </section>
                         <div class="footer-credit">
-                            <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar</small></p>
+                            <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar</small></p>
                         </div>
                     </div>
                 </div>
@@ -229,112 +809,752 @@
     </div>
     <main>
         <section class="head-image-container">
-            <img src="../img/project-head.jpg" alt="head img">
+            <img src="../img/project-head.jpg" alt="head img" decoding="async">
         </section>
 
-        <!-- Project Content Starts -->
-        <section class="about">
+        <!-- Projects Section Starts -->
+        <section class="projects-page-section">
             <div class="heading">
-                <h1>Projects</h1>
+                <h1>Projects &amp; Engineering Work</h1>
+            </div>
+
+            <div class="projects-page-inner">
+                <p class="projects-hero-subtitle">
+                    I build and explore projects at the intersection of electrical engineering, software systems, and applied AI — spanning multi-tenant academic platforms, computer vision research, EV control simulations, embedded IoT hardware, and digital media production.
+                </p>
+
+                <!-- Quick Impact Stats Bar -->
+                <div class="projects-stats-bar">
+                    <div class="proj-stat-item">
+                        <div class="proj-stat-number">15+</div>
+                        <div class="proj-stat-label">Total Projects</div>
+                    </div>
+                    <div class="proj-stat-divider"></div>
+                    <div class="proj-stat-item">
+                        <div class="proj-stat-number">1</div>
+                        <div class="proj-stat-label">Research Paper (2026)</div>
+                    </div>
+                    <div class="proj-stat-divider"></div>
+                    <div class="proj-stat-item">
+                        <div class="proj-stat-number">4+</div>
+                        <div class="proj-stat-label">Live Deployed Platforms</div>
+                    </div>
+                    <div class="proj-stat-divider"></div>
+                    <div class="proj-stat-item">
+                        <div class="proj-stat-number">5+</div>
+                        <div class="proj-stat-label">Years Multimedia &amp; Design</div>
+                    </div>
+                </div>
+
+                <!-- Search & Controls Row -->
+                <div class="projects-controls-row">
+                    <div class="projects-search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="projects-search-input" placeholder="Search projects by title, stack (e.g. React, YOLO, ESP32, Python)..." autocomplete="off">
+                        <button id="clear-search-btn" class="clear-search-btn" title="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="projects-showcase-pills">
+                        <a href="projects-web-dev.html" class="software-deepdive-btn" title="Software &amp; AI Engineering Deep-Dive">
+                            <i class="fa-solid fa-laptop-code"></i> Software &amp; AI <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="projects-video.html" class="software-deepdive-btn deepdive-video" title="Video Editing &amp; Post-Production Showcase">
+                            <i class="fa-solid fa-video"></i> Video Editing <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="projects-graphics.html" class="software-deepdive-btn deepdive-graphics" title="Graphic Design &amp; Brand Identity Gallery">
+                            <i class="fa-solid fa-palette"></i> Graphic Design <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Filter Navigation Pills -->
+                <div class="projects-filter-nav">
+                    <button class="proj-filter-btn is-active" data-filter="all">
+                        <i class="fa-solid fa-shapes"></i> All Projects <span class="filter-count">15</span>
+                    </button>
+                    <a href="projects-thumbnail.html" class="proj-filter-btn proj-special-thumb-btn" title="Open Dedicated Thumbnail Design Portfolio">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Thumbnail Designing <span class="special-thumb-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i> Portfolio</span>
+                    </a>
+                    <button class="proj-filter-btn" data-filter="software">
+                        <i class="fa-solid fa-code"></i> Software &amp; AI <span class="filter-count">4</span>
+                    </button>
+                    <button class="proj-filter-btn" data-filter="hardware">
+                        <i class="fa-solid fa-microchip"></i> Electrical &amp; Hardware <span class="filter-count">3</span>
+                    </button>
+                    <button class="proj-filter-btn" data-filter="video">
+                        <i class="fa-solid fa-video"></i> Video Editing <span class="filter-count">1</span>
+                    </button>
+                    <button class="proj-filter-btn" data-filter="graphics">
+                        <i class="fa-solid fa-palette"></i> Graphic Design <span class="filter-count">2</span>
+                    </button>
+                    <button class="proj-filter-btn" data-filter="foundation">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Early Web <span class="filter-count">3</span>
+                    </button>
+                    <button class="proj-filter-btn" data-filter="concept">
+                        <i class="fa-solid fa-lightbulb"></i> In Development &amp; ERP <span class="filter-count">2</span>
+                    </button>
+                </div>
+
+                                <!-- Projects Modern Grid -->
+                <div class="projects-modern-grid">
+
+                    <!-- 1. Eduspace (Note Loom) -->
+                    <div class="project-modern-card" data-category="software">
+                        <div class="project-media-wrap">
+                            <img src="../img/proj-web-dev/noteloom-preview.png" alt="Eduspace NoteLoom Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">In Development · Live &amp; Alpha/Beta</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Full-Stack · EdTech · AI Applications</div>
+                            <h3 class="project-title">Eduspace (formerly Note Loom)</h3>
+                            <p class="project-summary">
+                                Contributed to the development of Eduspace, a multi-tenant academic administration and learning platform for higher-education institutions. Currently in active development, featuring an AI-native LMS, video course delivery, college-code tenant separation, and an AI study assistant. Built across two internship periods at IEM Research Foundation.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">React</span>
+                                <span class="project-tech-pill">Vite</span>
+                                <span class="project-tech-pill">Node.js</span>
+                                <span class="project-tech-pill">Express</span>
+                                <span class="project-tech-pill">MongoDB Atlas</span>
+                                <span class="project-tech-pill">Multi-Tenant</span>
+                                <span class="project-tech-pill">JWT</span>
+                                <span class="project-tech-pill">AI Assistant</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://eduspace.suvnkr.in" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Platform
+                                </a>
+                                <a href="https://noteloomtest.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary">
+                                    <i class="fa-solid fa-vial"></i> Beta Build
+                                </a>
+                                <a href="https://alpha-noteloom.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-subtle">
+                                    <i class="fa-solid fa-clock-rotate-left"></i> Alpha
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('noteloom')">
+                                    <i class="fa-regular fa-images"></i> Gallery (5)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Leaf Health Classification with YOLO -->
+                    <div class="project-modern-card" data-category="software">
+                        <div class="project-media-wrap">
+                            <img src="../img/proj-web-dev/yolo-preview.png" alt="YOLOv11 Leaf Health Analysis Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">92.3% mAP · Paper 2026</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">AI · Computer Vision · Research Publication</div>
+                            <h3 class="project-title">Leaf Health Classification with YOLO</h3>
+                            <p class="project-summary">
+                                Co-authored a research study comparing YOLOv8, YOLOv9, and YOLOv11 for identifying healthy and diseased leaves in Ixora and Bougainvillea on an augmented dataset of 5,000 samples. Achieved 92.3% mAP@0.5 with YOLOv11 alongside 0.89 Disease Localization Accuracy (DLA) and 0.92 Environmental Robustness (ERS). Published in BIO Web of Conferences (2026).
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Python</span>
+                                <span class="project-tech-pill">YOLOv11</span>
+                                <span class="project-tech-pill">YOLOv9</span>
+                                <span class="project-tech-pill">YOLOv8</span>
+                                <span class="project-tech-pill">Deep Learning</span>
+                                <span class="project-tech-pill">Data Augmentation</span>
+                                <span class="project-tech-pill">BIO Web Conf 2026</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://doi.org/10.1051/bioconf/202622801001" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-file-pdf"></i> Paper DOI (10.1051)
+                                </a>
+                                <a href="https://github.com/Shuvankar2/leaf-health-by-YOLO" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Battery-Constrained EV MPC-ACC -->
+                    <div class="project-modern-card" data-category="hardware">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/evmpc/ev-1.png" alt="Battery Constrained EV MPC Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-sky">Digital Twin</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Electrical Engineering · EV Control · Simulation</div>
+                            <h3 class="project-title">Battery-Constrained EV MPC-ACC</h3>
+                            <p class="project-summary">
+                                Collaborative undergraduate research developing an interactive browser-based digital twin for battery-constrained Model Predictive Adaptive Cruise Control in electric vehicles. Models battery open-circuit voltage, uses an Extended Kalman Filter (EKF) for SOC estimation, and benchmarks MPC against a baseline PID controller.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Electric Vehicles</span>
+                                <span class="project-tech-pill">Model Predictive Control</span>
+                                <span class="project-tech-pill">Extended Kalman Filter</span>
+                                <span class="project-tech-pill">PID Control</span>
+                                <span class="project-tech-pill">React 18</span>
+                                <span class="project-tech-pill">Vite</span>
+                                <span class="project-tech-pill">Recharts</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://ev.suvnkr.in" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-globe"></i> Live Website
+                                </a>
+                                <a href="https://ev.suvnkr.in/how-it-works" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-subtle">
+                                    <i class="fa-solid fa-circle-info"></i> How It Works
+                                </a>
+                                <a href="https://github.com/Shuvankar2/ev2026" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://colab.research.google.com/github/Shuvankar2/ev2026/blob/main/notebooks/ev_mpc_battery_workbench.ipynb" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary">
+                                    <i class="fa-solid fa-code"></i> Colab
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('evmpc')">
+                                    <i class="fa-regular fa-images"></i> Gallery (2)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. AquaGlass — IoT Smart Fish Feeder -->
+                    <div class="project-modern-card" data-category="hardware">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/aquaglass/ag-1.png" alt="AquaGlass IoT Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-purple">In Active Development · Prototype</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Internet of Things · Embedded Systems · Mobile</div>
+                            <h3 class="project-title">AquaGlass — IoT Smart Fish Feeder</h3>
+                            <p class="project-summary">
+                                An automated aquarium feeder combining an ESP32-WROOM-32 microcontroller with a cross-platform Flutter application and Node.js backend. Currently in active development, featuring servo-controlled portion dispensing, day-wise feeding schedules, local and remote manual overrides, 6-digit device onboarding, and MongoDB database storage.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">ESP32</span>
+                                <span class="project-tech-pill">Flutter / Dart</span>
+                                <span class="project-tech-pill">Node.js</span>
+                                <span class="project-tech-pill">Express</span>
+                                <span class="project-tech-pill">MongoDB</span>
+                                <span class="project-tech-pill">Servo Control</span>
+                                <span class="project-tech-pill">JWT</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://aquaglass-sigma.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-globe"></i> Live Website
+                                </a>
+                                <a href="https://github.com/Shuvankar2/fish-feeder" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('aquaglass')">
+                                    <i class="fa-regular fa-images"></i> Gallery (4)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. GotiPrep -->
+                    <div class="project-modern-card" data-category="software">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/gotiprep/gp-1.png" alt="GotiPrep Examination Platform Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Open Source · MIT</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Assessment Technology · EdTech · Open Source</div>
+                            <h3 class="project-title">GotiPrep — Exam Preparation Platform</h3>
+                            <p class="project-summary">
+                                Built GotiPrep, an open-source examination-preparation platform for competitive exams such as TCS NQT, Banking (IBPS/RBI), and SSC. Features timed typing assessments with WPM/accuracy metrics and anti-cheat tab detection, unseen passage evaluation, grammar cloze exercises, timed email drafting simulations, and dynamic achievement posters.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">React 18</span>
+                                <span class="project-tech-pill">TypeScript 5</span>
+                                <span class="project-tech-pill">Vite 5</span>
+                                <span class="project-tech-pill">Zustand</span>
+                                <span class="project-tech-pill">TanStack Query</span>
+                                <span class="project-tech-pill">MIT License</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://gotiprep.suvnkr.in" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Website
+                                </a>
+                                <a href="https://github.com/Shuvankar2/gotiprep" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('gotiprep')">
+                                    <i class="fa-regular fa-images"></i> Gallery (3)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Wi-Fi Controlled Omnidirectional Car -->
+                    <div class="project-modern-card" data-category="hardware">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/wificar/wificar-preview.png" alt="Wi-Fi Controlled Omnidirectional Car Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-purple">Robotics Hardware</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Embedded Systems · Robotics · Hardware</div>
+                            <h3 class="project-title">Wi-Fi Controlled Omnidirectional Car</h3>
+                            <p class="project-summary">
+                                Built a Wi-Fi-controlled mobile robot using an ESP32 microcontroller and specialized Mecanum wheels. The omnidirectional wheel configuration enables multi-directional lateral strafing, diagonal traversal, and in-place 360-degree rotation without requiring a conventional turning radius, demonstrating embedded motor control.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">ESP32</span>
+                                <span class="project-tech-pill">Mecanum Wheels</span>
+                                <span class="project-tech-pill">Wi-Fi Control</span>
+                                <span class="project-tech-pill">Robotics</span>
+                                <span class="project-tech-pill">Motor Drivers</span>
+                                <span class="project-tech-pill">Embedded C</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://lnkd.in/p/dPgqXtXs" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn Project Post
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('wificar')">
+                                    <i class="fa-regular fa-images"></i> Gallery (1)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Trikal Darshi -->
+                    <div class="project-modern-card" data-category="software">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/trikal/td-1.png" alt="Trikal Darshi Vedic Astrology Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Live Web App</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Web Application · AI Integration · Domain Software</div>
+                            <h3 class="project-title">Trikal Darshi — Vedic Astrology AI</h3>
+                            <p class="project-summary">
+                                Developed Trikal Darshi, an independent Vedic astrology web application that computes planetary charts from user-provided birth details (date, time, location) and generates AI-assisted explanatory interpretations and transit predictions, exploring domain workflows combined with AI-assisted content delivery.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Web Application</span>
+                                <span class="project-tech-pill">AI Integration</span>
+                                <span class="project-tech-pill">Vedic Computation</span>
+                                <span class="project-tech-pill">API Integration</span>
+                                <span class="project-tech-pill">Responsive Design</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://trikaldarshi.online" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-globe"></i> Live Website
+                                </a>
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('trikal')">
+                                    <i class="fa-regular fa-images"></i> Gallery (6)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Creative Video Editing Portfolio -->
+                    <div class="project-modern-card" data-category="video creative">
+                        <div class="project-media-wrap">
+                            <img src="../img/premiere-pro.png" alt="Video Editing Showcase" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-sky">5+ Years Production</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Post-Production · Narrative Editing · Reels</div>
+                            <h3 class="project-title">Creative Video Editing &amp; Post-Production</h3>
+                            <p class="project-summary">
+                                Over 5 years of video editing across commercial teasers, tech vlogs, event promos, tutorial documentaries, and retention-optimized YouTube Shorts / Reels. Proficient in multicam editing, color grading pipelines, Fairlight audio mastering, dynamic keyframing, and narrative pacing using DaVinci Resolve and Premiere Pro.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">DaVinci Resolve</span>
+                                <span class="project-tech-pill">Adobe Premiere Pro</span>
+                                <span class="project-tech-pill">Wondershare Filmora</span>
+                                <span class="project-tech-pill">Color Grading</span>
+                                <span class="project-tech-pill">Audio Mastering</span>
+                                <span class="project-tech-pill">YouTube Packaging</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="../html/projects-video.html" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-play"></i> Video Showcase
+                                </a>
+                                <a href="https://www.youtube.com/@ShuvankarTechie" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i> YouTube Channel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Graphic Design & Brand Identity -->
+                    <div class="project-modern-card" data-category="graphics creative">
+                        <div class="project-media-wrap">
+                            <img src="../img/poster.png" alt="Graphic Design Showcase" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-purple">Visual Identity</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Brand Identity · Vector Design · Posters</div>
+                            <h3 class="project-title">Graphic Design &amp; Brand Identity</h3>
+                            <p class="project-summary">
+                                Comprehensive visual design portfolio featuring scalable brand logos, custom vector iconography, college fest event posters, social media marketing kits, and UI collateral. Built with a strong understanding of color contrast, visual hierarchy, typography, and print/digital resolution requirements.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Adobe Photoshop</span>
+                                <span class="project-tech-pill">Adobe Illustrator</span>
+                                <span class="project-tech-pill">Canva Pro</span>
+                                <span class="project-tech-pill">Brand Identity</span>
+                                <span class="project-tech-pill">Vector Graphics</span>
+                                <span class="project-tech-pill">Typography</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="../html/projects-graphics.html" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-images"></i> Graphics Gallery
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. High-CTR YouTube Packaging & Thumbnail Design -->
+                    <div class="project-modern-card" data-category="graphics thumbnail creative">
+                        <div class="project-media-wrap">
+                            <img src="../img/yt-thumb.jpg" alt="YouTube Thumbnail Packaging Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">High-CTR Packaging</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Digital Packaging · Audience Retention · UI</div>
+                            <h3 class="project-title">YouTube Packaging &amp; Thumbnail Design</h3>
+                            <p class="project-summary">
+                                Specialized visual packaging designed to maximize viewer Click-Through Rate (CTR) and initial retention. Employs visual hook theory, facial expression isolation, vibrant contrast separation, 3D text styling, and icon placements tested across diverse video genres including tech tutorials, vlogs, and gaming commentary.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Adobe Photoshop</span>
+                                <span class="project-tech-pill">Visual Hooks</span>
+                                <span class="project-tech-pill">CTR Optimization</span>
+                                <span class="project-tech-pill">Color Grading</span>
+                                <span class="project-tech-pill">Asset Composition</span>
+                                <span class="project-tech-pill">Audience Retention</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="../html/projects-thumbnail.html" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-image"></i> Thumbnail Gallery
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. HotelEase — Offline Hotel Management System -->
+                    <div class="project-modern-card" data-category="concept">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/hotelease/he-1.png" alt="HotelEase Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-purple">Windows Offline App</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Desktop Applications · Hospitality Systems · ERP</div>
+                            <h3 class="project-title">HotelEase — Offline Hotel Management System</h3>
+                            <p class="project-summary">
+                                A Windows-only, offline-first hotel management and ERP application that operates completely offline without requiring an internet connection, featuring room inventory management, restaurant billing, invoice generation, and guest records. Planned for future cloud database synchronization.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Windows Desktop</span>
+                                <span class="project-tech-pill">Offline First</span>
+                                <span class="project-tech-pill">Hotel ERP</span>
+                                <span class="project-tech-pill">Room Allocation</span>
+                                <span class="project-tech-pill">Restaurant POS</span>
+                                <span class="project-tech-pill">Billing System</span>
+                            </div>
+                            <div class="project-actions">
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('hotelease')">
+                                    <i class="fa-regular fa-images"></i> Gallery (6)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Kagazly — Online PDF Utilities -->
+                    <div class="project-modern-card" data-category="concept">
+                        <div class="project-media-wrap">
+                            <img src="../img/resources/kagazly/kg-1.png" alt="Kagazly Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge badge-purple">In Active Development</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Productivity Software · Document Processing</div>
+                            <h3 class="project-title">Kagazly — Online Document Utilities</h3>
+                            <p class="project-summary">
+                                Currently developing Kagazly, an online PDF and document utility platform focused on making common document workflows accessible through the browser. Built around a freemium architecture combining core client-side PDF utilities with additional subscription-based capabilities.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Web Development</span>
+                                <span class="project-tech-pill">PDF Processing</span>
+                                <span class="project-tech-pill">Document Utilities</span>
+                                <span class="project-tech-pill">Product Architecture</span>
+                            </div>
+                            <div class="project-actions">
+                                <button type="button" class="project-link-btn project-link-subtle" onclick="openExpGallery('kagazly')">
+                                    <i class="fa-regular fa-images"></i> Gallery (4)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. Multi-Page Responsive Survey Form -->
+                    <div class="project-modern-card" data-category="foundation">
+                        <div class="project-media-wrap">
+                            <img src="../img/survey-form.png" alt="Responsive Survey Form Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Early Project</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Early Web Builds · Frontend Development</div>
+                            <h3 class="project-title">Multi-Page Responsive Survey Form</h3>
+                            <p class="project-summary">
+                                An accessible, responsive multi-section survey form built with semantic HTML5 and responsive CSS3, featuring client-side form validation, custom radio/checkbox controls, multi-step navigation, and clean mobile responsiveness.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">HTML5</span>
+                                <span class="project-tech-pill">CSS3</span>
+                                <span class="project-tech-pill">Form Validation</span>
+                                <span class="project-tech-pill">Responsive Design</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://shuvankar2.github.io/survey-form/" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-globe"></i> Live Website
+                                </a>
+                                <a href="https://github.com/Shuvankar2/survey-form" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Competitive Exam Portal Authentication -->
+                    <div class="project-modern-card" data-category="foundation">
+                        <div class="project-media-wrap">
+                            <img src="../img/exam-page.png" alt="Candidate Exam Portal Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Early Project</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Early Web Builds · UI Authentication</div>
+                            <h3 class="project-title">Competitive Exam Portal Authentication</h3>
+                            <p class="project-summary">
+                                A clean candidate examination login and assessment authentication portal interface built with HTML5 and CSS3, optimized for candidate ID validation, password masking, responsive layouts, and structured examination instructions.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">HTML5</span>
+                                <span class="project-tech-pill">CSS3</span>
+                                <span class="project-tech-pill">UI Design</span>
+                                <span class="project-tech-pill">Portal Interface</span>
+                            </div>
+                            <div class="project-actions">
+                                <span class="project-link-btn project-link-disabled">
+                                    <i class="fa-solid fa-desktop"></i> UI Prototype
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. Semantic HTML-Only Portfolio -->
+                    <div class="project-modern-card" data-category="foundation">
+                        <div class="project-media-wrap">
+                            <img src="../img/proj-web-dev/html-port.png" alt="Pure HTML Portfolio Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Foundation Build</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Early Web Builds · Pure Semantic HTML</div>
+                            <h3 class="project-title">Semantic HTML-Only Portfolio</h3>
+                            <p class="project-summary">
+                                An experimental purely semantic HTML portfolio created strictly without external CSS or JavaScript to learn, test, and master document structure, accessibility trees, table hierarchies, and native HTML5 landmark semantics. Live and accessible online.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Semantic HTML5</span>
+                                <span class="project-tech-pill">Zero CSS</span>
+                                <span class="project-tech-pill">Accessibility</span>
+                                <span class="project-tech-pill">Document Flow</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://portfolioshuvankar.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-globe"></i> Live Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Empty State Message -->
+                <div id="no-projects-msg" class="no-projects-found" style="display: none;">
+                    <div class="no-proj-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>No matching projects found</h3>
+                    <p>Try searching with another keyword or resetting the category filter.</p>
+                    <button id="reset-filter-btn" class="proj-filter-btn" style="margin-top: 14px;">
+                        <i class="fa-solid fa-rotate-left"></i> Reset All Filters
+                    </button>
+                </div>
+
+
+                </div>
+
+                <!-- Scroll to Top Button -->
+                <button id="scrollToTopBtn" class="scrollToTopBtn" onclick="scrollToTop()">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+
+                <div class="exp-end">
+                    <p>--- End of Projects Portfolio ---</p>
+                </div>
             </div>
         </section>
+        <!-- Projects Section Ends -->
 
-        <section class="project-content">
-            <a href="../html/projects-web-dev.html">
-                <div class="project-container">
-                    <div class="project-icon"><i class="fa-solid fa-code"></i></div>
-                    <div class="project-title">Software Development</div>
+            <!-- ══════════════════════════════════════════
+         Interactive Gallery Lightbox Modal
+    ══════════════════════════════════════════ -->
+    <div id="expGalleryModal" class="exp-gallery-modal" role="dialog" aria-modal="true" aria-label="Photo Gallery">
+        <div class="exp-gallery-overlay" onclick="closeExpGallery()"></div>
+        <div class="exp-gallery-container">
+            <div class="exp-gallery-header">
+                <div class="exp-gallery-title-wrap">
+                    <h3 id="galleryTitle">Project Gallery</h3>
+                    <div class="exp-gallery-subtitle" id="gallerySubtitle">Gallery View</div>
                 </div>
-            </a>
-
-            <a href="../html/projects-video.html">
-                <div class="project-container">
-                    <div class="project-icon"><i class="fa-solid fa-video"></i></div>
-                    <div class="project-title">Video Editing</div>
+                <div class="exp-gallery-controls-top">
+                    <button type="button" class="gallery-autoplay-pill" id="galleryAutoplayToggle" onclick="toggleAutoplay()" title="Toggle 3s Auto-Slide">
+                        <i class="fa-solid fa-pause"></i> <span>Auto (3s)</span>
+                        <div class="gallery-progress-bar"><div class="gallery-progress-fill" id="galleryProgressFill"></div></div>
+                    </button>
+                    <button type="button" class="exp-gallery-close" onclick="closeExpGallery()" aria-label="Close Gallery">&times;</button>
                 </div>
-            </a>
-
-            <a href="../html/projects-graphics.html">
-                <div class="project-container">
-                    <div class="project-icon"><i class="fa-solid fa-paintbrush"></i></div>
-                    <div class="project-title">Graphics Designing</div>
+            </div>
+            <div class="exp-gallery-body">
+                <button type="button" class="exp-gallery-nav-btn prev" onclick="prevSlide()" aria-label="Previous Photo">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="exp-gallery-stage">
+                    <img id="galleryActiveImg" src="" alt="Gallery Image" class="exp-gallery-img" decoding="async" loading="lazy">
                 </div>
-            </a>
-            
-            <a href="../html/projects-thumbnail.html">
-                <div class="project-container">
-                    <div class="project-icon"><i class="fa-solid fa-image"></i></div>
-                    <div class="project-title">Thumbnail Designing</div>
-                </div>
-            </a>
-        </section>
-
-        <!-- Project Content Ends -->
-
-        <!-- Scroll to Top Button -->
-        <button id="scrollToTopBtn" class="scrollToTopBtn" onclick="scrollToTop()">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
-        <!-- Scroll to Top Button -->
-
-
-        <div class="exp-end">
-            <p> --- You've reached end of this page! --- </span></p>
+                <button type="button" class="exp-gallery-nav-btn next" onclick="nextSlide()" aria-label="Next Photo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="exp-gallery-caption-bar">
+                <div id="galleryCaption" class="exp-gallery-caption">Project Screenshot</div>
+                <div id="galleryCounter" class="exp-gallery-counter">1 / 1</div>
+            </div>
+            <div class="exp-gallery-thumbs-track" id="galleryThumbsTrack"></div>
         </div>
+    </div>
 
-        <!-- Footer Part -->
+    <!-- Footer Part -->
         <footer>
             <section class="footer-first">
                 <section class="footer-socials-sec">
                     <p>Follow On</p>
                     <div class="footer-socials">
                         <div class="footer-socials-container">
-                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social"><i
-                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin" target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
-                                    class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social"><i
-                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social"><i
-                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social"><i
-                                    class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                        <div class="footer-socials-container">
-                            <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                    class="fa-brands fa-telegram"></i></a>
+                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </section>
 
                 <section class="footer-logo">
-                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem>
+                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem decoding="async">
                 </section>
             </section>
 
             <hr>
 
-            <div class="footer-credit">
-                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved. &nbsp;|&nbsp; <a href="../html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a></small></p>
+                        <div class="footer-credit">
+                <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar. All rights reserved. &nbsp;|&nbsp;
+                        <a href="../html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a> &nbsp;|&nbsp;
+                        <a href="../html/terms-of-use.html" style="color:#00d2ff;text-decoration:underline;">Terms of Use</a></small></p>
             </div>
             <hr id="footer-bottom-bar">
         </footer>
     </main>
 
     <!-- Java Script Part -->
-    <script src="../js/script.js"></script> <!-- My Script Utility Part -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Projects Category Filter and Search Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.proj-filter-btn');
+            const projectCards = document.querySelectorAll('.project-modern-card');
+            const searchInput = document.getElementById('projects-search-input');
+            const clearBtn = document.getElementById('clear-search-btn');
+            const resetBtn = document.getElementById('reset-filter-btn');
+            const noResultsMsg = document.getElementById('no-projects-msg');
+
+            let currentFilter = 'all';
+            let searchQuery = '';
+
+            function applyFilters() {
+                let visibleCount = 0;
+                const q = searchQuery.toLowerCase().trim();
+
+                projectCards.forEach(card => {
+                    const cardCat = card.getAttribute('data-category') || '';
+                    const categories = cardCat.split(/\s+/);
+                    const cardText = card.textContent.toLowerCase();
+
+                    const matchesCategory = (currentFilter === 'all' || categories.includes(currentFilter));
+                    const matchesSearch = (q === '' || cardText.includes(q));
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (noResultsMsg) {
+                    noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+                }
+
+                if (clearBtn) {
+                    clearBtn.style.display = (q.length > 0) ? 'inline-flex' : 'none';
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    if (this.tagName.toLowerCase() === 'a') return; // Allow normal link navigation for portfolio showcase buttons
+                    filterBtns.forEach(b => b.classList.remove('is-active'));
+                    this.classList.add('is-active');
+                    currentFilter = this.getAttribute('data-filter') || 'all';
+                    applyFilters();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    searchQuery = this.value;
+                    applyFilters();
+                });
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function () {
+                    if (searchInput) {
+                        searchInput.value = '';
+                        searchQuery = '';
+                        applyFilters();
+                        searchInput.focus();
+                    }
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function () {
+                    if (searchInput) searchInput.value = '';
+                    searchQuery = '';
+                    currentFilter = 'all';
+                    filterBtns.forEach(b => {
+                        b.classList.toggle('is-active', b.getAttribute('data-filter') === 'all');
+                    });
+                    applyFilters();
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

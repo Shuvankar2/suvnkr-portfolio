@@ -117,12 +117,282 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Lexend:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="img/Logo-White.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261121_revamp">
+    <style>
+        /* ── Critical Styles for Modern Projects & Skills Alignment ── */
+        .skill-pair-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .skill-pair-img {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .skill-pair-img>img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            max-height: 20rem;
+            object-fit: contain;
+        }
+
+        .landing-skill-tech,
+        .landing-skill-proff {
+            flex: 1;
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #c2bad2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skill-head {
+            font-family: 'Lexend', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.4rem;
+            text-align: center;
+        }
+
+        .aligned-skill-list {
+            list-style: none !important;
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+            column-gap: 2.5rem !important;
+            row-gap: 1.25rem !important;
+            padding: 0 !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+            max-width: 680px !important;
+            justify-content: center !important;
+        }
+
+        .aligned-skill-list li {
+            margin: 0 !important;
+            font-size: 1.2rem !important;
+            font-family: 'Poppins', sans-serif !important;
+            color: #c2bad2 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+            white-space: nowrap !important;
+            transition: transform 0.22s ease, color 0.22s ease !important;
+            cursor: default !important;
+        }
+
+        .aligned-skill-list li i {
+            color: #39e168 !important;
+            font-size: 1.35rem !important;
+            width: 26px !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .aligned-skill-list li:hover {
+            transform: translateX(4px) !important;
+            color: #39e168 !important;
+        }
+
+        /* Modern Projects Grid styling */
+        .projects-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .project-modern-card {
+            background: rgba(29, 35, 52, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-modern-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(57, 225, 104, 0.4);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), 0 0 24px rgba(57, 225, 104, 0.12);
+        }
+
+        .project-media-wrap {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #0f1422;
+        }
+
+        .project-media-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .project-modern-card:hover .project-media-wrap img {
+            transform: scale(1.05);
+        }
+
+        .project-status-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(17, 23, 41, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(57, 225, 104, 0.4);
+            border-radius: 20px;
+            padding: 4px 13px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #39e168;
+            font-family: 'Lexend', sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-body {
+            padding: 24px 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-category-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00d2ff;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .project-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .project-summary {
+            font-size: 0.88rem;
+            color: #c2bad2;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .project-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            color: #b0bbcc;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Lexend', sans-serif;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .project-link-primary {
+            background: rgba(57, 225, 104, 0.15);
+            border: 1px solid rgba(57, 225, 104, 0.4);
+            color: #39e168;
+        }
+
+        .project-link-primary:hover {
+            background: #39e168;
+            color: #111729;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(57, 225, 104, 0.3);
+        }
+
+        .project-link-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #c2bad2;
+        }
+
+        .project-link-secondary:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 900px) {
+            .projects-modern-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-pair-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .aligned-skill-list {
+                grid-template-columns: 1fr !important;
+                max-width: 320px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -131,8 +401,7 @@
     <header>
         <nav>
             <div class="left">
-                <a href="https://suvnkr.in/"><img src="img/Logo-nav-cropped.svg" alt="nav-logo"
-                        height=1.5rem></a>
+                <a href="https://suvnkr.in/"><img src="img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem decoding="async"></a>
             </div>
             <div class="right">
                 <ul class="nav-desktop">
@@ -160,8 +429,8 @@
             <!-- More Menu Sidebar -->
             <div class="menu-sidebar">
 
-                <div class="close-menu-bar menu-bar">
-                    <p><i class="fa-solid fa-xmark menu-margin"></i></p>
+                <div class="close-menu-bar menu-bar" aria-label="Close menu">
+                    <p><i class="fa-solid fa-xmark"></i></p>
                 </div>
 
                 <div class="sidebar-content">
@@ -169,28 +438,46 @@
 
                         <!-- Desktop Menu -->
                         <ul class="menu-lists nav-desktop">
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:1;">
                                 <a href="html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:2;">
+                                <a href="html/publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="html/products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:4;">
                                 <a href="html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:5;">
                                 <a href="html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                                                        <li class="menu-list" style="--i:6;">
+                                <a href="html/terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:7;">
                                 <a href="uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
                                     type="application/pdf" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
@@ -198,52 +485,70 @@
 
                         <!-- Mobile-Menu -->
                         <ul class="menu-lists nav-mobile">
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:1;">
                                 <a href="https://suvnkr.in/" class="menu-nav-link">
-                                    <i class="fa-solid fa-house menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-house"></i></span>
                                     <span class="nav-link">Home</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:2;">
                                 <a href="html/about.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-user-secret  menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-user"></i></span>
                                     <span class="nav-link">About</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:3;">
                                 <a href="html/experience.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-bars-progress menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-briefcase"></i></span>
                                     <span class="nav-link">Experiences</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:4;">
                                 <a href="html/projects.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-diagram-project menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-layer-group"></i></span>
                                     <span class="nav-link">Projects</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:5;">
+                                <a href="html/publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:6;">
+                                <a href="html/products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:7;">
                                 <a href="html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:8;">
                                 <a href="html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:9;">
                                 <a href="html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
+                                                        <li class="menu-list" style="--i:10;">
+                                <a href="html/terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:11;">
                                 <a href="uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
                                     type="application/pdf" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
@@ -257,28 +562,28 @@
                             <div class="menu-socials">
                                 <div class="menu-socials-container">
                                     <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta"
-                                        target="_social"><i class="fa-brands fa-instagram"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
                                     <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                        target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                             class="fa-brands fa-github"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                            class="fa-brands fa-telegram"></i></a>
+                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
+                                        target="_social" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
-                                        target="_social"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
                                 </div>
                             </div>
                         </section>
                         <div class="footer-credit">
-                            <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar</small></p>
+                            <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar</small></p>
                         </div>
                     </div>
                 </div>
@@ -295,263 +600,747 @@
                 <div class="img-slider-landing"></div>
             </div>
             <section class="firstsection">
-                <div class="leftdiv">
-                    Hello! I'm <span class="name-color">Shuvankar</span>,
-                    <div> and I am a</div>
-                    <span id="element"></span>
+                <div class="leftdiv reveal-on-scroll">
+                    <div class="hero-greeting">Hello! I'm <span class="name-color">Shuvankar</span>,</div>
+                    <div class="hero-subline">and I am</div>
+                    <div class="hero-role-container">
+                        <span id="element"></span>
+                    </div>
+
+                    <p class="hero-intro-text">
+                        Electrical Engineering undergraduate at IEM Kolkata (2027) combining engineering fundamentals
+                        with modern full-stack development, applied AI, and practical prototyping.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="html/projects.html" class="hero-btn-primary">
+                            <i class="fa-solid fa-compass"></i> Explore Projects
+                        </a>
+                        <a href="html/contact.html" class="hero-btn-secondary">
+                            <i class="fa-solid fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
                 </div>
                 <div class="rightdiv">
-                    <!-- <img src="/img/test.png" alt="developer" [DP for later use]]> -->
+                    <!-- Space for background landing image -->
                 </div>
             </section>
         </section>
         <!-- Header Part Ends-->
 
-        <!-- About Landing-->
-        <section class="secondsection">
-            <div class="leftdiv">
+        <!-- ══════════════════════════════════════
+             Tagline Manifesto Banner
+        ══════════════════════════════════════ -->
+        <section class="manifesto-banner reveal-on-scroll">
+            <div class="manifesto-label"><i class="fa-solid fa-lightbulb"></i> Core Philosophy</div>
+            <div class="manifesto-quote">"Engineering ideas into working projects."</div>
+            <p class="manifesto-sub">
+                I combine my electrical engineering background with software development and AI to explore practical
+                problems, design resilient systems, and build useful, independent projects through continuous iteration.
+            </p>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             About Me Section
+        ══════════════════════════════════════ -->
+        <section class="secondsection" id="about">
+            <div class="leftdiv reveal-on-scroll">
                 <div class="heading">
                     <h1>About Me</h1>
                 </div>
                 <div class="content">
-                    <p>I'm Shuvankar Debnath — a Software & AI Engineer based in Kolkata, India, building at the
-                        intersection of intelligent systems and modern full-stack development. I design and ship
-                        production-ready applications, combining the MERN stack with applied AI and computer vision
-                        models.</p>
-                    <p>During my backend internship at IEMRF, I designed REST APIs and MongoDB schemas for ERP and LMS
-                        platforms used by real users. I also developed a plant disease detection pipeline using YOLOv8,
-                        YOLOv9, and YOLOv11 on Roboflow-annotated datasets, achieving ~92% mAP.</p>
-                    <p>Pursuing a B.Tech in Electrical Engineering at IEM Kolkata (graduating 2027) shapes my software
-                        engineering perspective, applying control systems modeling to software simulations and systems
-                        design.</p>
-                    <p>In addition to engineering, I have years of freelance experience in video editing (Premiere Pro,
-                        DaVinci Resolve, Filmora) and graphic design (Photoshop, Illustrator), which directly feeds into
-                        how I design user interfaces and present digital products.</p>
+                    <p>I'm Shuvankar Debnath — an Electrical Engineering undergraduate at the <strong>Institute of
+                            Engineering &amp; Management (IEM), Kolkata</strong> (graduating 2027), working at the
+                        intersection of electrical systems, full-stack software development, and artificial
+                        intelligence.</p>
+
+                    <p>My academic foundation in Electrical Engineering shapes how I reason about software: thinking in
+                        systems, feedback loops, stability, and control. In my independent work, I turn technical
+                        concepts into functional web applications, computer vision experiments, and embedded prototypes.
+                    </p>
+
+                    <p>Through industry trainee exposure at <strong>ONGC</strong> (Oil and Natural Gas Corporation) and
+                        backend engineering internship at <strong>IEM Research Foundation</strong>, I have worked with
+                        industrial power equipment safety standards as well as production REST APIs and MongoDB schemas
+                        used by active institutional users.</p>
+
+                    <p>In addition to engineering, years of freelance visual design (Photoshop, Illustrator) and video
+                        production (Premiere Pro, DaVinci Resolve) enable me to design intuitive interfaces and present
+                        complex technical work clearly.</p>
+
+                    <div class="about-highlight-chips">
+                        <span class="about-chip"><i class="fa-solid fa-graduation-cap"></i> B.Tech EE '27</span>
+                        <span class="about-chip"><i class="fa-solid fa-chart-line"></i> 8.21 CGPA</span>
+                        <span class="about-chip"><i class="fa-solid fa-building"></i> ONGC &amp; IEMRF</span>
+                        <span class="about-chip"><i class="fa-solid fa-code"></i> Full-Stack &amp; AI</span>
+                    </div>
                 </div>
                 <div class="btn">
                     <a href="html/about.html"><button class="primary-btn" data="Know More"></button></a>
-                    <a href="https://www.linkedin.com/in/shuvankardebnath/" target="=_blank"><button class="primary-btn"
-                            data="Linkedin"></button></a>
+                    <a href="https://www.linkedin.com/in/shuvankardebnath/" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn"><button class="primary-btn" data="LinkedIn"></button></a>
                 </div>
             </div>
-            <div class="rightdiv"><img src="img/about-pic.jpg" alt="about-dp"></div>
+            <div class="rightdiv reveal-on-scroll">
+                <div class="about-image-wrapper">
+                    <img src="img/about-pic.jpg" alt="Shuvankar Debnath" decoding="async" loading="lazy">
+                    <div class="dp-floating-badge">
+                        <i class="fa-solid fa-award"></i>
+                        <span>Electrical Engineering · Software</span>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!-- About Landing Ends-->
 
-        <!-- Experience Landing Page -->
-        <section class="thirdsection">
-            <div class="leftdiv">
+        <!-- ══════════════════════════════════════
+             Experience Section
+        ══════════════════════════════════════ -->
+        <section class="thirdsection" id="experience">
+            <div class="leftdiv reveal-on-scroll">
                 <div class="heading">
                     <h1>Experience</h1>
                 </div>
                 <div class="content">
                     <div class="experience-container">
-                        <div class="experience">
-                            <div class="year">2026</div>
+                        <!-- 1. National Test House -->
+                        <div class="experience reveal-on-scroll">
+                            <div class="exp-top-row">
+                                <span class="exp-badge"><i class="fa-solid fa-flask"></i> Testing · NABL Calibration
+                                    &amp; Standards</span>
+                                <span class="year">2026</span>
+                            </div>
                             <div class="details">
-                                <div class="title" onclick="toggleDetails(this)">Summer Trainee (Electrical)<span
-                                        class="toggle-icon">▼</span></div>
-                                <div class="company">at <a href="https://www.ongcindia.com/" target="_blank">Oil and
-                                        Natural Gas Corporation Limited (ONGC)</a></div>
-                                <div class="duration">May 2026 – Jun 2026 · 1 months / Kolkata, West Bengal, India ·
-                                    On-site</div>
+                                <div class="title exp-header-row" onclick="toggleDetails(this)">
+                                    <span class="exp-role-title">Electrical Engineering Trainee</span>
+                                    <span class="toggle-icon-wrap"><i
+                                            class="fa-solid fa-chevron-down toggle-icon"></i></span>
+                                </div>
+                                <div class="company">at <span class="exp-company-text">National Test House (Eastern
+                                        Region), Govt. of India</span></div>
+                                <div class="duration">Sep 2026 (1 month) · Salt Lake, Kolkata, West Bengal · On-site
+                                </div>
                                 <div class="description">
                                     <ul>
-                                        <li>Worked within the Electrical department of one of India's largest
-                                            public-sector energy corporations, gaining exposure to industrial-scale
-                                            power systems and field operations.</li>
-                                        <br>
-                                        <li>Observed and assisted in maintenance and inspection workflows for
-                                            high-voltage electrical equipment, applying core EE concepts in a live
-                                            industrial environment.</li>
-                                        <br>
-                                        <li>Developed a practical understanding of safety protocols and operational
-                                            standards followed in critical energy infrastructure at a national PSU.</li>
+                                        <li>Gained practical exposure to electrical testing activities and equipment in
+                                            an accredited laboratory environment.</li>
+                                        <li>Learned about calibration practices and rigorous workflows associated with
+                                            NABL-accredited laboratory operations.</li>
+                                        <li>Gained direct exposure to BIS-related work and the critical role of
+                                            standards in testing and quality compliance.</li>
+                                        <li>Applied DIALux lighting-design software for architectural and industrial
+                                            lighting modeling.</li>
                                     </ul>
+                                </div>
+                                <div class="exp-actions-row">
+                                    <a href="img/resources/certi/NTH-certi.jpeg" target="_blank"
+                                        rel="noopener noreferrer" class="exp-action-btn exp-cert-btn"
+                                        onclick="openCertModal('img/resources/certi/NTH-certi.jpeg', 'Electrical Engineering Training Certificate', 'National Test House (Eastern Region)'); return false;">
+                                        <i class="fa-solid fa-certificate"></i> View Certificate
+                                    </a>
+                                    <button type="button" class="exp-action-btn exp-gallery-btn"
+                                        onclick="openExpGallery('nth')">
+                                        <i class="fa-solid fa-images"></i> Gallery (4)
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="experience">
-                            <div class="year">2025-26</div>
+                        <!-- 2. ONGC -->
+                        <div class="experience reveal-on-scroll">
+                            <div class="exp-top-row">
+                                <span class="exp-badge"><i class="fa-solid fa-bolt"></i> Industrial Systems · Drilling
+                                    Operations</span>
+                                <span class="year">2026</span>
+                            </div>
                             <div class="details">
-                                <div class="title" onclick="toggleDetails(this)">Software & AI Engineering Intern<span
-                                        class="toggle-icon">▼</span></div>
-                                <div class="company">at <a href="https://iem.edu.in" target="_blank">IEM Research
-                                        Foundation</a></div>
-                                <div class="duration">Dec 2025 – Feb 2026 · 3 months / Kolkata, West Bengal, India ·
-                                    Hybrid</div>
+                                <div class="title exp-header-row" onclick="toggleDetails(this)">
+                                    <span class="exp-role-title">Summer Trainee (Electrical)</span>
+                                    <span class="toggle-icon-wrap"><i
+                                            class="fa-solid fa-chevron-down toggle-icon"></i></span>
+                                </div>
+                                <div class="company">at <a href="https://www.ongcindia.com/" target="_blank"
+                                        rel="noopener noreferrer" class="exp-company-text">Oil and Natural Gas
+                                        Corporation Limited (ONGC)</a></div>
+                                <div class="duration">May 2026 – Jun 2026 · Kolkata, West Bengal · On-site</div>
                                 <div class="description">
                                     <ul>
-                                        <li>Built and deployed production backend REST APIs using Node.js and Express
-                                            for ERP and LMS platforms, designing MongoDB schemas to support multi-role
-                                            user workflows.</li>
-                                        <br>
-                                        <li>Contributed to real-world system architecture decisions, ensuring API
-                                            endpoints were scalable and aligned with frontend data requirements across
-                                            multiple modules.</li>
-                                        <br>
-                                        <li>Gained hands-on experience translating product requirements into backend
-                                            logic in an agile team environment, working on systems used by active
-                                            institutional users.</li>
+                                        <li>Worked with safety-related documentation and gained exposure to industrial
+                                            safety practices at a premier national energy PSU.</li>
+                                        <li>Visited an active drilling site and observed the operational environment and
+                                            equipment used in heavy drilling activities.</li>
+                                        <li>Gained technical exposure to electrical control panels and machine-control
+                                            panels used in industrial operations.</li>
+                                        <li>Observed critical machinery including industrial diesel generators and
+                                            oil-rig electrical support systems.</li>
+                                        <li>Learned about the foundational role of electrical distribution in supporting
+                                            heavy drilling-site operations.</li>
                                     </ul>
+                                </div>
+                                <div class="exp-actions-row">
+                                    <a href="img/resources/certi/ONGC-certi.jpeg" target="_blank"
+                                        rel="noopener noreferrer" class="exp-action-btn exp-cert-btn"
+                                        onclick="openCertModal('img/resources/certi/ONGC-certi.jpeg', 'Summer Training Certificate', 'Oil and Natural Gas Corporation (ONGC)'); return false;">
+                                        <i class="fa-solid fa-certificate"></i> View Certificate
+                                    </a>
+                                    <button type="button" class="exp-action-btn exp-gallery-btn"
+                                        onclick="openExpGallery('ongc')">
+                                        <i class="fa-solid fa-images"></i> Gallery (7)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. DPL -->
+                        <div class="experience reveal-on-scroll">
+                            <div class="exp-top-row">
+                                <span class="exp-badge"><i class="fa-solid fa-industry"></i> Power Generation ·
+                                    Switchyards &amp; Substations</span>
+                                <span class="year">2026</span>
+                            </div>
+                            <div class="details">
+                                <div class="title exp-header-row" onclick="toggleDetails(this)">
+                                    <span class="exp-role-title">Vocational / Industrial Trainee</span>
+                                    <span class="toggle-icon-wrap"><i
+                                            class="fa-solid fa-chevron-down toggle-icon"></i></span>
+                                </div>
+                                <div class="company">at <a href="https://dpl.net.in" target="_blank"
+                                        rel="noopener noreferrer" class="exp-company-text">The Durgapur Projects Limited
+                                        (DPL)</a></div>
+                                <div class="duration">May 2026 – Jun 2026 · Durgapur, West Bengal · On-site</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Visited high-voltage switchyards and gained hands-on exposure to switchyard
+                                            equipment, busbars, and operational protocols.</li>
+                                        <li>Studied different types of power transformers and observed routine
+                                            inspection, oil testing, and maintenance checks.</li>
+                                        <li>Inspected industrial cooling-tower facilities and studied closed-loop
+                                            cooling cycles in thermal plant operations.</li>
+                                        <li>Observed the coal-processing yard, wagon tipplers, and conveyor systems
+                                            involved in fuel handling.</li>
+                                        <li>Visited boiler facilities and gained an overview of steam generation,
+                                            turbines, and thermal power plant workflows.</li>
+                                    </ul>
+                                </div>
+                                <div class="exp-actions-row">
+                                    <a href="img/resources/certi/dpl-certi.jpeg" target="_blank"
+                                        rel="noopener noreferrer" class="exp-action-btn exp-cert-btn"
+                                        onclick="openCertModal('img/resources/certi/dpl-certi.jpeg', 'Vocational Training Certificate', 'The Durgapur Projects Limited (DPL)'); return false;">
+                                        <i class="fa-solid fa-certificate"></i> View Certificate
+                                    </a>
+                                    <button type="button" class="exp-action-btn exp-gallery-btn"
+                                        onclick="openExpGallery('dpl')">
+                                        <i class="fa-solid fa-images"></i> Gallery (5)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. IEMRF Eduspace & NoteLoom -->
+                        <div class="experience reveal-on-scroll">
+                            <div class="exp-top-row">
+                                <span class="exp-badge"><i class="fa-solid fa-brain"></i> Multi-Tenant Platform · AI
+                                    Study Assistant</span>
+                                <span class="year">2025–26</span>
+                            </div>
+                            <div class="details">
+                                <div class="title exp-header-row" onclick="toggleDetails(this)">
+                                    <span class="exp-role-title">Full-Stack &amp; AI Developer Intern</span>
+                                    <span class="toggle-icon-wrap"><i
+                                            class="fa-solid fa-chevron-down toggle-icon"></i></span>
+                                </div>
+                                <div class="company">at <a href="https://iem.edu.in" target="_blank"
+                                        rel="noopener noreferrer" class="exp-company-text">IEM Research Foundation</a>
+                                </div>
+                                <div class="duration">Dec 2025 – Jul 2026 (Two Periods) · Kolkata · Hybrid</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Contributed across two internship periods to the architecture and deployment
+                                            of <strong>Note Loom / Eduspace</strong>, an AI-native LMS &amp; ERP
+                                            platform.</li>
+                                        <li>Built scalable backend REST APIs using Node.js, Express, and MongoDB,
+                                            supporting multi-tenant institutional administration.</li>
+                                        <li>Engineered an interactive video LMS and student AI study assistant to
+                                            streamline institutional learning workflows.</li>
+                                    </ul>
+                                </div>
+                                <div class="exp-actions-row">
+                                    <a href="img/resources/certi/iemrf-certi2.pdf" target="_blank"
+                                        rel="noopener noreferrer" class="exp-action-btn exp-cert-btn"
+                                        onclick="openCertModal('img/resources/certi/iemrf-certi2.png', 'Eduspace Summer Internship Certificate', 'IEM Research Foundation', 'img/resources/certi/iemrf-certi2.pdf'); return false;">
+                                        <i class="fa-solid fa-certificate"></i> View Certificate
+                                    </a>
+                                    <button type="button" class="exp-action-btn exp-gallery-btn is-disabled" disabled
+                                        aria-disabled="true" title="No on-site photos available for this engagement">
+                                        <i class="fa-regular fa-images"></i> Gallery (0)
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="btn">
+                <div class="btn" style="margin-top: 24px;">
                     <a href="html/experience.html"><button class="primary-btn" data="Know More"></button></a>
                 </div>
             </div>
         </section>
 
         <!-- Skills Part Landing -->
-        <section class="fourthsection">
-            <div class="heading">
-                <h1>Skills</h1>
-            </div>
-            <p>Glimpse of my skills, to learn more click on the Know More.</p>
-
-            <!-- Skills Section for PC -->
-
-            <section class="skill-section skill-land-desk">
-                <div class="left-skill-icon">
-                    <img src="img/skills-technical.svg" alt="tech-skills">
-                    <img src="img/skills-professional.svg" alt="proff-skills">
+        <section class="fourthsection reveal-on-scroll" id="skills">
+            <div class="section-inner">
+                <div class="heading">
+                    <h1>Skills</h1>
                 </div>
-                <div class="content">
-                    <div class="landing-skill-tech">
-                        <div class="skill-head">Technical Skills</div>
-                        <br>
-                        <ul>
-                            <li><i class="fa-brands fa-python"></i> Python</li>
-                            <li><i class="fa-solid fa-c"></i> Programming</li>
-                            <li><i class="fa-brands fa-html5"></i> HTML</li>
-                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                            <li><i class="fa-brands fa-js"></i> Java Script</li>
-                            <li><i class="fa-solid fa-video"></i> Video Editing</li>
-                            <li><i class="fa-solid fa-pen-nib"></i> Graphics Designer</li>
-                        </ul>
+
+                <!-- Skills Section for PC (Each Skill Block Aligned Vertically with its Illustration) -->
+                <section class="skill-section skill-land-desk">
+                    <!-- Row 1: Technical Skills paired & aligned with Technical SVG -->
+                    <div class="skill-pair-row">
+                        <div class="skill-pair-img left-skill-icon">
+                            <img src="img/skills-technical.svg" alt="Technical Skills" decoding="async" loading="lazy">
+                        </div>
+                        <div class="landing-skill-tech content">
+                            <div class="skill-head">Technical Skills</div>
+                            <ul class="aligned-skill-list">
+                                <li><i class="fa-brands fa-react"></i> React.js</li>
+                                <li><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</li>
+                                <li><i class="fa-solid fa-database"></i> MongoDB Atlas</li>
+                                <li><i class="fa-brands fa-python"></i> Python &amp; Applied AI</li>
+                                <li><i class="fa-solid fa-eye"></i> Computer Vision</li>
+                                <li><i class="fa-solid fa-bolt"></i> Power Transformers &amp; Testing</li>
+                                <li><i class="fa-solid fa-tower-broadcast"></i> Substation &amp; Switchgear</li>
+                                <li><i class="fa-solid fa-flask"></i> Electrical Testing &amp; DIALux</li>
+                                <li><i class="fa-solid fa-film"></i> DaVinci Resolve &amp; Premiere</li>
+                                <li><i class="fa-solid fa-palette"></i> Photoshop &amp; Illustrator</li>
+                            </ul>
+                        </div>
                     </div>
 
-
-                    <div class="landing-skill-proff">
-                        <div class="skill-head">Professional Skills</div>
-                        <br>
-                        <ul>
-                            <li><i class="fa-solid fa-head-side-virus"></i> Creativity</li>
-                            <li><i class="fa-solid fa-people-group"></i> Teamwork</li>
-                            <li><i class="fa-solid fa-comments"></i> Communication</li>
-                            <li><i class="fa-solid fa-lightbulb"></i> Problem Solving</li>
-                        </ul>
+                    <!-- Row 2: Professional Skills paired & aligned with Professional SVG -->
+                    <div class="skill-pair-row">
+                        <div class="skill-pair-img left-skill-icon">
+                            <img src="img/skills-professional.svg" alt="Professional Skills" decoding="async" loading="lazy">
+                        </div>
+                        <div class="landing-skill-proff content">
+                            <div class="skill-head">Professional Skills</div>
+                            <ul class="aligned-skill-list">
+                                <li><i class="fa-solid fa-sitemap"></i> System Architecture</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> Industrial Safety &amp; Standards</li>
+                                <li><i class="fa-solid fa-people-group"></i> Cross-Functional Collaboration</li>
+                                <li><i class="fa-solid fa-lightbulb"></i> Problem Solving &amp; Debugging</li>
+                            </ul>
+                        </div>
                     </div>
+                </section>
+
+                <!-- Skills Section for Mobile -->
+                <section class="skill-section skill-land-mob">
+                    <div class="content">
+                        <div class="landing-skill-tech">
+                            <div class="skill-head">Technical Skills</div>
+                            <ul>
+                                <div class="skill-box">
+                                    <li><i class="fa-brands fa-react"></i> React.js</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-database"></i> MongoDB Atlas</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-brands fa-python"></i> Python &amp; AI</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-eye"></i> Computer Vision</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-bolt"></i> Power Transformers</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-tower-broadcast"></i> Substation &amp; Switchgear</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-flask"></i> Testing &amp; DIALux</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-film"></i> Video Editing</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-palette"></i> Graphics Design</li>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <div class="landing-skill-proff">
+                            <div class="skill-head">Professional Skills</div>
+                            <ul>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-sitemap"></i> Architecture</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-shield-halved"></i> Industrial Safety</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-people-group"></i> Teamwork</li>
+                                </div>
+                                <div class="skill-box">
+                                    <li><i class="fa-solid fa-lightbulb"></i> Problem Solving</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="btn">
+                    <a href="html/skills.html"><button class="primary-btn" data="Know More"></button></a>
                 </div>
-            </section>
-
-
-
-            <!-- Skills Section for Mobile -->
-
-            <section class="skill-section skill-land-mob">
-                <div class="content">
-                    <div class="landing-skill-tech">
-                        <div class="skill-head">Technical Skills</div>
-                        <br>
-                        <ul>
-                            <div class="skill-box">
-                                <li><i class="fa-brands fa-python"></i> Python</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-c"></i> Programming</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-brands fa-html5"></i> HTML</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-brands fa-js"></i> Java Script</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-video"></i> Video Editing</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-pen-nib"></i> Graphics Designer</li>
-                            </div>
-                        </ul>
-                    </div>
-
-
-                    <div class="landing-skill-proff">
-                        <div class="skill-head">Professional Skills</div>
-                        <br>
-                        <ul>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-head-side-virus"></i> Creativity</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-people-group"></i> Teamwork</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-comments"></i> Communication</li>
-                            </div>
-                            <div class="skill-box">
-                                <li><i class="fa-solid fa-lightbulb"></i> Problem Solving</li>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <div class="btn">
-                <a href="/html/skills.html" target="_blank"><button class="primary-btn" data="Know More"></button></a>
             </div>
         </section>
 
-        <!-- Project Part Landing -->
-        <section class="fifthsection">
-            <div class="heading">
-                <h1>Projects</h1>
-            </div>
-            <p>I have a proven track record of building projects from the ground up. My process emphasizes thorough
-                planning and user-centric design for both Web Development and Graphics Designing. While Video Editing, I
-                communicate with my clients closely to fulfil their needs aiming to the audience.</p>
+        <!-- ══════════════════════════════════════
+             Selected Projects Section
+        ══════════════════════════════════════ -->
+        <section class="fifthsection" id="projects">
+            <div class="section-inner">
+                <div class="heading reveal-on-scroll">
+                    <h1>Projects</h1>
+                </div>
+                <p class="reveal-on-scroll" style="color: var(--text-sub); max-width: 760px; margin-top: 8px;">
+                    I have a proven track record of building projects from the ground up — from engineering control
+                    simulations and applied AI pipelines to production full-stack web platforms and digital media
+                    design.
+                </p>
 
-            <div class="projects-container">
-                <div class="project-card">
-                    <img src="img/exam-page.png" alt="Project 1">
-                    <div class="overlay">
-                        <a href="img/exam-page.png" class="project-link" target="_blank">Check Photo</a>
+                <div class="projects-modern-grid">
+                    <!-- Project 1: Eduspace (formerly Note Loom) -->
+                    <div class="project-modern-card reveal-on-scroll">
+                        <div class="project-media-wrap">
+                            <img src="img/proj-web-dev/noteloom-preview.png" alt="Eduspace Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Live &amp; Alpha/Beta</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Full-Stack Web Platform · EdTech</div>
+                            <h3 class="project-title">Eduspace (formerly Note Loom)</h3>
+                            <p class="project-summary">
+                                Multi-tenant academic administration and learning platform for higher-education
+                                institutions.
+                                Features role-aware access for students, faculty, and admins, modular attendance
+                                tracking,
+                                and video-based LMS.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">React</span>
+                                <span class="project-tech-pill">Vite</span>
+                                <span class="project-tech-pill">Node.js</span>
+                                <span class="project-tech-pill">Express</span>
+                                <span class="project-tech-pill">MongoDB Atlas</span>
+                                <span class="project-tech-pill">Multi-Tenant</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://eduspace.suvnkr.in" target="_blank" rel="noopener noreferrer"
+                                    class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Platform
+                                </a>
+                                <a href="https://noteloomtest.vercel.app" target="_blank" rel="noopener noreferrer"
+                                    class="project-link-btn project-link-secondary">
+                                    <i class="fa-solid fa-flask"></i> Beta Build
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/survey-form.png" alt="Project 2">
-                    <div class="overlay">
-                        <a href="img/survey-form.png" class="project-link" target="_blank">Check Photo</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/yt-thumb.jpg" alt="Project 3">
-                    <div class="overlay">
-                        <a href="https://www.youtube.com/watch?v=vFYFbY09zVc" class="project-link"
-                            target="_blank">Youtube Video</a>
-                        <a href="img/yt-thumb.jpg" class="project-link" target="_blank">Check Photo</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="img/poster.png" alt="Project 4">
-                    <div class="overlay">
-                        <a href="img/poster.png" class="project-link" target="_blank">Check Photo</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="btn">
-                <a href="html/projects.html" target="_blank"><button class="primary-btn" data="Know More"></button></a>
+                    <!-- Project 2: Leaf Health Classification with YOLO -->
+                    <div class="project-modern-card reveal-on-scroll">
+                        <div class="project-media-wrap">
+                            <img src="img/proj-web-dev/yolo-preview.png" alt="YOLO Leaf Detection Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">92.3% mAP@0.5</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">AI/ML · Research Publication</div>
+                            <h3 class="project-title">Leaf Health Classification (YOLO)</h3>
+                            <p class="project-summary">
+                                Co-authored research study evaluating YOLOv8, YOLOv9, and YOLOv11 for ornamental plant
+                                leaf
+                                disease identification (Ixora &amp; Bougainvillea). Reported 92.3% mAP@0.5. Published in
+                                <em>BIO Web of Conferences</em> (2026).
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Python</span>
+                                <span class="project-tech-pill">YOLOv11</span>
+                                <span class="project-tech-pill">YOLOv9</span>
+                                <span class="project-tech-pill">YOLOv8</span>
+                                <span class="project-tech-pill">PyTorch</span>
+                                <span class="project-tech-pill">Roboflow</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://doi.org/10.1051/bioconf/202622801001" target="_blank"
+                                    rel="noopener noreferrer" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-book-open"></i> Paper DOI
+                                </a>
+                                <a href="https://github.com/Shuvankar2/leaf-health-by-YOLO" target="_blank"
+                                    rel="noopener noreferrer" class="project-link-btn project-link-secondary" aria-label="GitHub"><i
+                                        class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Battery-Constrained EV MPC-ACC -->
+                    <div class="project-modern-card reveal-on-scroll">
+                        <div class="project-media-wrap">
+                            <img src="img/resources/evmpc/ev-1.png" alt="EV MPC Control Preview" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Interactive Twin</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Electrical · Control Systems · Simulation</div>
+                            <h3 class="project-title">Battery-Constrained EV MPC-ACC</h3>
+                            <p class="project-summary">
+                                Interactive browser digital twin simulating adaptive cruise control with battery plant
+                                modeling, open-circuit voltage, state-of-charge tracking, and Extended Kalman Filter
+                                state
+                                estimation comparing MPC with PID.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">Control Systems</span>
+                                <span class="project-tech-pill">EKF Estimator</span>
+                                <span class="project-tech-pill">Python</span>
+                                <span class="project-tech-pill">React</span>
+                                <span class="project-tech-pill">Vite</span>
+                                <span class="project-tech-pill">Simulation</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://ev.suvnkr.in" target="_blank" rel="noopener noreferrer"
+                                    class="project-link-btn project-link-primary"><i class="fa-solid fa-globe"></i> Live
+                                    Website
+                                </a>
+                                <a href="https://github.com/Shuvankar2/ev2026" target="_blank" rel="noopener noreferrer"
+                                    class="project-link-btn project-link-secondary" aria-label="GitHub"><i class="fa-brands fa-github"></i>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Creative & Visual Media -->
+                    <div class="project-modern-card reveal-on-scroll">
+                        <div class="project-media-wrap">
+                            <img src="img/poster.png" alt="Graphic Design Showcase" decoding="async" loading="lazy">
+                            <span class="project-status-badge">Design &amp; Media</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-category-tag">Visual Identity · Multimedia Post-Production</div>
+                            <h3 class="project-title">Digital Media, Video &amp; UI Design</h3>
+                            <p class="project-summary">
+                                5+ years of digital media production: commercial video editing, color grading, high-CTR
+                                YouTube
+                                packaging, vector branding, and UI design using DaVinci Resolve, Premiere Pro,
+                                Photoshop, and
+                                Illustrator.
+                            </p>
+                            <div class="project-tech-pills">
+                                <span class="project-tech-pill">DaVinci Resolve</span>
+                                <span class="project-tech-pill">Premiere Pro</span>
+                                <span class="project-tech-pill">Photoshop</span>
+                                <span class="project-tech-pill">Illustrator</span>
+                                <span class="project-tech-pill">YouTube CTR</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="html/projects-graphics.html" class="project-link-btn project-link-primary">
+                                    <i class="fa-solid fa-palette"></i> Graphics Gallery
+                                </a>
+                                <a href="html/projects-video.html" class="project-link-btn project-link-secondary">
+                                    <i class="fa-solid fa-film"></i> Video Showcase
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn" style="margin-top: 32px;">
+                    <a href="html/projects.html"><button class="primary-btn" data="All Projects"></button></a>
+                </div>
             </div>
         </section>
-        <!-- Project Part Landing Ends -->
+
+
+
+        <!-- ══ Certifications Showcase ══ -->
+        <section class="certifications-landing-section reveal-on-scroll" id="certifications">
+            <div class="section-inner" style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 40px 1.2rem;">
+                <div class="heading">
+                    <h1>Certifications</h1>
+                </div>
+
+                <div class="cert-grid">
+                    <!-- 1. National Test House (Latest: Sep 2026) -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/NTH-certi.jpeg', 'Electrical Engineering Training Certificate', 'National Test House (Eastern Region), Govt. of India')">
+                            <img src="img/resources/certi/NTH-certi.jpeg" alt="NTH Technical Training Certificate" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">Govt. Testing &amp; Calibration</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">National Test House (Govt. of India)</div>
+                            <h3 class="cert-title">Electrical Testing &amp; Standards Trainee</h3>
+                            <p class="cert-desc">Hands-on testing across high-voltage apparatus, transformer diagnostics, and NABL/BIS standards quality verification.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/NTH-certi.jpeg" target="_blank" rel="noopener noreferrer"
+                                    class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/NTH-certi.jpeg', 'Electrical Engineering Training Certificate', 'National Test House (Eastern Region), Govt. of India'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. ONGC (May – Jun 2026) -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/ONGC-certi.jpeg', 'Summer Training in Industrial Electrical Systems', 'Oil and Natural Gas Corporation (ONGC)')">
+                            <img src="img/resources/certi/ONGC-certi.jpeg" alt="ONGC Summer Training Certificate" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">PSU Industrial Training</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">Oil and Natural Gas Corporation (ONGC)</div>
+                            <h3 class="cert-title">Summer Trainee (Electrical Department)</h3>
+                            <p class="cert-desc">Summer training certification covering drilling site operations, electrical control panels, diesel generators, and industrial safety compliance.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/ONGC-certi.jpeg" target="_blank" rel="noopener noreferrer"
+                                    class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/ONGC-certi.jpeg', 'Summer Training in Industrial Electrical Systems', 'Oil and Natural Gas Corporation (ONGC)'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. DPL (May – Jun 2026) -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/dpl-certi.jpeg', 'Vocational Training in Thermal Power & Substations', 'The Durgapur Projects Limited (DPL)')">
+                            <img src="img/resources/certi/dpl-certi.jpeg" alt="DPL Vocational Training Certificate" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">Power Plant Training</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">The Durgapur Projects Limited (DPL)</div>
+                            <h3 class="cert-title">Thermal Power Station &amp; Switchyard Trainee</h3>
+                            <p class="cert-desc">Industrial training in boiler instrumentation, turbine generator units, and switchyard protection relays.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/dpl-certi.jpeg" target="_blank" rel="noopener noreferrer"
+                                    class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/dpl-certi.jpeg', 'Vocational Training in Thermal Power & Substations', 'The Durgapur Projects Limited (DPL)'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. IEM Research Foundation - Eduspace (May – Jul 2026) -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/iemrf-certi2.png', 'Eduspace Summer Internship Certificate', 'IEM Research Foundation', 'img/resources/certi/iemrf-certi2.pdf')">
+                            <img src="img/resources/certi/iemrf-certi2.png" alt="IEMRF Eduspace Certificate Preview" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">Software &amp; AI Internship</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">IEM Research Foundation</div>
+                            <h3 class="cert-title">Eduspace Platform Architecture Internship</h3>
+                            <p class="cert-desc">Recognition for designing backend multi-tenant architecture, LMS video streaming infrastructure, and AI integration for higher-ed institutions.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/iemrf-certi2.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/iemrf-certi2.png', 'Eduspace Summer Internship Certificate', 'IEM Research Foundation', 'img/resources/certi/iemrf-certi2.pdf'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. IEM Research Foundation - Note Loom (Dec 2025 – Feb 2026) -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/iemrf-certi1.png', 'Note Loom Internship Certificate', 'IEM Research Foundation', 'img/resources/certi/iemrf-certi1.pdf')">
+                            <img src="img/resources/certi/iemrf-certi1.png" alt="IEMRF Note Loom Certificate Preview" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">Full-Stack Development</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">IEM Research Foundation</div>
+                            <h3 class="cert-title">Note Loom LMS &amp; ERP Internship</h3>
+                            <p class="cert-desc">Certification for building modular academic ERP components, student portal state management, and real-time collaborative document tools.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/iemrf-certi1.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/iemrf-certi1.png', 'Note Loom Internship Certificate', 'IEM Research Foundation', 'img/resources/certi/iemrf-certi1.pdf'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. IIT Kharagpur Kshitij -->
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrap"
+                            onclick="openCertModal('img/resources/certi/kshitij-certi.jpeg', 'Kshitij Techno-Management Fest Credential', 'IIT Kharagpur')">
+                            <img src="img/resources/certi/kshitij-certi.jpeg" alt="IIT Kharagpur Kshitij Certificate" decoding="async" loading="lazy">
+                            <span class="cert-badge-type">National Tech Fest</span>
+                            <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> Preview Certificate</div>
+                        </div>
+                        <div class="cert-card-body">
+                            <div class="cert-issuer">IIT Kharagpur</div>
+                            <h3 class="cert-title">Kshitij Techno-Management Fest</h3>
+                            <p class="cert-desc">Official certification from Asia's premier annual techno-management festival organized by Indian Institute of Technology Kharagpur.</p>
+                            <div class="cert-actions">
+                                <a href="img/resources/certi/kshitij-certi.jpeg" target="_blank"
+                                    rel="noopener noreferrer" class="cert-open-btn"
+                                    onclick="openCertModal('img/resources/certi/kshitij-certi.jpeg', 'Kshitij Techno-Management Fest Credential', 'IIT Kharagpur'); return false;">
+                                    <i class="fa-solid fa-certificate"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn" style="margin-top: 36px; display: flex; justify-content: center;">
+                    <a href="html/experience.html#certifications"><button class="primary-btn"
+                            data="All Certifications"></button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ LinkedIn Real-Time Feed ══ -->
+        <section class="linkedin-showcase-section reveal-on-scroll" id="linkedin-posts">
+            <div class="linkedin-section-inner">
+
+                <!-- Header -->
+                <div class="linkedin-section-header">
+
+                    <div class="heading">
+                        <h2>Latest from LinkedIn</h2>
+                    </div>
+                    <p class="linkedin-hero-subtitle">
+                        Live engineering milestones, research publications, project architectures, and
+                        industrial insights directly synced from LinkedIn.
+                    </p>
+                    <a href="https://www.linkedin.com/in/shuvankardebnath/" target="_blank" rel="noopener"
+                        class="linkedin-follow-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>Follow @shuvankardebnath</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;opacity:0.7;"></i>
+                    </a>
+                </div>
+
+                <!-- Live Plugin / Widget Container -->
+                <div class="linkedin-feed-container" id="linkedin-feed-container" style="min-height: 380px;">
+                    <!-- Elfsight LinkedIn Feed | Real-time Synced Feed -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-150b502c-4937-4cf8-a239-85bc86ef8b5e" data-elfsight-app-lazy></div>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Me Landing -->
         <section class="sixthsection">
@@ -563,7 +1352,7 @@
                 opportunity to apply my skills and continue growing!</p>
 
             <div class="btn-index-mail">
-                <a href="mailto:shuvankar345@gmail.com" target="_blank"><button class="primary-btn-index-mail"
+                <a href="mailto:shuvankar345@gmail.com" target="_blank" rel="noopener noreferrer"><button class="primary-btn-index-mail"
                         data="Say Hello!"></button></a>
             </div>
         </section>
@@ -582,61 +1371,139 @@
                     <p>Follow On</p>
                     <div class="footer-socials">
                         <div class="footer-socials-container">
-                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social"><i
+                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social" rel="noopener noreferrer" aria-label="Instagram"><i
                                     class="fa-brands fa-instagram"></i></a>
                         </div>
                         <div class="footer-socials-container">
                             <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                     class="fa-brands fa-github"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social"><i
+                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social" rel="noopener noreferrer" aria-label="Facebook"><i
                                     class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social"><i
+                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social" rel="noopener noreferrer" aria-label="YouTube"><i
                                     class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social"><i
+                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
                                     class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                        <div class="footer-socials-container">
-                            <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                    class="fa-brands fa-telegram"></i></a>
                         </div>
                     </div>
                 </section>
 
                 <section class="footer-logo">
-                    <img src="img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem>
+                    <img src="img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem decoding="async">
                 </section>
             </section>
 
             <hr>
 
             <div class="footer-credit">
-                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved.
-                &nbsp;|&nbsp;
-                <a href="html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a>
-                </small></p>
+                <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar. All rights reserved.
+                        &nbsp;|&nbsp;
+                        <a href="html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a>
+                        &nbsp;|&nbsp;
+                        <a href="html/terms-of-use.html" style="color:#00d2ff;text-decoration:underline;">Terms of Use</a>
+                    </small></p>
             </div>
             <hr id="footer-bottom-bar">
         </footer>
     </main>
 
+    <!-- ══════════════════════════════════════════
+         Interactive Experience Gallery Modal
+    ══════════════════════════════════════════ -->
+    <div id="expGalleryModal" class="exp-gallery-modal" role="dialog" aria-modal="true"
+        aria-label="Experience Photo Gallery">
+        <div class="exp-gallery-overlay" onclick="closeExpGallery()"></div>
+        <div class="exp-gallery-container">
+            <div class="exp-gallery-header">
+                <div class="exp-gallery-title-wrap">
+                    <h3 id="galleryTitle">Oil and Natural Gas Corporation (ONGC)</h3>
+                    <div class="exp-gallery-subtitle" id="gallerySubtitle">Industrial Training · Drilling &amp; Rig
+                        Operations</div>
+                </div>
+                <div class="exp-gallery-controls-top">
+                    <button type="button" class="gallery-autoplay-pill" id="galleryAutoplayToggle"
+                        onclick="toggleAutoplay()" title="Toggle 3s Auto-Slide">
+                        <i class="fa-solid fa-pause"></i> <span>Auto (3s)</span>
+                        <div class="gallery-progress-bar">
+                            <div class="gallery-progress-fill" id="galleryProgressFill"></div>
+                        </div>
+                    </button>
+                    <button type="button" class="exp-gallery-close" onclick="closeExpGallery()"
+                        aria-label="Close Gallery">&times;</button>
+                </div>
+            </div>
+            <div class="exp-gallery-body">
+                <button type="button" class="exp-gallery-nav-btn prev" onclick="prevSlide()"
+                    aria-label="Previous Photo">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="exp-gallery-stage">
+                    <img id="galleryActiveImg" src="" alt="Gallery Image" class="exp-gallery-img" decoding="async" loading="lazy">
+                </div>
+                <button type="button" class="exp-gallery-nav-btn next" onclick="nextSlide()" aria-label="Next Photo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="exp-gallery-caption-bar">
+                <div id="galleryCaption" class="exp-gallery-caption">Industrial Inspection</div>
+                <div id="galleryCounter" class="exp-gallery-counter">1 / 7</div>
+            </div>
+            <div class="exp-gallery-thumbs-track" id="galleryThumbsTrack"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         Certificate Preview Lightbox Modal
+    ══════════════════════════════════════════ -->
+    <div id="certPreviewModal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Certificate Preview">
+        <div class="cert-modal-overlay" onclick="closeCertModal()"></div>
+        <div class="cert-modal-container">
+            <div class="cert-modal-header">
+                <div>
+                    <h3 id="certModalTitle">Certificate Credential</h3>
+                    <div style="font-size: 0.8rem; color: var(--brand-sky);" id="certModalIssuer">Issuing Body</div>
+                </div>
+                <button type="button" class="exp-gallery-close" onclick="closeCertModal()"
+                    aria-label="Close Certificate">&times;</button>
+            </div>
+            <div class="cert-modal-body">
+                <img id="certModalImg" src="" alt="Certificate Preview" class="cert-modal-img" decoding="async" loading="lazy">
+            </div>
+            <div class="cert-modal-footer">
+                <span style="font-size: 0.82rem; color: #a0aec0;"><i class="fa-solid fa-certificate"
+                        style="color:#39e168;margin-right:6px;"></i>Official Certification</span>
+                <a id="certModalOpenBtn" href="#" target="_blank" rel="noopener noreferrer" class="cert-open-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Full Document / PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Java Script Part -->
     <script src="js/script.js"></script> <!-- My Script Utility Part -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> <!-- Setup and start animation! -->
     <script>
-        //Typed JS Animated Text
+        // Typed JS Animated Text with Lexend font
         var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Video Editor', 'Graphics Designer'],
-            typeSpeed: 80,
+            strings: [
+                'an Electrical Engineering Student',
+                'a Software & AI Engineer',
+                'a Full-Stack Developer',
+                'a Video Editor & Designer'
+            ],
+            typeSpeed: 65,
+            backSpeed: 35,
+            backDelay: 1800,
+            contentType: 'null',
             loop: true
         });
     </script>
@@ -655,19 +1522,29 @@
             border-radius: 14px;
             padding: 22px 24px;
             z-index: 9999;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
             animation: slideUpBanner 0.4s ease;
         }
+
         @keyframes slideUpBanner {
-            from { opacity: 0; transform: translateX(-50%) translateY(30px); }
-            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
+
         #cookie-banner .cb-header {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
         }
+
         #cookie-banner .cb-header i {
             font-size: 1.3rem;
             background: linear-gradient(90deg, #39e168, #6d64d3);
@@ -675,27 +1552,32 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         #cookie-banner .cb-header h3 {
             font-size: 1rem;
             font-family: 'Poppins', sans-serif;
             color: #fff;
             margin: 0;
         }
+
         #cookie-banner p {
             font-size: 0.82rem;
             color: #8892a4;
             line-height: 1.7;
             margin-bottom: 16px;
         }
+
         #cookie-banner p a {
             color: #00d2ff;
             text-decoration: underline;
         }
+
         .cb-buttons {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
+
         .cb-btn {
             flex: 1;
             min-width: 140px;
@@ -708,63 +1590,107 @@
             font-weight: 600;
             transition: all 0.2s ease;
         }
+
         .cb-btn-necessary {
             background: transparent;
             border: 1px solid rgba(109, 100, 211, 0.5);
             color: #6d64d3;
         }
+
         .cb-btn-necessary:hover {
             border-color: #6d64d3;
-            background: rgba(109,100,211,0.1);
+            background: rgba(109, 100, 211, 0.1);
         }
+
         .cb-btn-all {
             background: linear-gradient(90deg, #39e168, #6d64d3);
             color: #111729;
         }
+
         .cb-btn-all:hover {
             opacity: 0.88;
         }
+
         .cb-cookie-toggle {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-bottom: 14px;
         }
+
         .cb-toggle-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 8px;
             padding: 8px 12px;
         }
+
         .cb-toggle-row span {
             font-size: 0.8rem;
             color: #b0bbcc;
         }
+
         .cb-toggle-row .cb-tag-required {
             font-size: 0.7rem;
             color: #39e168;
-            background: rgba(57,225,104,0.1);
-            border: 1px solid rgba(57,225,104,0.25);
+            background: rgba(57, 225, 104, 0.1);
+            border: 1px solid rgba(57, 225, 104, 0.25);
             padding: 1px 8px;
             border-radius: 20px;
         }
+
         /* toggle switch */
-        .cb-switch { position: relative; display: inline-block; width: 38px; height: 20px; }
-        .cb-switch input { opacity: 0; width: 0; height: 0; }
+        .cb-switch {
+            position: relative;
+            display: inline-block;
+            width: 38px;
+            height: 20px;
+        }
+
+        .cb-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
         .cb-slider {
-            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-            background: #2d3550; border-radius: 20px; transition: 0.3s;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #2d3550;
+            border-radius: 20px;
+            transition: 0.3s;
         }
+
         .cb-slider:before {
-            position: absolute; content: "";
-            height: 14px; width: 14px; left: 3px; bottom: 3px;
-            background: #8892a4; border-radius: 50%; transition: 0.3s;
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background: #8892a4;
+            border-radius: 50%;
+            transition: 0.3s;
         }
-        .cb-switch input:checked + .cb-slider { background: linear-gradient(90deg,#39e168,#6d64d3); }
-        .cb-switch input:checked + .cb-slider:before { transform: translateX(18px); background: white; }
-        .cb-switch input:disabled + .cb-slider { cursor: not-allowed; }
+
+        .cb-switch input:checked+.cb-slider {
+            background: linear-gradient(90deg, #39e168, #6d64d3);
+        }
+
+        .cb-switch input:checked+.cb-slider:before {
+            transform: translateX(18px);
+            background: white;
+        }
+
+        .cb-switch input:disabled+.cb-slider {
+            cursor: not-allowed;
+        }
     </style>
 
     <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie Consent">
@@ -779,32 +1705,36 @@
         </p>
         <div class="cb-cookie-toggle">
             <div class="cb-toggle-row">
-                <span><i class="fa-solid fa-lock" style="font-size:0.75rem;margin-right:6px;color:#39e168"></i>Strictly Necessary</span>
+                <span><i class="fa-solid fa-lock" style="font-size:0.75rem;margin-right:6px;color:#39e168"></i>Strictly
+                    Necessary</span>
                 <span class="cb-tag-required">Always On</span>
             </div>
             <div class="cb-toggle-row">
-                <span><i class="fa-solid fa-chart-bar" style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Analytics</span>
-                <label class="cb-switch"><input type="checkbox" id="cb-analytics" checked><span class="cb-slider"></span></label>
+                <span><i class="fa-solid fa-chart-bar"
+                        style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Analytics</span>
+                <label class="cb-switch"><input type="checkbox" id="cb-analytics" checked><span
+                        class="cb-slider"></span></label>
             </div>
             <div class="cb-toggle-row">
-                <span><i class="fa-solid fa-rectangle-ad" style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Advertising</span>
-                <label class="cb-switch"><input type="checkbox" id="cb-advertising" checked><span class="cb-slider"></span></label>
+                <span><i class="fa-solid fa-rectangle-ad"
+                        style="font-size:0.75rem;margin-right:6px;color:#6d64d3"></i>Advertising</span>
+                <label class="cb-switch"><input type="checkbox" id="cb-advertising" checked><span
+                        class="cb-slider"></span></label>
             </div>
         </div>
         <div class="cb-buttons">
-            <button class="cb-btn cb-btn-necessary" id="cb-accept-necessary"
-                onclick="cookieConsent('necessary')">Accept Only Necessary</button>
-            <button class="cb-btn cb-btn-all" id="cb-accept-all"
-                onclick="cookieConsent('all')">Accept All</button>
+            <button class="cb-btn cb-btn-necessary" id="cb-accept-necessary" onclick="cookieConsent('necessary')">Accept
+                Only Necessary</button>
+            <button class="cb-btn cb-btn-all" id="cb-accept-all" onclick="cookieConsent('all')">Accept All</button>
         </div>
     </div>
 
     <script>
         // Cookie Consent Logic
-        (function() {
+        (function () {
             var consent = localStorage.getItem('suvnkr_cookie_consent');
             if (!consent) {
-                setTimeout(function() {
+                setTimeout(function () {
                     var banner = document.getElementById('cookie-banner');
                     if (banner) banner.style.display = 'block';
                 }, 800);

@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="description" content="Technical & Engineering Skills of Shuvankar Debnath: Full-stack MERN, Python, TypeScript, React, Applied AI, Computer Vision, and Cloud tools.">
-    <meta name="keywords" content="SUVNKR, Shuvankar Debnath, Skills Shuvankar Debnath, Python, MERN stack, TypeScript, React, Computer Vision, Applied AI">
+    <meta name="description" content="Technical & Engineering Skills of Shuvankar Debnath: Full-Stack Web (MERN), Applied AI, Computer Vision, Industrial Electrical Systems, and Creative Post-Production.">
+    <meta name="keywords" content="SUVNKR, Shuvankar Debnath, Skills Shuvankar Debnath, Python, MERN stack, React, Deep Learning, Applied AI, Electrical Engineering, Power Systems">
     <meta name="author" content="Shuvankar Debnath (SUVNKR)">
     <title>Technical Skills & Stack — Shuvankar Debnath (SUVNKR)</title>
     <link rel="canonical" href="https://suvnkr.in/html/skills.html">
@@ -19,43 +19,14 @@
     <meta property="og:site_name" content="Shuvankar Debnath">
     <meta property="og:url" content="https://suvnkr.in/html/skills.html">
     <meta property="og:title" content="Technical Skills & Stack — Shuvankar Debnath (SUVNKR)">
-    <meta property="og:description" content="Comprehensive technical stack of Shuvankar Debnath: Python, MERN stack, React, TypeScript, Applied AI, and Cloud architecture.">
+    <meta property="og:description" content="Comprehensive technical stack of Shuvankar Debnath: Full-Stack MERN, Applied AI, Industrial Electrical Systems, and Post-Production.">
     <meta property="og:image" content="https://suvnkr.in/img/Logo-White.svg">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "url": "https://suvnkr.in/html/skills.html",
-        "name": "Skills — Shuvankar Debnath",
-        "description": "Technical & engineering skills of Shuvankar Debnath."
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://suvnkr.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Skills",
-            "item": "https://suvnkr.in/html/skills.html"
-          }
-        ]
-      }
-    ]
-    </script>
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -63,7 +34,338 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/about.css">
     <link rel="stylesheet" href="../css/experience.css">
-    <link rel="stylesheet" href="../css/skills.css">
+    <link rel="stylesheet" href="../css/skills.css?v=20261121">
+
+    <style>
+        :root {
+            --brand-green: #39e168;
+            --brand-purple: #6d64d3;
+            --brand-sky: #00d2ff;
+            --brand-gradient: linear-gradient(90deg, #39e168 -1.88%, #6d64d3 104.56%);
+            --navy-base: #111729;
+            --navy-surface: #1d2334;
+            --text-main: #ffffff;
+            --text-sub: #c2bad2;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* ── Skills Section Layout & Margins (Matches Experience & About) ── */
+        .skills-section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 1.2rem 60px;
+            box-sizing: border-box;
+        }
+
+        .skills-firstsection {
+            width: 100%;
+            max-width: 1140px;
+            padding: 10px 0 40px;
+            box-sizing: border-box;
+        }
+
+        /* ── Section Heading & Subtitle ── */
+        .skills-section .heading {
+            margin: 45px auto 16px;
+            font-family: "Lexend", sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #39e168 -1.88%, #6d64d3 104.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .skills-section .heading h1 {
+            all: unset;
+            display: block;
+        }
+
+        .skills-hero-subtitle {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            max-width: 760px;
+            margin: 0 auto 36px;
+            line-height: 1.65;
+            text-align: center;
+        }
+
+        /* ── Interactive Category Filter Pills ── */
+        .skills-filter-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 0 44px;
+        }
+
+        .skill-filter-btn {
+            background: rgba(29, 35, 52, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c2bad2;
+            padding: 9px 20px;
+            border-radius: 24px;
+            font-size: 0.88rem;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s var(--ease-out);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-filter-btn:hover {
+            background: rgba(57, 225, 104, 0.12);
+            border-color: rgba(57, 225, 104, 0.35);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .skill-filter-btn.is-active {
+            background: linear-gradient(135deg, rgba(57, 225, 104, 0.22), rgba(109, 100, 211, 0.32));
+            border-color: var(--brand-green);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(57, 225, 104, 0.25);
+        }
+
+        .skill-filter-btn .filter-count {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        .skill-filter-btn.is-active .filter-count {
+            background: var(--brand-green);
+            color: #111729;
+            font-weight: 700;
+        }
+
+        /* ── Category Container Group ── */
+        .skills-category-group {
+            background: #1d2334;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px 30px;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .skills-category-group:hover {
+            border-color: rgba(57, 225, 104, 0.3);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .skills-cat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .skills-cat-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .skills-cat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(57, 225, 104, 0.12);
+            border: 1px solid rgba(57, 225, 104, 0.3);
+            color: var(--brand-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .skills-cat-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .skills-cat-badge {
+            background: rgba(109, 100, 211, 0.15);
+            border: 1px solid rgba(109, 100, 211, 0.35);
+            color: #b7aeff;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        /* ── Modern Skills Grid ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item-card {
+            background: rgba(17, 23, 41, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item-card:hover {
+            background: rgba(29, 35, 52, 0.95);
+            border-color: rgba(57, 225, 104, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px rgba(57, 225, 104, 0.08);
+        }
+
+        .skill-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .skill-card-icon {
+            font-size: 1.45rem;
+            color: var(--brand-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+        }
+
+        .skill-card-badge {
+            font-size: 0.72rem;
+            font-family: 'Lexend', sans-serif;
+            padding: 2px 9px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--brand-sky);
+            font-weight: 500;
+        }
+
+        .skill-card-name {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .skill-card-desc {
+            font-size: 0.84rem;
+            color: var(--text-sub);
+            line-height: 1.55;
+            margin-top: auto;
+        }
+
+        /* ── Language Cards ── */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .lang-card {
+            background: rgba(17, 23, 41, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.25s var(--ease-out);
+        }
+
+        .lang-card:hover {
+            border-color: rgba(57, 225, 104, 0.35);
+            transform: translateY(-2px);
+            background: rgba(29, 35, 52, 0.95);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .lang-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(57, 225, 104, 0.12);
+            border: 1px solid rgba(57, 225, 104, 0.3);
+            color: var(--brand-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+
+        .lang-name {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .lang-level {
+            font-size: 0.82rem;
+            color: var(--brand-sky);
+            font-weight: 500;
+        }
+
+        .exp-end {
+            text-align: center;
+            margin: 40px auto 20px;
+            color: #8b95a8;
+            font-size: 0.9rem;
+        }
+
+        /* ── Responsive Styling ── */
+        @media (max-width: 900px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-category-group {
+                padding: 22px 18px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .lang-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-cat-title {
+                font-size: 1.25rem;
+            }
+            .skills-section .heading {
+                font-size: 2.3rem;
+                margin: 36px auto 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -71,7 +373,7 @@
     <header>
         <nav>
             <div class="left">
-                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem></a>
+                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem decoding="async"></a>
             </div>
             <div class="right">
                 <ul class="nav-desktop">
@@ -83,7 +385,7 @@
                         <div class="menu-bar">
                             <p><i class="fa-solid fa-bars menu-margin"></i></p>
                         </div>
-                    </li> <!-- Skills, Contact -->
+                    </li>
                 </ul>
 
                 <ul class="nav-mobile">
@@ -93,14 +395,13 @@
                         </div>
                     </li>
                 </ul>
-
             </div>
 
-            <!-- More Menu Sidebar -->
+                        <!-- More Menu Sidebar -->
             <div class="menu-sidebar">
 
-                <div class="close-menu-bar menu-bar">
-                    <p><i class="fa-solid fa-xmark menu-margin"></i></p>
+                <div class="close-menu-bar menu-bar" aria-label="Close menu">
+                    <p><i class="fa-solid fa-xmark"></i></p>
                 </div>
 
                 <div class="sidebar-content">
@@ -108,79 +409,117 @@
 
                         <!-- Desktop Menu -->
                         <ul class="menu-lists nav-desktop">
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:1;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:6;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:7;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
                         </ul>
-                        
+
                         <!-- Mobile-Menu -->
                         <ul class="menu-lists nav-mobile">
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:1;">
                                 <a href="https://suvnkr.in/" class="menu-nav-link">
-                                    <i class="fa-solid fa-house menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-house"></i></span>
                                     <span class="nav-link">Home</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/about.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-user-secret  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="about.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-user"></i></span>
                                     <span class="nav-link">About</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/experience.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-bars-progress menu-icon"></i>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="experience.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-briefcase"></i></span>
                                     <span class="nav-link">Experiences</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/projects.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-diagram-project menu-icon"></i>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="projects.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-layer-group"></i></span>
                                     <span class="nav-link">Projects</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:6;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:7;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:8;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:9;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:10;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:11;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
@@ -194,28 +533,28 @@
                             <div class="menu-socials">
                                 <div class="menu-socials-container">
                                     <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta"
-                                        target="_social"><i class="fa-brands fa-instagram"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
                                     <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                        target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                             class="fa-brands fa-github"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                            class="fa-brands fa-telegram"></i></a>
+                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
+                                        target="_social" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
-                                        target="_social"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
                                 </div>
                             </div>
                         </section>
                         <div class="footer-credit">
-                            <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar</small></p>
+                            <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar</small></p>
                         </div>
                     </div>
                 </div>
@@ -228,298 +567,435 @@
     </div>
     <main>
         <section class="head-image-container">
-            <img src="../img/skill-head.jpg" alt="head img">
+            <img src="../img/skill-head.jpg" alt="head img" decoding="async">
         </section>
-        <!-- Skills Content Starts -->
-        <section class="about">
+
+        <!-- Skills Section Starts -->
+        <section class="skills-section">
             <div class="heading">
-                <h1>Skills</h1>
+                <h1>Skills &amp; Expertise</h1>
             </div>
 
-            <!-- Technical Skills Part -->
+            <div class="skills-firstsection">
+                <p class="skills-hero-subtitle">
+                    Core technical competencies across full-stack software development, applied AI, industrial electrical infrastructure, and digital media production — developed through industry internships, platform development, and research.
+                </p>
 
-            <div class="about-firstsection">
-                <h2><span>Technical Skills <i class="fa-solid fa-laptop-code"></i></span></h2>
-                <p>A list of technical skills I have acquired, showcasing my proficiency in various domains, these
-                    technical skills encompass a wide range of expertise. Each skill contributes to my ability to create
-                    dynamic, visually appealing, and highly functional digital content.</p>
-            </div>
+                <!-- Filter Navigation Pills -->
+                <div class="skills-filter-nav">
+                    <button class="skill-filter-btn is-active" data-filter="all">
+                        <i class="fa-solid fa-shapes"></i> All Disciplines <span class="filter-count">35</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="web">
+                        <i class="fa-solid fa-code"></i> Full-Stack Web <span class="filter-count">6</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="ai">
+                        <i class="fa-solid fa-brain"></i> Applied AI &amp; Software <span class="filter-count">6</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="electrical">
+                        <i class="fa-solid fa-bolt"></i> Electrical &amp; Industrial <span class="filter-count">8</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="creative">
+                        <i class="fa-solid fa-palette"></i> Creative &amp; Media <span class="filter-count">6</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="tools">
+                        <i class="fa-solid fa-wrench"></i> Developer Tools <span class="filter-count">5</span>
+                    </button>
+                    <button class="skill-filter-btn" data-filter="languages">
+                        <i class="fa-solid fa-language"></i> Languages <span class="filter-count">3</span>
+                    </button>
+                </div>
 
-            <div class="experience-container">
-                <div class="experience">
-                    <div class="year"><i class="fa-brands fa-html5"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">HTML<span class="toggle-icon">▼</span></div>
-                        <div class="duration">Completed with learning from
-                            <a href="https://youtu.be/HcOc7P5BMi4?si=etUjWyaUZqRHnDIS">You Tube</a>
+                <!-- 1. Full-Stack Web Development -->
+                <div class="skills-category-group" data-category="web">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-code"></i></div>
+                            <h2 class="skills-cat-title">Full-Stack Web Development</h2>
                         </div>
-                        <div class="description">
-                            <ul>
-                                <br>
-                                <li>Proefficient <i class="fa-solid fa-circle-check"></i></li>
-                                <br>
-                                <li>Completed with basics.</li>
-                                <br>
-                                <li>Have a strong grip by making projects.</li>
-                            </ul>
+                        <span class="skills-cat-badge">Production Full-Stack · MERN Architecture</span>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-react"></i></div>
+                                <span class="skill-card-badge">Frontend</span>
+                            </div>
+                            <div class="skill-card-name">React.js</div>
+                            <div class="skill-card-desc">Component-driven architecture, custom hooks, context API, state synchronization, and reactive UI workflows.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-node-js"></i></div>
+                                <span class="skill-card-badge">Backend Runtime</span>
+                            </div>
+                            <div class="skill-card-name">Node.js &amp; Express.js</div>
+                            <div class="skill-card-desc">RESTful API routing, modular controllers, middleware authentication, rate limiting, and CORS security.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-database"></i></div>
+                                <span class="skill-card-badge">Database</span>
+                            </div>
+                            <div class="skill-card-name">MongoDB Atlas &amp; Mongoose</div>
+                            <div class="skill-card-desc">Schema modeling, aggregation pipelines, query profiling, indexing strategies, and cloud Atlas clustering.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-js"></i></div>
+                                <span class="skill-card-badge">Core Language</span>
+                            </div>
+                            <div class="skill-card-name">JavaScript (ES6+)</div>
+                            <div class="skill-card-desc">Asynchronous programming, promises, async/await, closures, event-driven DOM handling, and modular ES standards.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                                <span class="skill-card-badge">Architecture</span>
+                            </div>
+                            <div class="skill-card-name">RESTful API Engineering</div>
+                            <div class="skill-card-desc">Scalable endpoint architecture, token-based JWT authorization, request payload validation, and JSON serialization.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-html5"></i></div>
+                                <span class="skill-card-badge">Layout &amp; Styling</span>
+                            </div>
+                            <div class="skill-card-name">HTML5 &amp; Modern CSS3</div>
+                            <div class="skill-card-desc">Semantic document markup, CSS Grid, Flexbox systems, custom keyframe animations, and responsive styling.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-brands fa-css3-alt"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">CSS<span class="toggle-icon">▼</span></div>
-                        <div class="duration">Completed with learning from
-                            <a href="https://youtu.be/Edsxf_NBFrw?si=lx-kgAeoe8cwfSJm">You Tube</a>
+                <!-- 2. Applied AI & Software Engineering -->
+                <div class="skills-category-group" data-category="ai">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h2 class="skills-cat-title">Applied AI &amp; Software Engineering</h2>
                         </div>
-                        <div class="description">
-                            <ul>
-                                <br>
-                                <li>Proefficient <i class="fa-solid fa-circle-check"></i></li>
-                                <br>
-                                <li>Completed with basics.</li>
-                                <br>
-                                <li>Given me further boost for the frontend development</li>
-                            </ul>
+                        <span class="skills-cat-badge">Machine Learning · LLM Integration · Systems</span>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-python"></i></div>
+                                <span class="skill-card-badge">Core AI &amp; Scripting</span>
+                            </div>
+                            <div class="skill-card-name">Python</div>
+                            <div class="skill-card-desc">Algorithmic programming, automated data preprocessing, model inference pipelines, and backend scripting.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-microchip"></i></div>
+                                <span class="skill-card-badge">Intelligent Systems</span>
+                            </div>
+                            <div class="skill-card-name">Applied AI &amp; LLM Integration</div>
+                            <div class="skill-card-desc">LLM orchestration, structured prompt engineering, context injection, and AI-driven automated feedback pipelines.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-eye"></i></div>
+                                <span class="skill-card-badge">Deep Learning</span>
+                            </div>
+                            <div class="skill-card-name">Computer Vision &amp; Object Detection</div>
+                            <div class="skill-card-desc">Multi-generation YOLOv8, YOLOv9, and YOLOv11 benchmark pipelines with Roboflow annotations achieving ~92% mAP.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <span class="skill-card-badge">Model Evaluation</span>
+                            </div>
+                            <div class="skill-card-name">Model Benchmarking &amp; Metrics</div>
+                            <div class="skill-card-desc">Empirical performance evaluation across precision, recall, mAP@50-95, inference latency, and edge deployment profiles.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-c"></i></div>
+                                <span class="skill-card-badge">Systems Foundation</span>
+                            </div>
+                            <div class="skill-card-name">C Programming</div>
+                            <div class="skill-card-desc">Low-level computational fundamentals, memory pointers, algorithmic problem solving, and core data structures.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-cubes"></i></div>
+                                <span class="skill-card-badge">SaaS Design</span>
+                            </div>
+                            <div class="skill-card-name">Multi-Tenant Architecture</div>
+                            <div class="skill-card-desc">Role-Based Access Control (RBAC), multi-user session state, secure credential handling, and scalable schema separation.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-brands fa-js"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">Java Script<span class="toggle-icon">▼</span>
+                <!-- 3. Electrical & Industrial Engineering -->
+                <div class="skills-category-group" data-category="electrical">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h2 class="skills-cat-title">Electrical &amp; Industrial Engineering</h2>
                         </div>
-                        <div class="duration">Ongoing learning from
-                            <a href="https://www.youtube.com/playlist?list=PLGjplNEQ1it_oTvuLRNqXfz_v_0pq6unW">You
-                                Tube</a>
+                        <span class="skills-cat-badge">Energy Infrastructure · Lab Standards · Power Systems</span>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-plug"></i></div>
+                                <span class="skill-card-badge">High-Voltage Equipment</span>
+                            </div>
+                            <div class="skill-card-name">Power Transformers &amp; Testing</div>
+                            <div class="skill-card-desc">Inspection of power step-up/step-down transformers, winding resistance, and oil dielectric breakdown voltage (BDV) tests.</div>
                         </div>
-                        <div class="description">
-                            <ul>
-                                <br>
-                                <li>Practicing everyday learning</li>
-                                <br>
-                                <li>Given me exposure for adding events and many more to frontend</li>
-                            </ul>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+                                <span class="skill-card-badge">Grid Infrastructure</span>
+                            </div>
+                            <div class="skill-card-name">Switchyard &amp; Substation Operations</div>
+                            <div class="skill-card-desc">220kV &amp; 132kV busbar arrangements, SF6 gas circuit breakers, vacuum breakers, isolators, and CT/PT monitoring.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-sliders"></i></div>
+                                <span class="skill-card-badge">Industrial Automation</span>
+                            </div>
+                            <div class="skill-card-name">Control Panels &amp; Switchgear</div>
+                            <div class="skill-card-desc">Motor Control Centers (MCC), Power Control Centers (PCC), relay protection coordination, and schematic interpretation.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-gears"></i></div>
+                                <span class="skill-card-badge">Auxiliary Power</span>
+                            </div>
+                            <div class="skill-card-name">Diesel Generator (DG) Backup Systems</div>
+                            <div class="skill-card-desc">Standby industrial DG sets, automatic transfer switches (ATS), synchronization, and critical load reliability.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-flask"></i></div>
+                                <span class="skill-card-badge">Govt. Lab Standards</span>
+                            </div>
+                            <div class="skill-card-name">Electrical Testing &amp; Metrology</div>
+                            <div class="skill-card-desc">High-voltage lab bench calibration, Megger insulation resistance testing, and dielectric safety verifications.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                                <span class="skill-card-badge">Illuminance Simulation</span>
+                            </div>
+                            <div class="skill-card-name">DIALux Lighting Design</div>
+                            <div class="skill-card-desc">3D photometric calculation, lux level optimization, luminaire selection, and compliant indoor/outdoor lighting layouts.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                                <span class="skill-card-badge">Accreditation</span>
+                            </div>
+                            <div class="skill-card-name">NABL &amp; ISO Calibration Workflows</div>
+                            <div class="skill-card-desc">Standard operating procedures (SOP), measurement uncertainty tracking, test reporting, and laboratory audit compliance.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <span class="skill-card-badge">Plant Safety</span>
+                            </div>
+                            <div class="skill-card-name">Industrial Safety Compliance (DGMS / OISD)</div>
+                            <div class="skill-card-desc">Regulatory adherence to DGMS and OISD protocols, hazard mitigation, earthing integrity, and high-voltage PPE standards.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-brands fa-python"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">Python<span class="toggle-icon">▼</span></div>
-                        <div class="duration">Completed with learning from
-                            <a
-                                href="https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&si=OUTyx9w9JREKjgxw">You
-                                Tube</a>
+                <!-- 4. Creative Design & Media Production -->
+                <div class="skills-category-group" data-category="creative">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-palette"></i></div>
+                            <h2 class="skills-cat-title">Creative Design &amp; Media Production</h2>
                         </div>
-                        <div class="description">
-                            <ul>
-                                <br>
-                                <li>Coding frequently to have a strong grip</li>
-                                <br>
-                                <li>Learnt with basics</li>
-                                <br>
-                                <li>Given me exposure to machine learning</li>
-                            </ul>
+                        <span class="skills-cat-badge">Post-Production · Brand Identity · UI Graphics</span>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-film"></i></div>
+                                <span class="skill-card-badge">Post-Production</span>
+                            </div>
+                            <div class="skill-card-name">DaVinci Resolve</div>
+                            <div class="skill-card-desc">Multi-track video editing, color correction and grading workflows, audio normalization, and cinematic delivery.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-video"></i></div>
+                                <span class="skill-card-badge">Video Editing</span>
+                            </div>
+                            <div class="skill-card-name">Adobe Premiere Pro</div>
+                            <div class="skill-card-desc">Dynamic timeline editing, multicam sync, audio balance, pacing, and multi-format export optimization.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-image"></i></div>
+                                <span class="skill-card-badge">Digital Imaging</span>
+                            </div>
+                            <div class="skill-card-name">Adobe Photoshop</div>
+                            <div class="skill-card-desc">High-conversion YouTube thumbnail packaging, layer composites, lighting manipulation, and visual assets.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                                <span class="skill-card-badge">Vector Design</span>
+                            </div>
+                            <div class="skill-card-name">Adobe Illustrator</div>
+                            <div class="skill-card-desc">Scalable vector logos, branding assets, custom vector iconography, and illustration typography.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-brush"></i></div>
+                                <span class="skill-card-badge">Rapid Prototyping</span>
+                            </div>
+                            <div class="skill-card-name">Canva Pro</div>
+                            <div class="skill-card-desc">Rapid social media design, deck formatting, marketing collateral, and promotional campaign materials.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                                <span class="skill-card-badge">Audience Retention</span>
+                            </div>
+                            <div class="skill-card-name">YouTube Growth &amp; Packaging</div>
+                            <div class="skill-card-desc">Visual storytelling, high-CTR thumbnail theory, title synergy, pacing strategies, and audience engagement optimization.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-brands fa-c"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">C Programming<span class="toggle-icon">▼</span>
+                <!-- 5. Developer Tools & Workflows -->
+                <div class="skills-category-group" data-category="tools">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h2 class="skills-cat-title">Developer Tools &amp; Workflows</h2>
                         </div>
-                        <div class="duration">Completed with learning from
-                            <a href="https://youtu.be/YXcgD8hRHYY?si=Hk4NyGuXzZgznJ7r">You Tube</a> and <a
-                                href="https://iem.edu.in">My College</a>
+                        <span class="skills-cat-badge">Toolchain · Version Control · Testing</span>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-brands fa-github"></i></div>
+                                <span class="skill-card-badge">Version Control</span>
+                            </div>
+                            <div class="skill-card-name">Git &amp; GitHub</div>
+                            <div class="skill-card-desc">Branch management, merge workflows, commit conventions, pull request reviews, and remote repository syncing.</div>
                         </div>
-                        <div class="description">
-                            <ul>
-                                <br>
-                                <li>Got exposure to Data Structures & Algorithm as B. Tech 1st year</li>
-                            </ul>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-vial"></i></div>
+                                <span class="skill-card-badge">API Testing</span>
+                            </div>
+                            <div class="skill-card-name">Postman</div>
+                            <div class="skill-card-desc">Endpoint validation, automated environment variables, test script assertions, and mock API development.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-compass"></i></div>
+                                <span class="skill-card-badge">Database GUI</span>
+                            </div>
+                            <div class="skill-card-name">MongoDB Compass</div>
+                            <div class="skill-card-desc">Graphical database inspection, aggregation pipeline builder, index profiling, and query performance tuning.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                <span class="skill-card-badge">Build Systems</span>
+                            </div>
+                            <div class="skill-card-name">Vite &amp; Frontend Tooling</div>
+                            <div class="skill-card-desc">Modern frontend bundling, fast Hot Module Replacement (HMR), asset optimization, and npm module ecosystems.</div>
+                        </div>
+
+                        <div class="skill-item-card">
+                            <div class="skill-card-top">
+                                <div class="skill-card-icon"><i class="fa-solid fa-terminal"></i></div>
+                                <span class="skill-card-badge">CLI &amp; Environment</span>
+                            </div>
+                            <div class="skill-card-name">Linux / Shell Commands</div>
+                            <div class="skill-card-desc">Command-line navigation, file permissions, background process handling, and server management essentials.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-video"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">Video Editing<span class="toggle-icon">▼</span>
+                <!-- 6. Languages -->
+                <div class="skills-category-group" data-category="languages">
+                    <div class="skills-cat-header">
+                        <div class="skills-cat-title-wrap">
+                            <div class="skills-cat-icon"><i class="fa-solid fa-language"></i></div>
+                            <h2 class="skills-cat-title">Languages</h2>
                         </div>
-                        <div class="duration">Learning with new styles of trend edits
-                            <div class="description">
-                                <ul>
-                                    <br>
-                                    <li>5+ years of video editing experience</li>
-                                    <br>
-                                    <li>Proefficient with Vlogs, Teasers, Promo, Tutorial / Documentary, Shorts / Reels
-                                    </li>
-                                    <br>
-                                    <li>Holding good knowledge about You Tube <i class="fa-brands fa-youtube"
-                                            style="color: red;"></i> and its Algorithm</li>
-                                    <br>
-                                    <li>Proefficient with Wondershare filmora PC <img src="../img/filmora.png"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    <br>
-                                    <li>Proefficient with Adobe Premiere Pro <img src="../img/premiere-pro.png"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    </li>
-                                    <br>
-                                    <li>Knows with basic Adobe After Effects <img src="../img/after-effects.png"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    </li>
-                                </ul>
+                        <span class="skills-cat-badge">Multilingual Communication</span>
+                    </div>
+                    <div class="lang-grid">
+                        <div class="lang-card">
+                            <div class="lang-avatar">En</div>
+                            <div>
+                                <div class="lang-name">English</div>
+                                <div class="lang-level">Professional Working Proficiency</div>
+                                <div class="skill-card-desc" style="margin-top:4px;">Technical documentation, engineering communication, research papers, and cross-functional presentations.</div>
+                            </div>
+                        </div>
+
+                        <div class="lang-card">
+                            <div class="lang-avatar">हिं</div>
+                            <div>
+                                <div class="lang-name">Hindi (हिंदी)</div>
+                                <div class="lang-level">Native / Bilingual Proficiency</div>
+                                <div class="skill-card-desc" style="margin-top:4px;">Fluent conversational and professional communication across technical and non-technical teams.</div>
+                            </div>
+                        </div>
+
+                        <div class="lang-card">
+                            <div class="lang-avatar">বাং</div>
+                            <div>
+                                <div class="lang-name">Bengali (বাংলা)</div>
+                                <div class="lang-level">Native / Mother Tongue</div>
+                                <div class="skill-card-desc" style="margin-top:4px;">Native spoken and written fluency with complete bilingual command.</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-paintbrush"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">Graphics Designing<span
-                                class="toggle-icon">▼</span></div>
-                        <div class="duration">Learning with new styles of trend edits
-                            <div class="description">
-                                <ul>
-                                    <br>
-                                    <li>Proefficient making in trending social media posts & posters</li>
-                                    <br>
-                                    <li>Proefficient with Canva <img src="../img/canva.jpeg" alt="icon-toggle-bar"
-                                            class="img-toggle"></li>
-                                    <br>
-                                    <li>Proefficient with Adobe Photoshop <img src="../img/photoshop.png"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    </li>
-                                    <br>
-                                    <li>Knowledge of basics in Adobe Illustrator <img src="../img/illustrator.avif"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Scroll to Top Button -->
+                <button id="scrollToTopBtn" class="scrollToTopBtn" onclick="scrollToTop()">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
 
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-image"></i></div>
-                    <div class="details">
-                        <div class="title" onclick="toggleDetails(this)">Thumbnail Designing<span
-                                class="toggle-icon">▼</span></div>
-                        <div class="duration">Learning with new styles of You Tube thumbnails
-                            <div class="description">
-                                <ul>
-                                    <br>
-                                    <li>Holding good knowledge about You Tube <i class="fa-brands fa-youtube"
-                                            style="color: red;"></i> and its Algorithm</li>
-                                    <br>
-                                    <li>Proefficient with Canva <img src="../img/canva.jpeg" alt="icon-toggle-bar"
-                                            class="img-toggle"></li>
-                                    <br>
-                                    <li>Proefficient with Adobe Photoshop <img src="../img/photoshop.png"
-                                            alt="icon-toggle-bar" class="img-toggle"></li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="exp-end">
+                    <p>--- End of Skills &amp; Stack Portfolio ---</p>
                 </div>
             </div>
-
-            <!-- Technical Skills Part Ends -->
-
-
-
-            <!-- Proff Skills Part -->
-
-            <div class="about-firstsection">
-                <h2><span>Professional Skills <i class="fa-solid fa-user-tie"></i></span></h2>
-                <p>My professional skills include effective project management, creative problem-solving, and strong
-                    communication abilities, which have consistently driven successful outcomes in web development,
-                    graphic design, and video editing projects.</p>
-            </div>
-
-            <div class="experience-container">
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-pen"></i></div>
-                    <div class="details">
-                        <div class="skill-name">Creativity</div>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-people-group"></i></div>
-                    <div class="details">
-                        <div class="skill-name">Teamwork</div>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-phone"></i></div>
-                    <div class="details">
-                        <div class="skill-name">Communication</div>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="year"><i class="fa-solid fa-lightbulb"></i></div>
-                    <div class="details">
-                        <div class="skill-name">Problem Solving</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proff Skills Part Ends -->
-
-
-
-            <!-- Lang Skills Part -->
-
-            <div class="about-firstsection">
-                <h2><span>Language Skills <i class="fa-solid fa-language"></i></span></h2>
-                <p>Language skills include the languages which I know and I can speak.</p>
-            </div>
-
-            <div class="experience-container">
-                <div class="experience">
-                    <div class="year">En</div>
-                    <div class="details">
-                        <div class="skill-name">English</div>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="year">हिंदी</div>
-                    <div class="details">
-                        <div class="skill-name">Hindi</div>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="year">বাংলা</div>
-                    <div class="details">
-                        <div class="skill-name">Bengali</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scroll to Top Button -->
-        <button id="scrollToTopBtn" class="scrollToTopBtn" onclick="scrollToTop()">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
-        <!-- Scroll to Top Button -->
-         
-            <!-- Lang Skills Part Ends -->
-
-            <div class="exp-end">
-                    <p> --- You've reached end of this page! --- </span></p>
-                </div>
         </section>
+        <!-- Skills Section Ends -->
+
         <!-- Footer Part -->
         <footer>
             <section class="footer-first">
@@ -527,52 +1003,82 @@
                     <p>Follow On</p>
                     <div class="footer-socials">
                         <div class="footer-socials-container">
-                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social"><i
+                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social" rel="noopener noreferrer" aria-label="Instagram"><i
                                     class="fa-brands fa-instagram"></i></a>
                         </div>
                         <div class="footer-socials-container">
                             <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                     class="fa-brands fa-github"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social"><i
+                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social" rel="noopener noreferrer" aria-label="Facebook"><i
                                     class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social"><i
+                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social" rel="noopener noreferrer" aria-label="YouTube"><i
                                     class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social"><i
+                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
                                     class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                        <div class="footer-socials-container">
-                            <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                    class="fa-brands fa-telegram"></i></a>
                         </div>
                     </div>
                 </section>
 
                 <section class="footer-logo">
-                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem>
+                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem decoding="async">
                 </section>
             </section>
 
             <hr>
 
-            <div class="footer-credit">
-                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved. &nbsp;|&nbsp; <a href="../html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a></small></p>
+                        <div class="footer-credit">
+                <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar. All rights reserved. &nbsp;|&nbsp;
+                        <a href="../html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a> &nbsp;|&nbsp;
+                        <a href="../html/terms-of-use.html" style="color:#00d2ff;text-decoration:underline;">Terms of Use</a></small></p>
             </div>
             <hr id="footer-bottom-bar">
         </footer>
     </main>
 
     <!-- Java Script Part -->
-    <script src="../js/script.js"></script> <!-- My Script Utility Part -->
+    <script src="../js/script.js"></script>
+    <script>
+        // Skills Category Filter Interactive Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.skill-filter-btn');
+            const catGroups = document.querySelectorAll('.skills-category-group');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(b => b.classList.remove('is-active'));
+                    this.classList.add('is-active');
+
+                    const targetFilter = this.getAttribute('data-filter');
+
+                    catGroups.forEach(group => {
+                        const groupCat = group.getAttribute('data-category');
+                        if (targetFilter === 'all' || groupCat === targetFilter) {
+                            group.style.display = 'block';
+                            group.style.opacity = '0';
+                            group.style.transform = 'translateY(10px)';
+                            setTimeout(() => {
+                                group.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                                group.style.opacity = '1';
+                                group.style.transform = 'translateY(0)';
+                            }, 30);
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

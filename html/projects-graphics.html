@@ -50,7 +50,7 @@
     <header>
         <nav>
             <div class="left">
-                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem></a>
+                <a href="https://suvnkr.in/"><img src="../img/Logo-nav-cropped.svg" alt="nav-logo" height=1.5rem decoding="async"></a>
             </div>
             <div class="right">
                 <ul class="nav-desktop">
@@ -75,11 +75,11 @@
 
             </div>
 
-            <!-- More Menu Sidebar -->
+                        <!-- More Menu Sidebar -->
             <div class="menu-sidebar">
 
-                <div class="close-menu-bar menu-bar">
-                    <p><i class="fa-solid fa-xmark menu-margin"></i></p>
+                <div class="close-menu-bar menu-bar" aria-label="Close menu">
+                    <p><i class="fa-solid fa-xmark"></i></p>
                 </div>
 
                 <div class="sidebar-content">
@@ -87,79 +87,117 @@
 
                         <!-- Desktop Menu -->
                         <ul class="menu-lists nav-desktop">
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:1;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:6;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:7;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
                         </ul>
-                        
+
                         <!-- Mobile-Menu -->
                         <ul class="menu-lists nav-mobile">
-                            <li class="menu-list">
+                            <li class="menu-list" style="--i:1;">
                                 <a href="https://suvnkr.in/" class="menu-nav-link">
-                                    <i class="fa-solid fa-house menu-icon"></i>
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-house"></i></span>
                                     <span class="nav-link">Home</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/about.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-user-secret  menu-icon"></i>
+                            <li class="menu-list" style="--i:2;">
+                                <a href="about.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-user"></i></span>
                                     <span class="nav-link">About</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/experience.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-bars-progress menu-icon"></i>
+                            <li class="menu-list" style="--i:3;">
+                                <a href="experience.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-briefcase"></i></span>
                                     <span class="nav-link">Experiences</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/projects.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-diagram-project menu-icon"></i>
+                            <li class="menu-list" style="--i:4;">
+                                <a href="projects.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-layer-group"></i></span>
                                     <span class="nav-link">Projects</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/skills.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-book menu-icon"></i>
+                            <li class="menu-list" style="--i:5;">
+                                <a href="publications.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-newspaper"></i></span>
+                                    <span class="nav-link">Publications</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:6;">
+                                <a href="products.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-cubes"></i></span>
+                                    <span class="nav-link">Products by SUVNKR</span>
+                                </a>
+                            </li>
+                            <li class="menu-list" style="--i:7;">
+                                <a href="skills.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></span>
                                     <span class="nav-link">Skills</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/contact.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-address-book  menu-icon"></i>
+                            <li class="menu-list" style="--i:8;">
+                                <a href="contact.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-envelope"></i></span>
                                     <span class="nav-link">Contact</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../html/privacy-policy.html" class="menu-nav-link">
-                                    <i class="fa-solid fa-shield-halved menu-icon"></i>
+                            <li class="menu-list" style="--i:9;">
+                                <a href="privacy-policy.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
                                     <span class="nav-link">Privacy Policy</span>
                                 </a>
                             </li>
-                            <li class="menu-list">
-                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer" class="menu-nav-link">
-                                    <i class="fa-solid fa-file-pdf menu-icon"></i>
+                                                        <li class="menu-list" style="--i:10;">
+                                <a href="terms-of-use.html" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-gavel"></i></span>
+                                    <span class="nav-link">Terms of Use</span>
+                                </a>
+                            </li>
+<li class="menu-list" style="--i:11;">
+                                <a href="../uploads/SD-web-CV.pdf" target="_blank" rel="noopener noreferrer"
+                                    type="application/pdf" class="menu-nav-link">
+                                    <span class="menu-icon-wrap"><i class="fa-solid fa-file-pdf"></i></span>
                                     <span class="nav-link">PDF Resume</span>
                                 </a>
                             </li>
@@ -173,28 +211,28 @@
                             <div class="menu-socials">
                                 <div class="menu-socials-container">
                                     <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta"
-                                        target="_social"><i class="fa-brands fa-instagram"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
                                     <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                        target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                        target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                                    <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                             class="fa-brands fa-github"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                            class="fa-brands fa-telegram"></i></a>
+                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
+                                        target="_social" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                                 </div>
                                 <div class="menu-socials-container">
-                                    <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt"
-                                        target="_social"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
                                 </div>
                             </div>
                         </section>
                         <div class="footer-credit">
-                            <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar</small></p>
+                            <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar</small></p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +245,7 @@
     </div>
     <main>
         <section class="head-image-container">
-            <img src="../img/project-head.jpg" alt="head img">
+            <img src="../img/project-head.jpg" alt="head img" decoding="async">
         </section>
 
         <!-- Graphips Content Starts -->
@@ -226,123 +264,123 @@
             <div class="projects-container">
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/fp-1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/fp-1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/fp-1.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/fp-1.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/logo-1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/logo-1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/logo-1.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/logo-1.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/occation-1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/occation-1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/occation-1.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/occation-1.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/poster-1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/poster-1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/poster-1.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/poster-1.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/socialmedia-1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/socialmedia-1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/socialmedia-1.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/socialmedia-1.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/socialmedia-2.png" alt="Project 3">
+                    <img src="../img/proj-graphics/socialmedia-2.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/socialmedia-2.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/socialmedia-2.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                     <div class="project-card">
-                        <img src="../img/proj-graphics/socialmedia-3.png" alt="Project 3">
+                        <img src="../img/proj-graphics/socialmedia-3.png" alt="Project 3" decoding="async" loading="lazy">
                         <div class="overlay">
-                            <a href="../img/proj-graphics/socialmedia-3.png" class="project-link" target="_blank">See
+                            <a href="../img/proj-graphics/socialmedia-3.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                                 image</a>
                         </div>
                     </div>
                 
                     <div class="project-card">    
-                    <img src="../img/proj-graphics/pp2.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp2.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp2.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/pp2.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/pp3.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp3.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp3.png" class="project-link" target="_blank">See image</a>
+                        <a href="../img/proj-graphics/pp3.png" class="project-link" target="_blank" rel="noopener noreferrer">See image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/pp1.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp1.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp1.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/pp1.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/pp4.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp4.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp4.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/pp4.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                     <div class="project-card">
-                        <img src="../img/proj-graphics/pp5.png" alt="Project 3">
+                        <img src="../img/proj-graphics/pp5.png" alt="Project 3" decoding="async" loading="lazy">
                         <div class="overlay">
-                            <a href="../img/proj-graphics/pp5.png" class="project-link" target="_blank">See
+                            <a href="../img/proj-graphics/pp5.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                                 image</a>
                         </div>
                     </div>
                 
                     <div class="project-card">
-                    <img src="../img/proj-graphics/pp6.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp6.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp6.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/pp6.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="../img/proj-graphics/pp7.png" alt="Project 3">
+                    <img src="../img/proj-graphics/pp7.png" alt="Project 3" decoding="async" loading="lazy">
                     <div class="overlay">
-                        <a href="../img/proj-graphics/pp7.png" class="project-link" target="_blank">See
+                        <a href="../img/proj-graphics/pp7.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                             image</a>
                     </div>
                 </div>
 
                     <div class="project-card">
-                        <img src="../img/proj-graphics/pp9.png" alt="Project 3">
+                        <img src="../img/proj-graphics/pp9.png" alt="Project 3" decoding="async" loading="lazy">
                         <div class="overlay">
-                            <a href="../img/proj-graphics/pp9.png" class="project-link" target="_blank">See
+                            <a href="../img/proj-graphics/pp9.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                                 image</a>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <img src="../img/proj-graphics/pp8.png" alt="Project 3">
+                        <img src="../img/proj-graphics/pp8.png" alt="Project 3" decoding="async" loading="lazy">
                         <div class="overlay">
-                            <a href="../img/proj-graphics/pp8.png" class="project-link" target="_blank">See
+                            <a href="../img/proj-graphics/pp8.png" class="project-link" target="_blank" rel="noopener noreferrer">See
                                 image</a>
                         </div>
                     </div>
@@ -362,7 +400,7 @@
 
 
         <div class="exp-end">
-            <p> --- You've reached end of this page! --- </span></p>
+            <p> --- You've reached end of this page! --- </p>
         </div>
 
         <!-- Footer Part -->
@@ -372,45 +410,43 @@
                     <p>Follow On</p>
                     <div class="footer-socials">
                         <div class="footer-socials-container">
-                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social"><i
+                            <a href="https://www.instagram.com/shuvankarrr/" id="footer-insta" target="_social" rel="noopener noreferrer" aria-label="Instagram"><i
                                     class="fa-brands fa-instagram"></i></a>
                         </div>
                         <div class="footer-socials-container">
                             <a href="https://www.linkedin.com/in/shuvankardebnath/" id="footer-linkedin"
-                                target="_social"><i class="fa-brands fa-linkedin"></i></a>
+                                target="_social" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social"><i
+                            <a href="https://github.com/Shuvankar2" id="footer-git" target="_social" rel="noopener noreferrer" aria-label="GitHub"><i
                                     class="fa-brands fa-github"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social"><i
+                            <a href="https://www.facebook.com/suvnkrr" id="footer-fb" target="_social" rel="noopener noreferrer" aria-label="Facebook"><i
                                     class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social"><i
+                            <a href="https://www.youtube.com/@ShuvankarTechie" id="footer-yt" target="_social" rel="noopener noreferrer" aria-label="YouTube"><i
                                     class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div class="footer-socials-container">
-                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social"><i
+                            <a href="https://x.com/suvnkrr" id="footer-twitter" target="_social" rel="noopener noreferrer" aria-label="X (Twitter)"><i
                                     class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                        <div class="footer-socials-container">
-                            <a href="https://t.me/shuvankar0" id="footer-telegram" target="_social"><i
-                                    class="fa-brands fa-telegram"></i></a>
                         </div>
                     </div>
                 </section>
 
                 <section class="footer-logo">
-                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem>
+                    <img src="../img/Logo-nav-cropped.svg" alt="footer logo" height=1.5rem decoding="async">
                 </section>
             </section>
 
             <hr>
 
-            <div class="footer-credit">
-                <p><small>&#169 <span class="copyright-year">2025</span> Shuvankar. All rights reserved.</small></p>
+                        <div class="footer-credit">
+                <p><small>&#169; <span class="copyright-year">2026</span> Shuvankar. All rights reserved. &nbsp;|&nbsp;
+                        <a href="../html/privacy-policy.html" style="color:#00d2ff;text-decoration:underline;">Privacy Policy</a> &nbsp;|&nbsp;
+                        <a href="../html/terms-of-use.html" style="color:#00d2ff;text-decoration:underline;">Terms of Use</a></small></p>
             </div>
             <hr id="footer-bottom-bar">
         </footer>

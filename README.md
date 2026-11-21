@@ -69,4 +69,3 @@ portfolio/
   - **GitHub**: [@Shuvankar2](https://github.com/Shuvankar2)
   - **YouTube**: [ShuvankarTechie](https://www.youtube.com/@ShuvankarTechie)
   - **Instagram**: [@shuvankarrr](https://www.instagram.com/shuvankarrr/)
-  - **Telegram**: [@shuvankar0](https://t.me/shuvankar0)
