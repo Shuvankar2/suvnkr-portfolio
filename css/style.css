@@ -2908,3 +2908,302 @@ img:not(.img-loaded) {
         padding: 0 20px;
     }
 }
+
+/* ══════════════════════════════════════════════════════
+   SUVNKR AI Virtual Concierge (Cloudflare LLaMA 3.1)
+   ══════════════════════════════════════════════════════ */
+.suvnkr-ai-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1d2334 0%, #111729 100%);
+    border: 1.5px solid #39e168;
+    color: #39e168;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 12px rgba(57, 225, 104, 0.28);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.suvnkr-ai-toggle:hover {
+    transform: scale(1.08);
+    border-color: #00d2ff;
+    color: #00d2ff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 210, 255, 0.45);
+}
+
+.suvnkr-ai-toggle.above-scroll-btn {
+    bottom: 82px;
+}
+
+.suvnkr-ai-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 11px;
+    height: 11px;
+    background: #39e168;
+    border-radius: 50%;
+    border: 2px solid #111729;
+    box-shadow: 0 0 6px #39e168;
+}
+
+/* Chat Drawer */
+.suvnkr-ai-drawer {
+    position: fixed;
+    bottom: 82px;
+    right: 20px;
+    width: 375px;
+    max-width: calc(100vw - 32px);
+    height: 520px;
+    max-height: calc(100vh - 120px);
+    background: #111729;
+    border: 1px solid rgba(57, 225, 104, 0.25);
+    border-radius: 18px;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.75), 0 0 20px rgba(57, 225, 104, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), bottom 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.suvnkr-ai-drawer.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.suvnkr-ai-drawer.above-scroll-btn {
+    bottom: 144px;
+}
+
+/* Drawer Header */
+.suvnkr-ai-header {
+    background: #1d2334;
+    padding: 13px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.suvnkr-ai-header-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.suvnkr-ai-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(57, 225, 104, 0.15);
+    border: 1px solid rgba(57, 225, 104, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #39e168;
+    font-size: 0.95rem;
+}
+
+.suvnkr-ai-title-wrap h4 {
+    margin: 0;
+    font-size: 0.92rem;
+    font-family: 'Lexend', sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.suvnkr-ai-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #39e168;
+    box-shadow: 0 0 6px #39e168;
+}
+
+.suvnkr-ai-title-wrap span {
+    font-size: 0.72rem;
+    color: #8892a4;
+}
+
+.suvnkr-ai-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.suvnkr-ai-header-btn {
+    background: transparent;
+    border: none;
+    color: #8892a4;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.suvnkr-ai-header-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Chat Messages */
+.suvnkr-ai-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    scroll-behavior: smooth;
+}
+
+.suvnkr-ai-msg {
+    max-width: 86%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    word-break: break-word;
+}
+
+.suvnkr-ai-msg.bot {
+    background: #1d2334;
+    color: #d1d8e6;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom-left-radius: 3px;
+    align-self: flex-start;
+}
+
+.suvnkr-ai-msg.bot a {
+    color: #00d2ff;
+    text-decoration: underline;
+}
+
+.suvnkr-ai-msg.user {
+    background: linear-gradient(135deg, #39e168 0%, #2bc856 100%);
+    color: #0f1523;
+    font-weight: 500;
+    border-bottom-right-radius: 3px;
+    align-self: flex-end;
+}
+
+.suvnkr-ai-msg.loading {
+    background: #1d2334;
+    color: #8892a4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    border-bottom-left-radius: 3px;
+    align-self: flex-start;
+}
+
+/* Quick chips */
+.suvnkr-ai-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.suvnkr-ai-chip {
+    background: rgba(57, 225, 104, 0.1);
+    border: 1px solid rgba(57, 225, 104, 0.25);
+    color: #39e168;
+    padding: 5px 11px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Lexend', sans-serif;
+}
+
+.suvnkr-ai-chip:hover {
+    background: #39e168;
+    color: #111729;
+    box-shadow: 0 0 10px rgba(57, 225, 104, 0.4);
+}
+
+/* Input Area */
+.suvnkr-ai-input-wrap {
+    padding: 12px 14px;
+    background: #1d2334;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.suvnkr-ai-input {
+    flex: 1;
+    background: #111729;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 9px 16px;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.suvnkr-ai-input:focus {
+    border-color: #39e168;
+}
+
+.suvnkr-ai-send-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #39e168;
+    border: none;
+    color: #111729;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.suvnkr-ai-send-btn:hover {
+    transform: scale(1.08);
+    background: #00d2ff;
+}
+
+@media (max-width: 480px) {
+    .suvnkr-ai-drawer {
+        right: 12px;
+        bottom: 76px;
+        width: calc(100vw - 24px);
+        height: 480px;
+    }
+    .suvnkr-ai-drawer.above-scroll-btn {
+        bottom: 138px;
+    }
+    .suvnkr-ai-toggle {
+        right: 16px;
+        bottom: 16px;
+    }
+    .suvnkr-ai-toggle.above-scroll-btn {
+        bottom: 76px;
+    }
+}

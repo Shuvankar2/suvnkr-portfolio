@@ -260,11 +260,25 @@ function scrollToTop() {
         if (!scrollTicking) {
             window.requestAnimationFrame(function() {
                 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                const aiToggle = document.getElementById('suvnkrAiToggleBtn');
+                const aiDrawer = document.getElementById('suvnkrAiDrawer');
+                const isScrollShowing = window.pageYOffset > 300;
+
                 if (scrollToTopBtn) {
-                    if (window.pageYOffset > 300) {
+                    if (isScrollShowing) {
                         scrollToTopBtn.classList.add('show');
                     } else {
                         scrollToTopBtn.classList.remove('show');
+                    }
+                }
+
+                if (aiToggle) {
+                    if (isScrollShowing) {
+                        aiToggle.classList.add('above-scroll-btn');
+                        if (aiDrawer) aiDrawer.classList.add('above-scroll-btn');
+                    } else {
+                        aiToggle.classList.remove('above-scroll-btn');
+                        if (aiDrawer) aiDrawer.classList.remove('above-scroll-btn');
                     }
                 }
                 scrollTicking = false;
@@ -688,3 +702,210 @@ function initElfsightDarkMode() {
 }
 
 document.addEventListener('DOMContentLoaded', initElfsightDarkMode);
+
+// ══════════════════════════════════════════════════
+// SUVNKR AI Virtual Concierge (Cloudflare LLaMA 3.1)
+// ══════════════════════════════════════════════════
+function initSuvnkrAiWidget() {
+    // Avoid double injection
+    if (document.getElementById('suvnkrAiToggleBtn')) return;
+
+    const WORKER_URL = 'https://suvnkr-ai.shuvankar345.workers.dev';
+    let conversationHistory = [];
+    let isRequestPending = false;
+
+    // 1. Create floating toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'suvnkrAiToggleBtn';
+    toggleBtn.className = 'suvnkr-ai-toggle';
+    toggleBtn.setAttribute('aria-label', 'Open SUVNKR AI Assistant');
+    toggleBtn.setAttribute('title', 'Chat with SUVNKR AI Concierge');
+    toggleBtn.innerHTML = `
+        <i class="fas fa-robot"></i>
+        <span class="suvnkr-ai-badge"></span>
+    `;
+
+    // 2. Create Drawer Modal
+    const drawer = document.createElement('div');
+    drawer.id = 'suvnkrAiDrawer';
+    drawer.className = 'suvnkr-ai-drawer';
+    drawer.setAttribute('role', 'dialog');
+    drawer.setAttribute('aria-label', 'SUVNKR AI Chat Concierge');
+    drawer.innerHTML = `
+        <div class="suvnkr-ai-header">
+            <div class="suvnkr-ai-header-info">
+                <div class="suvnkr-ai-avatar">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="suvnkr-ai-title-wrap">
+                    <h4>SUVNKR AI <span class="suvnkr-ai-status-dot"></span></h4>
+                    <span>Portfolio Concierge · LLaMA 3.1</span>
+                </div>
+            </div>
+            <div class="suvnkr-ai-header-actions">
+                <button type="button" class="suvnkr-ai-header-btn" id="suvnkrAiClearBtn" title="Clear Chat History">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+                <button type="button" class="suvnkr-ai-header-btn" id="suvnkrAiCloseBtn" title="Close Chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="suvnkr-ai-messages" id="suvnkrAiMessages">
+            <div class="suvnkr-ai-msg bot">
+                👋 <strong>Hello! I'm SUVNKR AI</strong>, the personal portfolio concierge for Shuvankar Debnath.<br><br>
+                Ask me anything about his software engineering products, published YOLO research, industrial training, or how to reach out!
+                <div class="suvnkr-ai-chips">
+                    <span class="suvnkr-ai-chip" data-prompt="What are Shuvankar's flagship products?">💼 Products</span>
+                    <span class="suvnkr-ai-chip" data-prompt="Tell me about Shuvankar's YOLO leaf research paper.">🔬 YOLO Research</span>
+                    <span class="suvnkr-ai-chip" data-prompt="What is Shuvankar's electrical engineering and industrial background?">⚡ Experience</span>
+                    <span class="suvnkr-ai-chip" data-prompt="How can I contact or collaborate with Shuvankar?">📬 Contact Info</span>
+                </div>
+            </div>
+        </div>
+        <form class="suvnkr-ai-input-wrap" id="suvnkrAiForm">
+            <input type="text" id="suvnkrAiInput" class="suvnkr-ai-input" placeholder="Ask about Shuvankar's work..." autocomplete="off" maxlength="300" />
+            <button type="submit" class="suvnkr-ai-send-btn" id="suvnkrAiSendBtn" aria-label="Send message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    `;
+
+    document.body.appendChild(toggleBtn);
+    document.body.appendChild(drawer);
+
+    // Initial check for scroll button position
+    if (window.pageYOffset > 300) {
+        toggleBtn.classList.add('above-scroll-btn');
+        drawer.classList.add('above-scroll-btn');
+    }
+
+    const messagesContainer = drawer.querySelector('#suvnkrAiMessages');
+    const inputEl = drawer.querySelector('#suvnkrAiInput');
+    const formEl = drawer.querySelector('#suvnkrAiForm');
+    const closeBtn = drawer.querySelector('#suvnkrAiCloseBtn');
+    const clearBtn = drawer.querySelector('#suvnkrAiClearBtn');
+
+    function formatMarkdown(text) {
+        if (!text) return '';
+        let escaped = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        escaped = escaped.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        escaped = escaped.replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.1);padding:2px 5px;border-radius:4px;font-size:0.85em;">$1</code>');
+        escaped = escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+        escaped = escaped.replace(/(^|[^">])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
+        escaped = escaped.replace(/\n/g, '<br>');
+        return escaped;
+    }
+
+    function appendMessage(role, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `suvnkr-ai-msg ${role}`;
+        if (role === 'user') {
+            msgDiv.textContent = text;
+        } else {
+            msgDiv.innerHTML = formatMarkdown(text);
+        }
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return msgDiv;
+    }
+
+    function toggleDrawer(open) {
+        const shouldOpen = (open !== undefined) ? open : !drawer.classList.contains('is-open');
+        if (shouldOpen) {
+            drawer.classList.add('is-open');
+            toggleBtn.innerHTML = '<i class="fas fa-times"></i>';
+            setTimeout(() => inputEl.focus(), 150);
+        } else {
+            drawer.classList.remove('is-open');
+            toggleBtn.innerHTML = '<i class="fas fa-robot"></i><span class="suvnkr-ai-badge"></span>';
+        }
+    }
+
+    toggleBtn.addEventListener('click', () => toggleDrawer());
+    closeBtn.addEventListener('click', () => toggleDrawer(false));
+
+    clearBtn.addEventListener('click', () => {
+        conversationHistory = [];
+        messagesContainer.innerHTML = `
+            <div class="suvnkr-ai-msg bot">
+                Conversation reset! How can I assist you with Shuvankar's portfolio?
+                <div class="suvnkr-ai-chips">
+                    <span class="suvnkr-ai-chip" data-prompt="What are Shuvankar's flagship products?">💼 Products</span>
+                    <span class="suvnkr-ai-chip" data-prompt="Tell me about Shuvankar's YOLO leaf research paper.">🔬 YOLO Research</span>
+                    <span class="suvnkr-ai-chip" data-prompt="How can I contact or collaborate with Shuvankar?">📬 Contact Info</span>
+                </div>
+            </div>
+        `;
+    });
+
+    // Delegate chips click
+    messagesContainer.addEventListener('click', (e) => {
+        const chip = e.target.closest('.suvnkr-ai-chip');
+        if (chip) {
+            const prompt = chip.getAttribute('data-prompt');
+            if (prompt) handleUserSend(prompt);
+        }
+    });
+
+    async function handleUserSend(userText) {
+        const text = userText || inputEl.value.trim();
+        if (!text || isRequestPending) return;
+
+        inputEl.value = '';
+        appendMessage('user', text);
+        conversationHistory.push({ role: 'user', content: text });
+
+        // Show typing indicator
+        isRequestPending = true;
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'suvnkr-ai-msg loading';
+        loadingDiv.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Thinking...';
+        messagesContainer.appendChild(loadingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        try {
+            const response = await fetch(WORKER_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: conversationHistory.slice(-8) // Send recent context window
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server returned HTTP ${response.status}`);
+            }
+
+            const data = await response.json();
+            loadingDiv.remove();
+
+            const botReply = data.reply || "I didn't receive an answer. Please feel free to email Shuvankar directly at shuvankar345@gmail.com!";
+            appendMessage('bot', botReply);
+            conversationHistory.push({ role: 'assistant', content: botReply });
+        } catch (err) {
+            console.error('SUVNKR AI Error:', err);
+            loadingDiv.remove();
+            appendMessage('bot', `⚠️ I had a temporary issue connecting to the AI edge worker. You can reach out directly via the contact form or email at <a href="mailto:shuvankar345@gmail.com">shuvankar345@gmail.com</a>.`);
+        } finally {
+            isRequestPending = false;
+        }
+    }
+
+    formEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleUserSend();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+            toggleDrawer(false);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initSuvnkrAiWidget);
