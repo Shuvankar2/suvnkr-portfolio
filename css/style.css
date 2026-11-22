@@ -3352,6 +3352,13 @@ img:not(.img-loaded) {
     box-shadow: 0 4px 15px rgba(24, 119, 242, 0.45);
 }
 
+.suvnkr-ai-nav-btn.btn-maps:hover {
+    background: #34a853;
+    border-color: #34a853;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.45);
+}
+
 .suvnkr-ai-msg.user {
     background: linear-gradient(135deg, #39e168 0%, #2bc856 100%);
     color: #0f1523;

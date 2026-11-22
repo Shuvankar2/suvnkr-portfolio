@@ -858,11 +858,31 @@ function initSuvnkrAiWidget() {
 
     function resolvePortfolioUrl(rawTarget) {
         if (!rawTarget) return '#';
-        const target = rawTarget.trim();
-        // External URLs, mailto, tel, or anchor hashes
+        let target = rawTarget.trim();
+
+        // 1. External URLs, mailto, tel, or anchor hashes
         if (/^(https?:|mailto:|tel:|#)/i.test(target)) return target;
 
-        // Check if current page is within the html/ directory
+        // 2. Direct web domains (e.g. maps.google.com, google.com, en.wikipedia.org)
+        if (/^([a-zA-Z0-9-]+\.)+(?:com|org|net|io|in|gov|edu|me|ai|app)(\/.*)?$/i.test(target)) {
+            return 'https://' + target;
+        }
+
+        // 3. Google Maps / directions / navigation queries (e.g. "Google Maps", "Directions to Kolkata", "maps")
+        if (/\b(maps?|directions?|route|location|navigate)\b/i.test(target) || /^google\s*maps?$/i.test(target)) {
+            const query = target.replace(/^(google\s*maps?|maps?|directions?\s*(to|for)?|route\s*(to|for)?|navigate\s*(to)?)\s*/i, '').trim();
+            return query ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}` : 'https://maps.google.com';
+        }
+
+        // 4. Known internal portfolio pages (with or without .html)
+        const isInternalPage = /^(index|about|experience|products|projects|projects-web-dev|publications|skills|contact|maintenance)(\.html)?$/i.test(target);
+
+        // If target has spaces or no dot and isn't an internal page, treat as a search query
+        if (!isInternalPage && (target.includes(' ') || !target.includes('.'))) {
+            return `https://www.google.com/search?q=${encodeURIComponent(target)}`;
+        }
+
+        // 5. Internal portfolio path resolution
         const pathname = window.location.pathname.toLowerCase();
         const isInHtmlFolder = pathname.includes('/html/') || 
                                pathname.endsWith('/html') ||
@@ -870,6 +890,9 @@ function initSuvnkrAiWidget() {
 
         // Normalize target path
         let clean = target.replace(/^\.\.\//, '').replace(/^html\//, '').replace(/^\//, '');
+        if (!clean.endsWith('.html') && !clean.includes('.')) {
+            clean += '.html';
+        }
 
         if (clean === 'index.html' || clean === '') {
             return isInHtmlFolder ? '../index.html' : 'index.html';
@@ -883,7 +906,10 @@ function initSuvnkrAiWidget() {
         let iconClass = 'fa-solid fa-arrow-right';
         let extraClass = '';
 
-        if (combined.includes('linkedin')) {
+        if (combined.includes('map') || combined.includes('direction') || combined.includes('route') || combined.includes('location')) {
+            iconClass = 'fa-solid fa-map-location-dot';
+            extraClass = 'btn-maps';
+        } else if (combined.includes('linkedin')) {
             iconClass = 'fa-brands fa-linkedin';
             extraClass = 'btn-linkedin';
         } else if (combined.includes('github')) {
