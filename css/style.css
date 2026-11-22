@@ -540,6 +540,16 @@ body.menu-open .menu-overlay {
     line-height: 1.65;
     font-weight: 400;
 }
+
+@media (max-width: 768px) {
+    .hero-intro-text {
+        display: none !important;
+    }
+    .hero-cta-group {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
 .hero-cta-group {
     display: flex;
     gap: 14px;
