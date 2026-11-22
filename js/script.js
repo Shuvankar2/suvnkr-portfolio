@@ -759,10 +759,10 @@ function initSuvnkrAiWidget() {
                 Hey there! 👋 <strong>I'm SUVNKR AI</strong>, Shuvankar's portfolio buddy. Think of me as a friend who knows everything about his journey, coding projects, and research!<br><br>
                 What's on your mind? Want to check out his apps, research paper, or just have a chat?
                 <div class="suvnkr-ai-chips">
-                    <span class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</span>
-                    <span class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</span>
-                    <span class="suvnkr-ai-chip" data-prompt="What's his tech stack and engineering background?">⚡ Background</span>
-                    <span class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</span>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</button>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</button>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="What's his tech stack and engineering background?">⚡ Background</button>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</button>
                 </div>
             </div>
         </div>
@@ -1101,9 +1101,9 @@ function initSuvnkrAiWidget() {
             <div class="suvnkr-ai-msg bot">
                 Hey, fresh chat! How can I help you explore Shuvankar's work?
                 <div class="suvnkr-ai-chips">
-                    <span class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</span>
-                    <span class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</span>
-                    <span class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</span>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="What cool projects has Shuvankar built?">💼 Cool Projects</button>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="Tell me about his YOLO leaf research paper!">🔬 YOLO Paper</button>
+                    <button type="button" class="suvnkr-ai-chip" data-prompt="How can I get in touch with Shuvankar?">📬 Say Hello</button>
                 </div>
             </div>
         `;
