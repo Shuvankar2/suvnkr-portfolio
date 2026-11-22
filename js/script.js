@@ -34,9 +34,9 @@
       if (!imageSlider) return;
 
       const images = [
-          'img/bg-landing.jpg',
-          'img/bg-landing2.jpg',
-          'img/bg-landing3.jpg'
+          'img/bg-landing.webp',
+          'img/bg-landing2.webp',
+          'img/bg-landing3.webp'
       ];
   
       let currentImageIndex = 0;
@@ -319,11 +319,11 @@ const expGalleryData = {
         cert: 'img/resources/certi/ONGC-certi.jpeg',
         images: [
             { src: 'img/resources/ongc/ongc-1.jpeg', caption: 'ONGC Drilling Site & Field Operations' },
-            { src: 'img/resources/ongc/ongc-2.jpeg', caption: 'Industrial Electrical Control Panel & Monitoring System' },
+            { src: 'img/resources/ongc/ongc-2.webp', caption: 'Industrial Electrical Control Panel & Monitoring System' },
             { src: 'img/resources/ongc/ongc-3.jpeg', caption: 'High-Voltage Machinery & Rig Power Units' },
             { src: 'img/resources/ongc/ongc-4.jpeg', caption: 'Diesel Generator Backup & Distribution Layout' },
             { src: 'img/resources/ongc/ongc-5.jpeg', caption: 'Substation Field Work & Safety Protocol Review' },
-            { src: 'img/resources/ongc/ongc-6.jpeg', caption: 'Heavy Drilling Machinery & Operational Grounding' },
+            { src: 'img/resources/ongc/ongc-6.webp', caption: 'Heavy Drilling Machinery & Operational Grounding' },
             { src: 'img/resources/ongc/ongc-7.jpeg', caption: 'Technical Trainee Inspection Team at ONGC Facility' }
         ]
     },
@@ -331,7 +331,7 @@ const expGalleryData = {
         title: 'Eduspace (formerly Note Loom)',
         badge: 'Multi-Tenant Academic ERP & AI Platform (In Development)',
         images: [
-            { src: 'img/resources/noteloom/noteloom-2.png', caption: 'Eduspace Multi-Tenant Institutional Administration Dashboard' },
+            { src: 'img/resources/noteloom/noteloom-2.webp', caption: 'Eduspace Multi-Tenant Institutional Administration Dashboard' },
             { src: 'img/resources/noteloom/noteloom-3.png', caption: 'Course Management & Video Learning Management System' },
             { src: 'img/resources/noteloom/noteloom-4.png', caption: 'Student Analytics & Academic Performance Records' },
             { src: 'img/resources/noteloom/noteloom-5.png', caption: 'Role-Based Access Control (Student, Faculty, Admin)' },
@@ -352,7 +352,7 @@ const expGalleryData = {
         title: 'GotiPrep — Competitive Examination Platform',
         badge: 'Assessment Technology · Open Source (MIT)',
         images: [
-            { src: 'img/resources/gotiprep/gp-1.png', caption: 'GotiPrep Exam Dashboard & Assessment Categories' },
+            { src: 'img/resources/gotiprep/gp-1.webp', caption: 'GotiPrep Exam Dashboard & Assessment Categories' },
             { src: 'img/resources/gotiprep/gp-2.png', caption: 'Typing Arena with Real-Time WPM & Anti-Cheat Analytics' },
             { src: 'img/resources/gotiprep/gp-3.png', caption: 'Passage Comprehension & Timed Email Drafting Suite' }
         ]
@@ -364,31 +364,31 @@ const expGalleryData = {
             { src: 'img/resources/hotelease/he-1.png', caption: 'HotelEase Main Dashboard & Operational Overview' },
             { src: 'img/resources/hotelease/he-2.png', caption: 'Room Inventory Allocation & Live Availability Grid' },
             { src: 'img/resources/hotelease/he-3.png', caption: 'Guest Check-In/Check-Out & Registration System' },
-            { src: 'img/resources/hotelease/he-4.png', caption: 'Restaurant POS Billing & Order Management Module' },
+            { src: 'img/resources/hotelease/he-4.webp', caption: 'Restaurant POS Billing & Order Management Module' },
             { src: 'img/resources/hotelease/he-5.png', caption: 'Automated Itemized Invoicing & Tax Computation' },
-            { src: 'img/resources/hotelease/he-6.png', caption: 'Staff Management & Local System Configuration' }
+            { src: 'img/resources/hotelease/he-6.webp', caption: 'Staff Management & Local System Configuration' }
         ]
     },
     'kagazly': {
         title: 'Kagazly — Cloud Document & PDF Utilities',
         badge: 'Productivity Platform · Browser-Based WASM Tools',
         images: [
-            { src: 'img/resources/kagazly/kg-1.png', caption: 'Kagazly Utility Suite & Document Workspace' },
-            { src: 'img/resources/kagazly/kg-2.png', caption: 'PDF Merging, Splitting & Reorganization Tool' },
-            { src: 'img/resources/kagazly/kg-3.png', caption: 'Compression Engine & Client-Side Processing' },
-            { src: 'img/resources/kagazly/kg-4.png', caption: 'Watermarking & Format Conversion Interface' }
+            { src: 'img/resources/kagazly/kg-1.webp', caption: 'Kagazly Utility Suite & Document Workspace' },
+            { src: 'img/resources/kagazly/kg-2.webp', caption: 'PDF Merging, Splitting & Reorganization Tool' },
+            { src: 'img/resources/kagazly/kg-3.webp', caption: 'Compression Engine & Client-Side Processing' },
+            { src: 'img/resources/kagazly/kg-4.webp', caption: 'Watermarking & Format Conversion Interface' }
         ]
     },
     'trikal': {
         title: 'Trikal Darshi — Vedic Astrology Platform',
         badge: 'Planetary Computation & AI Interpretations',
         images: [
-            { src: 'img/resources/trikal/td-1.png', caption: 'Trikal Darshi Natal Chart & Planetary Calculation View' },
-            { src: 'img/resources/trikal/td-2.png', caption: 'AI-Generated Astrological Narrative & Predictions' },
-            { src: 'img/resources/trikal/td-3.png', caption: 'Birth Details Input & Geolocation Coordinate Resolver' },
-            { src: 'img/resources/trikal/td-4.png', caption: 'House Alignments & Dasha Timeline Breakdown' },
-            { src: 'img/resources/trikal/td-5.png', caption: 'Planetary Strength & Compatibility Analysis' },
-            { src: 'img/resources/trikal/td-6.png', caption: 'Mobile-Responsive Astrological Dashboard' }
+            { src: 'img/resources/trikal/td-1.webp', caption: 'Trikal Darshi Natal Chart & Planetary Calculation View' },
+            { src: 'img/resources/trikal/td-2.webp', caption: 'AI-Generated Astrological Narrative & Predictions' },
+            { src: 'img/resources/trikal/td-3.webp', caption: 'Birth Details Input & Geolocation Coordinate Resolver' },
+            { src: 'img/resources/trikal/td-4.webp', caption: 'House Alignments & Dasha Timeline Breakdown' },
+            { src: 'img/resources/trikal/td-5.webp', caption: 'Planetary Strength & Compatibility Analysis' },
+            { src: 'img/resources/trikal/td-6.webp', caption: 'Mobile-Responsive Astrological Dashboard' }
         ]
     },
     'evmpc': {
@@ -411,11 +411,11 @@ const expGalleryData = {
         badge: 'Vocational Training · Power Plant & Switchyard',
         cert: 'img/resources/certi/dpl-certi.jpeg',
         images: [
-            { src: 'img/resources/dpl/dpl-1.jpeg', caption: 'DPL Thermal Power Plant Infrastructure & Stack Overview' },
-            { src: 'img/resources/dpl/dpl-2.jpeg', caption: 'High-Voltage Switchyard & Substation Transmission Lines' },
-            { src: 'img/resources/dpl/dpl-3.jpeg', caption: 'Power Transformers & Regular Maintenance Inspection' },
+            { src: 'img/resources/dpl/dpl-1.webp', caption: 'DPL Thermal Power Plant Infrastructure & Stack Overview' },
+            { src: 'img/resources/dpl/dpl-2.webp', caption: 'High-Voltage Switchyard & Substation Transmission Lines' },
+            { src: 'img/resources/dpl/dpl-3.webp', caption: 'Power Transformers & Regular Maintenance Inspection' },
             { src: 'img/resources/dpl/dpl-4.jpeg', caption: 'Industrial Cooling Tower & Plant Water Circulation Unit' },
-            { src: 'img/resources/dpl/dpl-5.jpeg', caption: 'Coal Processing Plant & Fuel Handling Systems' }
+            { src: 'img/resources/dpl/dpl-5.webp', caption: 'Coal Processing Plant & Fuel Handling Systems' }
         ]
     }
 };
@@ -1201,7 +1201,7 @@ function initSuvnkrAiWidget() {
         } catch (err) {
             console.error('SUVNKR AI Error:', err);
             loadingDiv.remove();
-            typeBotMessage(`⚠️ I had a temporary issue connecting to the AI edge worker. You can reach out directly via the contact form or email at shuvankar345@gmail.com.`);
+            typeBotMessage(`⚠️ I had a temporary issue connecting to the AI edge worker. You can reach out directly by email at shuvankar345@gmail.com.`);
         } finally {
             isRequestPending = false;
         }

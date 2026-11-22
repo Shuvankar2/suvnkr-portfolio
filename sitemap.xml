@@ -2,86 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://suvnkr.in/</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/about.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/experience.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/skills.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/projects.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/projects-web-dev.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/projects-video.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/projects-thumbnail.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/projects-graphics.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://suvnkr.in/html/products.html</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://suvnkr.in/html/publications.html</loc>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/contact.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://suvnkr.in/html/publications.html</loc>
-    <lastmod>2026-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://suvnkr.in/html/products.html</loc>
-    <lastmod>2026-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/privacy-policy.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://suvnkr.in/html/terms-of-use.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://suvnkr.in/html/cookie-policy.html</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

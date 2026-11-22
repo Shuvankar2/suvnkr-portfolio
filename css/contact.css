@@ -68,3 +68,53 @@ footer {
     margin: 0;
 }
     
+/* Contact guidance grid */
+.contact-info {
+    max-width: 1100px;
+    margin: 42px auto 0;
+    padding: 0 5vw;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.contact-info article {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(29, 35, 52, 0.6);
+    padding: 20px 22px;
+}
+
+.contact-info h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.02rem;
+    color: #39e168;
+    margin: 0 0 10px;
+}
+
+.contact-info p,
+.contact-info li {
+    color: #a8b3c7;
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+.contact-info p {
+    margin: 0 0 10px;
+}
+
+.contact-info ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.contact-info a {
+    color: #00d2ff;
+    text-decoration: underline;
+}
+

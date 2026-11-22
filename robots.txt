@@ -1,4 +1,16 @@
+# suvnkr.in — robots.txt
+# The portfolio intentionally carries no advertising. Product subdomains are
+# separate properties and publish their own robots.txt where needed.
+
 User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Ads crawlers must be able to reach ads.txt at the domain root.
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
 Allow: /
 
 Sitemap: https://suvnkr.in/sitemap.xml

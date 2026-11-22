@@ -474,7 +474,7 @@ body.menu-open .menu-overlay {
 
 /* Ensures the first image is visible on load */
 .img-slider-landing {
-    background-image: url('../img/bg-landing.jpg');
+    background-image: url('../img/bg-landing.webp');
 }
 .firstsection {
     display: flex;
@@ -492,6 +492,9 @@ body.menu-open .menu-overlay {
 .hero-greeting {
     font-size: 2.6rem;
     font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+    color: inherit;
 }
 .hero-subline {
     font-size: 2.2rem;
@@ -603,7 +606,8 @@ body.menu-open .menu-overlay {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.heading h1 {
+.heading h1,
+.heading h2 {
     all: unset;
     display: block;
 }
@@ -1823,7 +1827,8 @@ body.menu-open .menu-overlay {
     text-align: center;
 }
 
-.sixthsection > .heading h1 {
+.sixthsection > .heading h1,
+.sixthsection > .heading h2 {
     all: unset;
     display: inline-block;
 }
@@ -1864,7 +1869,7 @@ body.menu-open .menu-overlay {
     footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background: #1d2334;
-    background-image: url(../img/footer-bg.png);
+    background-image: url(../img/footer-bg.webp);
     background-position: center;
     background-size: cover;
     padding: 20px;

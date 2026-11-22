@@ -19,7 +19,8 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
 }
-.heading h1 {
+.heading h1,
+.heading h2 {
     all: unset;
     display: block;
 }
