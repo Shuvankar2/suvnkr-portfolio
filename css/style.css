@@ -593,7 +593,7 @@ body.menu-open .menu-overlay {
         justify-content: center !important;
         align-items: flex-start !important;
         text-align: left !important;
-        background-image: linear-gradient(to bottom, rgba(17, 23, 41, 0.95) 0%, rgba(17, 23, 41, 0.82) 50%, rgba(17, 23, 41, 0.96) 100%) !important;
+        background-image: linear-gradient(to bottom, rgba(17, 23, 41, 0.78) 0%, rgba(17, 23, 41, 0.55) 50%, rgba(17, 23, 41, 0.78) 100%) !important;
     }
     .firstsection > .leftdiv {
         width: 100% !important;
