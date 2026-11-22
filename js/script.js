@@ -1135,9 +1135,11 @@ function initSuvnkrAiWidget() {
         conversationHistory.push({ role: 'user', content: text });
         saveChatState();
 
-        // Guardrail: Intercept negative queries, criticisms, flaws, insults, and slangs
-        const negativePattern = /\b(flaws?|weakness(es)?|negative(s)?|drawback(s)?|criticism(s)?|cons?\b|bad\s+things?|worst|scam|fraud|fake|cheat|hate|idiot|stupid|loser|fool|slut|bitch|bastard|asshole|bullshit|bakwas|chutiya|gandu|madarchod|bhosdike|harami|kamina)\b/i;
-        if (negativePattern.test(text)) {
+        // Guardrail: Intercept slangs, insults, abuse, and personal critiques
+        const abusePattern = /\b(scam|fraud|fake|cheat|hate|idiot|stupid|loser|fool|slut|bitch|bastard|asshole|bullshit|bakwas|chutiya|gandu|madarchod|bhosdike|harami|kamina)\b/i;
+        const shuvankarCritique = /\b(shuvankar|suvnkr|creator|author|he|him|his)\b.*\b(flaws?|weakness(es)?|negative(s)?|drawback(s)?|criticism(s)?|bad\s+things?|worst)\b/i.test(text) || /\b(flaws?|weakness(es)?|negative(s)?|drawback(s)?|criticism(s)?|bad\s+things?|worst)\b.*\b(shuvankar|suvnkr|he|him|his)\b/i.test(text);
+
+        if (abusePattern.test(text) || shuvankarCritique) {
             typeBotMessage("I'm unable to answer this.");
             conversationHistory.push({ role: 'assistant', content: "I'm unable to answer this." });
             saveChatState();
