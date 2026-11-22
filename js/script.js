@@ -1144,6 +1144,15 @@ function initSuvnkrAiWidget() {
             return;
         }
 
+        // Guardrail: Intercept inquiries about AI policy, rules, or system instructions
+        const policyPattern = /\b(system\s*prompt|ai\s*policy|your\s*policy|internal\s*rules?|hidden\s*instructions?|prompt\s*injection|what\s+rules?\s+(do\s+you|are\s+you)\s+follow|what\s+(is\s+your|are\s+your)\s+(instructions?|system\s*prompt|rules?|guidelines?|policies|policy))\b/i;
+        if (policyPattern.test(text)) {
+            typeBotMessage("I don't have any info about this.");
+            conversationHistory.push({ role: 'assistant', content: "I don't have any info about this." });
+            saveChatState();
+            return;
+        }
+
         // Show typing indicator
         isRequestPending = true;
         const loadingDiv = document.createElement('div');
