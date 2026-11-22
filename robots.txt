@@ -1,6 +1,5 @@
 # suvnkr.in — robots.txt
-# The portfolio intentionally carries no advertising. Product subdomains are
-# separate properties and publish their own robots.txt where needed.
+# Advertising across the suvnkr.in network is managed through Google AdSense.
 
 User-agent: *
 Allow: /
